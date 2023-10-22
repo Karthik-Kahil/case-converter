@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledLink = styled.li`
   list-style: none;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 
   & a {
     display: inline-block;
@@ -12,6 +12,10 @@ const StyledLink = styled.li`
     padding: 1rem 2rem;
     border-radius: 10px;
     color: #ffffff;
+  }
+
+  :hover {
+    background-color: #99b080;
   }
 `;
 
