@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Button from "../../UI/Button";
-import { useDispatch } from "react-redux";
-import { textLoader } from "./ConvertSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { lowerCase, sentenceCase, textLoader, upperCase } from "./ConvertSlice";
 
 const StyledBox = styled.div`
   background-color: #445d48;
@@ -40,6 +40,9 @@ const StyledBox = styled.div`
 
 function CaseConvert() {
   const dispatch = useDispatch();
+  const { currentText, charactersCount, wordCount, lineCount } = useSelector(
+    (select) => select.convertCase
+  );
 
   const textHandler = (e) => {
     dispatch(textLoader(e.target.value));
@@ -58,12 +61,13 @@ function CaseConvert() {
         <textarea
           cols="30"
           rows="10"
+          value={currentText}
           onChange={textHandler}
           placeholder="Type or paste here..."
         ></textarea>
-        <Button>Sentense case</Button>
-        <Button>Lower case</Button>
-        <Button>UPPER case</Button>
+        <Button onClick={() => dispatch(sentenceCase())}>Sentense case</Button>
+        <Button onClick={() => dispatch(lowerCase())}>Lower case</Button>
+        <Button onClick={() => dispatch(upperCase())}>UPPER case</Button>
         <Button>Captilize case</Button>
         <Button>aLtErNaTiNg cAsE</Button>
         <Button>Title Case</Button>
@@ -71,7 +75,10 @@ function CaseConvert() {
         <Button>Copy to Clipboard</Button>
         <Button>Clear</Button>
         <div>
-          <p>Character Count: 0 | Word Count: 0 | Line Count: 0</p>
+          <p>
+            Character Count: {charactersCount} | Word Count: {wordCount} | Line
+            Count: {lineCount}
+          </p>
         </div>
       </StyledBox>
     </div>
