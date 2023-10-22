@@ -1,5 +1,5 @@
 function CaseConvert() {
-  return <div>Welcome</div>;
+  return <div>Welcome to case converter</div>;
 }
 
 export default CaseConvert;
