@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../../UI/Button";
 
 const StyledBox = styled.div`
   background-color: #445d48;
@@ -47,21 +48,22 @@ function CaseConvert() {
           Simply enter your text and choose the case you want to convert it to.
         </p>
         <textarea
-          name=""
-          id=""
           cols="30"
           rows="10"
           placeholder="Type or paste here..."
         ></textarea>
-        <button>Sentense case</button>
-        <button>Lower case</button>
-        <button>UPPER case</button>
-        <button>Captilize case</button>
-        <button>aLtErNaTiNg cAsE</button>
-        <button>Title Case</button>
-        <button>InVeRsE CaSe</button>
-        <button>Copy to Clipboard</button>
-        <button>Clear</button>
+        <Button>Sentense case</Button>
+        <Button>Lower case</Button>
+        <Button>UPPER case</Button>
+        <Button>Captilize case</Button>
+        <Button>aLtErNaTiNg cAsE</Button>
+        <Button>Title Case</Button>
+        <Button>InVeRsE CaSe</Button>
+        <Button>Copy to Clipboard</Button>
+        <Button>Clear</Button>
+        <div>
+          <p>Character Count: 0 | Word Count: 0 | Line Count: 0</p>
+        </div>
       </StyledBox>
     </div>
   );
