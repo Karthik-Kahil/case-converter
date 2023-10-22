@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Button from "../../UI/Button";
 import { useDispatch } from "react-redux";
-import { sentenceCase } from "./ConvertSlice";
+import { textLoader } from "./ConvertSlice";
 
 const StyledBox = styled.div`
   background-color: #445d48;
@@ -42,7 +42,7 @@ function CaseConvert() {
   const dispatch = useDispatch();
 
   const textHandler = (e) => {
-    dispatch(sentenceCase(e.target.value));
+    dispatch(textLoader(e.target.value));
   };
 
   return (
