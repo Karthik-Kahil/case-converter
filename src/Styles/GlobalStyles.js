@@ -54,7 +54,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   color: var(--color-grey-700);
-
+  background-color: #faf8ed;
   transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;
   line-height: 1.5;
@@ -99,7 +99,7 @@ select:focus {
 
 
 body {
-  background-color: var(--color-primary);
+  background-color: #faf8ed;
 }
 
 

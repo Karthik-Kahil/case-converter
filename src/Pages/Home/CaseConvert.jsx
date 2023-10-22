@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Button from "../../UI/Button";
+import { useDispatch } from "react-redux";
+import { sentenceCase } from "./ConvertSlice";
 
 const StyledBox = styled.div`
   background-color: #445d48;
@@ -37,6 +39,12 @@ const StyledBox = styled.div`
 `;
 
 function CaseConvert() {
+  const dispatch = useDispatch();
+
+  const textHandler = (e) => {
+    dispatch(sentenceCase(e.target.value));
+  };
+
   return (
     <div>
       <StyledBox>
@@ -50,6 +58,7 @@ function CaseConvert() {
         <textarea
           cols="30"
           rows="10"
+          onChange={textHandler}
           placeholder="Type or paste here..."
         ></textarea>
         <Button>Sentense case</Button>
