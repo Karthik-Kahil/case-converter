@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import toast, { Toaster } from "react-hot-toast";
 import Button from "../../UI/Button";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -47,6 +48,8 @@ function CaseConvert() {
     dispatch(textLoader(e.target.value));
   };
 
+  const copiedSucessfully = () => toast("Copied to clipboard");
+
   return (
     <div>
       <StyledBox>
@@ -72,7 +75,8 @@ function CaseConvert() {
         <Button>aLtErNaTiNg cAsE</Button>
         <Button>Title Case</Button>
         <Button onClick={() => dispatch(inverseCase())}>InVeRsE CaSe</Button>
-        <Button>Copy to Clipboard</Button>
+        <Button onClick={copiedSucessfully}>Copy to Clipboard</Button>
+        <Toaster />
         <Button onClick={() => dispatch(clear())}>Clear</Button>
         <div>
           <p>

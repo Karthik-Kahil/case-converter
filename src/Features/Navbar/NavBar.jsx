@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import NavLinks from "./NavLinks";
+import NavLinks from "./NavLink";
 
 const StyledUl = styled.ul`
   display: flex;

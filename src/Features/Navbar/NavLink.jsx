@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledLink = styled.li`
@@ -14,7 +14,7 @@ const StyledLink = styled.li`
     color: #ffffff;
   }
 
-  :hover {
+  .active {
     background-color: #99b080;
   }
 `;
@@ -23,7 +23,7 @@ const StyledLink = styled.li`
 function NavLinks({ children }) {
   return (
     <StyledLink>
-      <Link>{children}</Link>
+      <NavLink>{children}</NavLink>
     </StyledLink>
   );
 }
