@@ -1,19 +1,29 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 
 const StyledBox = styled.div`
   background-color: antiquewhite;
   padding: 2rem;
+
+  & h4 {
+    font-size: 1.5rem;
+  }
+
+  & p {
+    font-size: 1.4rem;
+    padding-top: 1rem;
+  }
 `;
 
-function InformationStyledBox() {
+function InformationStyledBox({ data }) {
+  const html = data.description;
+  const parser = new DOMParser();
+  const descrip = parser.parseFromString(html, "text/html");
+
   return (
     <StyledBox>
-      <h4>Welcome to the Convert Case Text Generator Tool</h4>
-      <p>
-        A very handy online text tool where you can change between lower case
-        and upper case letters, where you can capitalize, uncapitalize, convert
-        to mix case and transform your text. Explore the options below:
-      </p>
+      <h4>{data.header}</h4>
+      <p>{descrip.body.innerHTML}</p>
     </StyledBox>
   );
 }

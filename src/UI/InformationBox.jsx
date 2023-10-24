@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 import InformationStyledBox from "./InformationStyledBox";
 
@@ -8,14 +9,13 @@ const StyledBox = styled.div`
   margin-top: 2rem;
 `;
 
-function InformationBox() {
+// eslint-disable-next-line react/prop-types
+function InformationBox({ data }) {
   return (
     <StyledBox>
-      <InformationStyledBox />
-      <InformationStyledBox />
-      <InformationStyledBox />
-      <InformationStyledBox />
-      <InformationStyledBox />
+      {data.map((data) => (
+        <InformationStyledBox key={data.header} data={data} />
+      ))}
     </StyledBox>
   );
 }
