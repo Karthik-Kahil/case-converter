@@ -31,6 +31,10 @@ const convertslice = createSlice({
       const sentence = state.currentText.toUpperCase();
       state.currentText = sentence;
     },
+    capitalizeCase(state) {
+      const sentence = state.currentText.split("");
+      console.log(sentence);
+    },
   },
 });
 
