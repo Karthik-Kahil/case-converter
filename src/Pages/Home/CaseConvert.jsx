@@ -3,6 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Button from "../../UI/Button";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  alternatingCase,
   capitalizeCase,
   clear,
   copyClipBoard,
@@ -12,6 +13,8 @@ import {
   textLoader,
   upperCase,
 } from "./ConvertSlice";
+import CaseInformation from "./CaseInformation";
+import WordsCounter from "../../Features/Counter/WordsCounter";
 
 const StyledBox = styled.div`
   background-color: #445d48;
@@ -36,6 +39,8 @@ const StyledBox = styled.div`
     color: #186f65;
     margin-top: 2rem;
     background-color: #f5eec8;
+    resize: vertical;
+    min-height: 300px;
   }
 `;
 
@@ -65,7 +70,7 @@ function CaseConvert() {
           Simply enter your text and choose the case you want to convert it to.
         </p>
         <textarea
-          rows="10"
+          autoFocus={true}
           value={currentText}
           onChange={textHandler}
           placeholder="Type or paste here..."
@@ -76,7 +81,9 @@ function CaseConvert() {
         <Button onClick={() => dispatch(capitalizeCase())}>
           Captilize case
         </Button>
-        <Button>aLtErNaTiNg cAsE</Button>
+        <Button onClick={() => dispatch(alternatingCase())}>
+          aLtErNaTiNg cAsE
+        </Button>
         <Button>Title Case</Button>
         <Button onClick={() => dispatch(inverseCase())}>InVeRsE CaSe</Button>
         <Button onClick={copiedSucessfully}>Copy to Clipboard</Button>
@@ -90,13 +97,13 @@ function CaseConvert() {
           />{" "}
           Buy me a Coffee
         </Button>
-        <div>
-          <p>
-            Character Count: {charactersCount} | Word Count: {wordCount} | Line
-            Count: {lineCount}
-          </p>
-        </div>
+        <WordsCounter
+          charactersCount={charactersCount}
+          wordCount={wordCount}
+          lineCount={lineCount}
+        />
       </StyledBox>
+      <CaseInformation />
     </div>
   );
 }

@@ -41,11 +41,20 @@ const convertslice = createSlice({
     copyClipBoard(state) {
       copyTextToClipboard(state.currentText);
     },
-    inverseCase(state) {
+    alternatingCase(state) {
       const sentence = state.currentText.toUpperCase("").split(" ");
       state.currentText = sentence
         .map((word) => word.charAt(0).toLowerCase() + word.slice(1))
         .join(" ");
+    },
+    inverseCase(state) {
+      const sentence = state.currentText
+        .split("")
+        .map((word) =>
+          word === word.toUpperCase() ? word.toLowerCase() : word.toUpperCase()
+        )
+        .join("");
+      state.currentText = sentence;
     },
     clear(state) {
       state.currentText = "";
@@ -59,6 +68,7 @@ export const {
   lowerCase,
   upperCase,
   capitalizeCase,
+  alternatingCase,
   copyClipBoard,
   inverseCase,
   clear,
