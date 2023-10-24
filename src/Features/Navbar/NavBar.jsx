@@ -12,13 +12,15 @@ function NavBar() {
   return (
     <nav>
       <StyledUl>
-        <NavLinks>Convert Case</NavLinks>
-        <NavLinks>Bold Text Generater</NavLinks>
-        <NavLinks>Duplicate Line remover</NavLinks>
-        <NavLinks>Mirror Text Converter</NavLinks>
-        <NavLinks>Plain Text Converter</NavLinks>
-        <NavLinks>Reverse Text Converter</NavLinks>
-        <NavLinks>Sentense Case Converter</NavLinks>
+        <NavLinks to="/">Convert Case</NavLinks>
+        <NavLinks to="/bold-text-generater">Bold Text Generater</NavLinks>
+        <NavLinks to="/duplicate-line-remover">Duplicate Line remover</NavLinks>
+        <NavLinks to="/mirror-text-converter">Mirror Text Converter</NavLinks>
+        <NavLinks to="/plain-text-converter">Plain Text Converter</NavLinks>
+        <NavLinks to="/reverse-text-converter">Reverse Text Converter</NavLinks>
+        <NavLinks to="/sentense-text-converter">
+          Sentense Case Converter
+        </NavLinks>
       </StyledUl>
     </nav>
   );

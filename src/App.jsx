@@ -11,6 +11,30 @@ function App() {
         <Routes>
           <Route element={<AppLayout />}>
             <Route path="/" element={<CaseConvert />}></Route>
+            <Route
+              path="/bold-text-generater"
+              element={<CaseConvert />}
+            ></Route>
+            <Route
+              path="/duplicate-line-remover"
+              element={<CaseConvert />}
+            ></Route>
+            <Route
+              path="/mirror-text-converter"
+              element={<CaseConvert />}
+            ></Route>
+            <Route
+              path="/plain-text-converter"
+              element={<CaseConvert />}
+            ></Route>
+            <Route
+              path="/reverse-text-converter"
+              element={<CaseConvert />}
+            ></Route>
+            <Route
+              path="/sentense-text-converter"
+              element={<CaseConvert />}
+            ></Route>
           </Route>
         </Routes>
       </BrowserRouter>

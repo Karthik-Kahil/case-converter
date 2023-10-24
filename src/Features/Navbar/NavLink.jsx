@@ -20,10 +20,10 @@ const StyledLink = styled.li`
 `;
 
 // eslint-disable-next-line react/prop-types
-function NavLinks({ children }) {
+function NavLinks({ children, to }) {
   return (
     <StyledLink>
-      <NavLink>{children}</NavLink>
+      <NavLink to={to}>{children}</NavLink>
     </StyledLink>
   );
 }

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   capitalizeCase,
   clear,
+  copyClipBoard,
   inverseCase,
   lowerCase,
   sentenceCase,
@@ -48,7 +49,10 @@ function CaseConvert() {
     dispatch(textLoader(e.target.value));
   };
 
-  const copiedSucessfully = () => toast("Copied to clipboard");
+  const copiedSucessfully = () => {
+    toast("Copied to clipboard");
+    dispatch(copyClipBoard());
+  };
 
   return (
     <div>
@@ -78,6 +82,14 @@ function CaseConvert() {
         <Button onClick={copiedSucessfully}>Copy to Clipboard</Button>
         <Toaster />
         <Button onClick={() => dispatch(clear())}>Clear</Button>
+        <Button>
+          <img
+            src="../../public/kofi.png"
+            alt="Buy a coffee"
+            style={{ height: "14px", width: "21px" }}
+          />{" "}
+          Buy me a Coffee
+        </Button>
         <div>
           <p>
             Character Count: {charactersCount} | Word Count: {wordCount} | Line

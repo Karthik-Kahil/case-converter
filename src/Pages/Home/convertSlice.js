@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { copyTextToClipboard } from "../../Utils/copyclip";
 
 const initialState = {
   currentText: "",
@@ -37,6 +38,9 @@ const convertslice = createSlice({
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ");
     },
+    copyClipBoard(state) {
+      copyTextToClipboard(state.currentText);
+    },
     inverseCase(state) {
       const sentence = state.currentText.toUpperCase("").split(" ");
       state.currentText = sentence
@@ -55,6 +59,7 @@ export const {
   lowerCase,
   upperCase,
   capitalizeCase,
+  copyClipBoard,
   inverseCase,
   clear,
 } = convertslice.actions;
