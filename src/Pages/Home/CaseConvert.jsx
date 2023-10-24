@@ -3,6 +3,8 @@ import Button from "../../UI/Button";
 import { useDispatch, useSelector } from "react-redux";
 import {
   capitalizeCase,
+  clear,
+  inverseCase,
   lowerCase,
   sentenceCase,
   textLoader,
@@ -33,15 +35,6 @@ const StyledBox = styled.div`
     margin-top: 2rem;
     background-color: #f5eec8;
   }
-
-  & button {
-    background-color: #d6cc99;
-    border: 0;
-    padding: 0.5rem 1rem;
-    margin-right: 1rem;
-    margin-top: 1rem;
-    color: #445d48;
-  }
 `;
 
 function CaseConvert() {
@@ -65,7 +58,6 @@ function CaseConvert() {
           Simply enter your text and choose the case you want to convert it to.
         </p>
         <textarea
-          cols="30"
           rows="10"
           value={currentText}
           onChange={textHandler}
@@ -79,9 +71,9 @@ function CaseConvert() {
         </Button>
         <Button>aLtErNaTiNg cAsE</Button>
         <Button>Title Case</Button>
-        <Button>InVeRsE CaSe</Button>
+        <Button onClick={() => dispatch(inverseCase())}>InVeRsE CaSe</Button>
         <Button>Copy to Clipboard</Button>
-        <Button>Clear</Button>
+        <Button onClick={() => dispatch(clear())}>Clear</Button>
         <div>
           <p>
             Character Count: {charactersCount} | Word Count: {wordCount} | Line

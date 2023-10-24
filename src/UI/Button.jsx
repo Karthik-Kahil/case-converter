@@ -7,6 +7,11 @@ const Button = styled.button`
   margin-right: 1rem;
   margin-top: 1rem;
   color: #445d48;
+
+  &:hover {
+    background-color: #748e63;
+    color: #ffffff;
+  }
 `;
 
 export default Button;
