@@ -14,7 +14,9 @@ const convertslice = createSlice({
     textLoader(state, action) {
       state.currentText = action.payload;
       state.charactersCount = action.payload.split("").length;
-      state.wordCount = action.payload.split(" ").length;
+      state.wordCount = action.payload
+        .split(" ")
+        .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
     },
     sentenceCase(state) {
@@ -32,13 +34,18 @@ const convertslice = createSlice({
       state.currentText = sentence;
     },
     capitalizeCase(state) {
-      const sentence = state.currentText.split("");
+      const sentence = state.currentText.toLowerCase("").split(" ");
       console.log(sentence);
     },
   },
 });
 
-export const { sentenceCase, textLoader, lowerCase, upperCase } =
-  convertslice.actions;
+export const {
+  sentenceCase,
+  textLoader,
+  lowerCase,
+  upperCase,
+  capitalizeCase,
+} = convertslice.actions;
 
 export default convertslice.reducer;

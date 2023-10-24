@@ -1,7 +1,13 @@
 import styled from "styled-components";
 import Button from "../../UI/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { lowerCase, sentenceCase, textLoader, upperCase } from "./ConvertSlice";
+import {
+  capitalizeCase,
+  lowerCase,
+  sentenceCase,
+  textLoader,
+  upperCase,
+} from "./ConvertSlice";
 
 const StyledBox = styled.div`
   background-color: #445d48;
@@ -68,7 +74,9 @@ function CaseConvert() {
         <Button onClick={() => dispatch(sentenceCase())}>Sentense case</Button>
         <Button onClick={() => dispatch(lowerCase())}>Lower case</Button>
         <Button onClick={() => dispatch(upperCase())}>UPPER case</Button>
-        <Button>Captilize case</Button>
+        <Button onClick={() => dispatch(capitalizeCase())}>
+          Captilize case
+        </Button>
         <Button>aLtErNaTiNg cAsE</Button>
         <Button>Title Case</Button>
         <Button>InVeRsE CaSe</Button>
