@@ -5,13 +5,7 @@ const StyledBox = styled.div`
   background-color: #f5eec8;
   color: #186f65;
   padding: 2rem;
-
-  & ::before {
-    border: 1px solid #030303;
-    position: absolute;
-    width: 100%;
-    top: 0;
-  }
+  border-top: 3px solid #186f65;
 
   & h4 {
     font-size: 1.4rem;
@@ -20,6 +14,7 @@ const StyledBox = styled.div`
   & p {
     font-size: 1.3rem;
     padding-top: 1rem;
+    hyphens: none;
   }
 `;
 
