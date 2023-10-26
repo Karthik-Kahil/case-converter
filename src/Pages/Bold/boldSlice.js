@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { copyTextToClipboard } from "../../Utils/copyclip";
 
 const initialState = {
   currentText: "",
@@ -23,9 +24,13 @@ const boldSlice = createSlice({
     convertedTextLoader(state, action) {
       state.convertedText = action.payload;
     },
+    copyClipBoard(state) {
+      copyTextToClipboard(state.convertedText);
+    },
   },
 });
 
-export const { currentTextLoader, convertedTextLoader } = boldSlice.actions;
+export const { currentTextLoader, convertedTextLoader, copyClipBoard } =
+  boldSlice.actions;
 
 export default boldSlice.reducer;

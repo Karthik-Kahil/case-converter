@@ -5,8 +5,9 @@ import TextArea from "../../UI/TextArea";
 import TextOutput from "../../UI/TextOutput";
 import CaseInformation from "../Home/CaseInformation";
 import WordsCounter from "../../Features/Counter/WordsCounter";
-import { currentTextLoader } from "./boldSlice";
+import { copyClipBoard, currentTextLoader } from "./boldSlice";
 import { useDispatch, useSelector } from "react-redux";
+import toast from "react-hot-toast";
 
 const StyledTwoGrid = styled.div`
   display: grid;
@@ -24,6 +25,13 @@ function BoldConvert() {
     dispatch(currentTextLoader(e.target.value));
   };
 
+  const copiedSucessfully = () => {
+    (currentText.length > 0 && toast.success("Copied to clipboard")) ||
+      toast.error("Please enter some text to copy");
+
+    dispatch(copyClipBoard());
+  };
+
   return (
     <div>
       <StyledBox>
@@ -39,7 +47,10 @@ function BoldConvert() {
         </HeaderText>
         <StyledTwoGrid>
           <TextArea textHandler={textHandler} />
-          <TextOutput currentText={currentText} />
+          <TextOutput
+            currentText={currentText}
+            copiedSucessfully={copiedSucessfully}
+          />
         </StyledTwoGrid>
         <WordsCounter
           charactersCount={charactersCount}

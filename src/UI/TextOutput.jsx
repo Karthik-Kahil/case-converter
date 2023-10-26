@@ -18,7 +18,7 @@ const StyledTextArea = styled.div`
   }
 `;
 
-function TextOutput({ currentText }) {
+function TextOutput({ currentText, copiedSucessfully }) {
   const dispatch = useDispatch();
   const fonts = getFonts();
   const [fontType, setFontType] = useState("sansSerifBold");
@@ -34,7 +34,7 @@ function TextOutput({ currentText }) {
       <p>{convertedText}</p>
       <TextSelection setFontType={setFontType} />
       <Button>Download Text</Button>
-      <Button>Copy to Clipboard</Button>
+      <Button onClick={copiedSucessfully}>Copy to Clipboard</Button>
       <Button>
         <img
           src="../../public/kofi.png"
