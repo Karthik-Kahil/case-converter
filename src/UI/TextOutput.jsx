@@ -18,7 +18,7 @@ const StyledTextArea = styled.div`
   }
 `;
 
-function TextOutput({ currentText, copiedSucessfully }) {
+function TextOutput({ currentText, copiedSucessfully, textSelection }) {
   const dispatch = useDispatch();
   const fonts = getFonts();
   const [fontType, setFontType] = useState("sansSerifBold");
@@ -32,7 +32,7 @@ function TextOutput({ currentText, copiedSucessfully }) {
   return (
     <StyledTextArea>
       <p>{convertedText}</p>
-      <TextSelection setFontType={setFontType} />
+      {textSelection && <TextSelection setFontType={setFontType} />}
       <Button>Download Text</Button>
       <Button onClick={copiedSucessfully}>Copy to Clipboard</Button>
       <Button>

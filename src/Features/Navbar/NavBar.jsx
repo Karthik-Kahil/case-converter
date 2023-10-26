@@ -6,6 +6,10 @@ const StyledUl = styled.ul`
   justify-content: space-between;
   margin-top: 2rem;
   padding: 0 5%;
+
+  & a {
+    outline-color: #445d48;
+  }
 `;
 
 function NavBar() {

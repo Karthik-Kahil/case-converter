@@ -3,6 +3,7 @@ import CaseConvert from "./Pages/Home/CaseConvert";
 import AppLayout from "./AppLayoyt";
 import GlobalStyles from "./Styles/GlobalStyles";
 import BoldConvert from "./Pages/Bold/BoldConvert";
+import DuplicateConvert from "./Pages/Duplicate/DuplicateConvert";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             ></Route>
             <Route
               path="/duplicate-line-remover"
-              element={<CaseConvert />}
+              element={<DuplicateConvert />}
             ></Route>
             <Route
               path="/mirror-text-converter"

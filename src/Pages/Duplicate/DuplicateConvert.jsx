@@ -1,13 +1,13 @@
-import styled from "styled-components";
+import toast, { Toaster } from "react-hot-toast";
 import HeaderText from "../../UI/HeaderText";
 import StyledBox from "../../UI/StyledBox";
+import CaseInformation from "../Home/CaseInformation";
 import TextArea from "../../UI/TextArea";
 import TextOutput from "../../UI/TextOutput";
-import CaseInformation from "../Home/CaseInformation";
 import WordsCounter from "../../Features/Counter/WordsCounter";
-import { copyClipBoard, currentTextLoader } from "./boldSlice";
+import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import toast, { Toaster } from "react-hot-toast";
+import { copyClipBoard, currentTextLoader } from "./duplicateSlice";
 
 const StyledTwoGrid = styled.div`
   display: grid;
@@ -15,10 +15,10 @@ const StyledTwoGrid = styled.div`
   grid-gap: 2rem;
 `;
 
-function BoldConvert() {
+function DuplicateConvert() {
   const dispatch = useDispatch();
   const { currentText, charactersCount, wordCount, lineCount } = useSelector(
-    (select) => select.boldConvert
+    (select) => select.duplicateConvert
   );
 
   const textHandler = (e) => {
@@ -36,20 +36,19 @@ function BoldConvert() {
     <div>
       <StyledBox>
         <HeaderText>
-          <h3>Bold Text Generator</h3>
+          <h3>Online Duplicate Line Remover</h3>
           <p>
-            Use this handy bold text generator. Simply paste or write the text
-            that you need to be converted into a bold font into the left field,
-            then as you write it, you will see it being converted into bold into
-            the field on the right. Then simply copy it from the bold text
-            converter and paste it where you want it to go.
+            Whether you&rsquo;re dealing with large data sets, cleaning up
+            lists, or just need to eliminate redundant information, our tool is
+            here to simplify your task. Simply paste your text and let our tool
+            do the rest!
           </p>
         </HeaderText>
         <Toaster />
         <StyledTwoGrid>
           <TextArea textHandler={textHandler} />
           <TextOutput
-            textSelection={true}
+            textSelection={false}
             currentText={currentText}
             copiedSucessfully={copiedSucessfully}
           />
@@ -65,4 +64,4 @@ function BoldConvert() {
   );
 }
 
-export default BoldConvert;
+export default DuplicateConvert;
