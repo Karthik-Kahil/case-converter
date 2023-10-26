@@ -1,8 +1,11 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 import Button from "./Button";
 import { getFonts, transform } from "convert-unicode-fonts";
 import TextSelection from "./TextSelection";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { convertedTextLoader } from "../Pages/Bold/boldSlice";
 
 const StyledTextArea = styled.div`
   & p {
@@ -15,18 +18,20 @@ const StyledTextArea = styled.div`
   }
 `;
 
-function TextOutput() {
-  const [fontType, setFontType] = useState("");
-
+function TextOutput({ currentText }) {
+  const dispatch = useDispatch();
   const fonts = getFonts();
-  const resultText = transform(
-    "abcdefXZYUPO91234 hello WORLD",
-    fonts["sansSerifBold"]
-  );
+  const [fontType, setFontType] = useState("sansSerifBold");
+  const { convertedText } = useSelector((select) => select.boldConvert);
+
+  useEffect(() => {
+    const resultText = transform(currentText, fonts[fontType]);
+    dispatch(convertedTextLoader(resultText));
+  }, [currentText, fontType, dispatch, fonts]);
 
   return (
     <StyledTextArea>
-      <p>Result</p>
+      <p>{convertedText}</p>
       <TextSelection setFontType={setFontType} />
       <Button>Download Text</Button>
       <Button>Copy to Clipboard</Button>
