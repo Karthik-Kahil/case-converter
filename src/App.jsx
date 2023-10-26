@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CaseConvert from "./Pages/Home/CaseConvert";
 import AppLayout from "./AppLayoyt";
 import GlobalStyles from "./Styles/GlobalStyles";
+import BoldConvert from "./Pages/Bold/BoldConvert";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
             <Route path="/" element={<CaseConvert />}></Route>
             <Route
               path="/bold-text-generater"
-              element={<CaseConvert />}
+              element={<BoldConvert />}
             ></Route>
             <Route
               path="/duplicate-line-remover"
