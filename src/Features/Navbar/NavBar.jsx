@@ -18,9 +18,7 @@ function NavBar() {
         <NavLinks to="/mirror-text-converter">Mirror Text Converter</NavLinks>
         <NavLinks to="/plain-text-converter">Plain Text Converter</NavLinks>
         <NavLinks to="/reverse-text-converter">Reverse Text Converter</NavLinks>
-        <NavLinks to="/sentense-text-converter">
-          Sentense Case Converter
-        </NavLinks>
+        <NavLinks to="/sentense-text-converter">...more tools</NavLinks>
       </StyledUl>
     </nav>
   );

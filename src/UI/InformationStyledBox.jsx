@@ -8,12 +8,12 @@ const StyledBox = styled.div`
   border-top: 3px solid #186f65;
 
   & h4 {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
   }
 
   & p {
     font-size: 1.3rem;
-    padding-top: 1rem;
+    padding-top: 2rem;
     hyphens: none;
   }
 `;
