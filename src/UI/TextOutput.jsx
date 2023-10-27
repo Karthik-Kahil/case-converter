@@ -31,7 +31,7 @@ function TextOutput({ currentText, copiedSucessfully, textSelection }) {
 
   return (
     <StyledTextArea>
-      <p>{convertedText}</p>
+      <p>{textSelection ? convertedText : currentText}</p>
       {textSelection && <TextSelection setFontType={setFontType} />}
       <Button>Download Text</Button>
       <Button onClick={copiedSucessfully}>Copy to Clipboard</Button>

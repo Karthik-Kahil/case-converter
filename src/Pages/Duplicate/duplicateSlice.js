@@ -15,12 +15,16 @@ const duplicateSlice = createSlice({
   reducers: {
     currentTextLoader(state, action) {
       state.currentText = action.payload;
+
       state.charactersCount = action.payload.split("").length;
       state.wordCount = action.payload
         .split(" ")
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
-      console.log(state.currentText.split(/\n/));
+
+      const duplicateRemover = state.currentText.split(/\n/);
+      state.convertedText = [...new Set(duplicateRemover)];
+      state.convertedText = state.convertedText.join("\n");
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);

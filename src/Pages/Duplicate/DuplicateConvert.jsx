@@ -17,9 +17,8 @@ const StyledTwoGrid = styled.div`
 
 function DuplicateConvert() {
   const dispatch = useDispatch();
-  const { currentText, charactersCount, wordCount, lineCount } = useSelector(
-    (select) => select.duplicateConvert
-  );
+  const { currentText, convertedText, charactersCount, wordCount, lineCount } =
+    useSelector((select) => select.duplicateConvert);
 
   const textHandler = (e) => {
     dispatch(currentTextLoader(e.target.value));
@@ -49,7 +48,7 @@ function DuplicateConvert() {
           <TextArea textHandler={textHandler} />
           <TextOutput
             textSelection={false}
-            currentText={currentText}
+            currentText={convertedText}
             copiedSucessfully={copiedSucessfully}
           />
         </StyledTwoGrid>
