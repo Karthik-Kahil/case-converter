@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 function MirrorConvert() {
   const dispatch = useDispatch();
+
   const { currentText, convertedText, charactersCount, wordCount, lineCount } =
     useSelector((select) => select.mirrorConvert);
 
