@@ -22,16 +22,12 @@ const mirrorSlice = createSlice({
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
     },
-    convertedText(state, action) {
-      state.convertedText = action.payload;
-    },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);
     },
   },
 });
 
-export const { currentTextLoader, copyClipBoard, convertedText } =
-  mirrorSlice.actions;
+export const { currentTextLoader, copyClipBoard } = mirrorSlice.actions;
 
 export default mirrorSlice.reducer;
