@@ -9,23 +9,20 @@ const initialState = {
   lineCount: 0,
 };
 
-const duplicateSlice = createSlice({
-  name: "duplicateSlice",
+const mirrorSlice = createSlice({
+  name: "mirrorSlice",
   initialState,
   reducers: {
     currentTextLoader(state, action) {
       state.currentText = action.payload;
+
+      state.convertedText = state.currentText;
 
       state.charactersCount = action.payload.split("").length;
       state.wordCount = action.payload
         .split(" ")
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
-
-      const duplicateRemover = state.currentText;
-      state.convertedText = [...new Set(duplicateRemover.split(/\n/))];
-      console.log(state.convertedText);
-      state.convertedText = state.convertedText.join(" <br> ");
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);
@@ -33,6 +30,6 @@ const duplicateSlice = createSlice({
   },
 });
 
-export const { currentTextLoader, copyClipBoard } = duplicateSlice.actions;
+export const { currentTextLoader, copyClipBoard } = mirrorSlice.actions;
 
-export default duplicateSlice.reducer;
+export default mirrorSlice.reducer;

@@ -4,6 +4,7 @@ import AppLayout from "./AppLayoyt";
 import GlobalStyles from "./Styles/GlobalStyles";
 import BoldConvert from "./Pages/Bold/BoldConvert";
 import DuplicateConvert from "./Pages/Duplicate/DuplicateConvert";
+import MirrorConvert from "./Pages/Mirror/MirrorConvert";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
             ></Route>
             <Route
               path="/mirror-text-converter"
-              element={<CaseConvert />}
+              element={<MirrorConvert />}
             ></Route>
             <Route
               path="/plain-text-converter"

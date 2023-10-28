@@ -1,19 +1,18 @@
+import toast, { Toaster } from "react-hot-toast";
 import HeaderText from "../../UI/HeaderText";
 import StyledBox from "../../UI/StyledBox";
+import CaseInformation from "../Home/CaseInformation";
 import TextArea from "../../UI/TextArea";
 import TextOutput from "../../UI/TextOutput";
-import CaseInformation from "../Home/CaseInformation";
-import WordsCounter from "../../Features/Counter/WordsCounter";
-import { copyClipBoard, currentTextLoader } from "./boldSlice";
-import { useDispatch, useSelector } from "react-redux";
-import toast, { Toaster } from "react-hot-toast";
 import StyledTwoGrid from "../../UI/StyledTwoGrid";
+import WordsCounter from "../../Features/Counter/WordsCounter";
+import { copyClipBoard, currentTextLoader } from "./mirrorSlice";
+import { useDispatch, useSelector } from "react-redux";
 
-function BoldConvert() {
+function MirrorConvert() {
   const dispatch = useDispatch();
-  const { currentText, charactersCount, wordCount, lineCount } = useSelector(
-    (select) => select.boldConvert
-  );
+  const { currentText, convertedText, charactersCount, wordCount, lineCount } =
+    useSelector((select) => select.mirrorConvert);
 
   const textHandler = (e) => {
     dispatch(currentTextLoader(e.target.value));
@@ -30,21 +29,20 @@ function BoldConvert() {
     <div>
       <StyledBox>
         <HeaderText>
-          <h3>Bold Text Generator</h3>
+          <h3>Mirror Text Generator</h3>
           <p>
-            Use this handy bold text generator. Simply paste or write the text
-            that you need to be converted into a bold font into the left field,
-            then as you write it, you will see it being converted into bold into
-            the field on the right. Then simply copy it from the bold text
-            converter and paste it where you want it to go.
+            Use this mirrored text generator as a quick and easy way of changing
+            standard text into the mirrored version. Simply type the normal and
+            regular text in the left hand panel and see it get converted to the
+            mirrored text on the right hand side.
           </p>
         </HeaderText>
         <Toaster />
         <StyledTwoGrid>
           <TextArea textHandler={textHandler} />
           <TextOutput
-            textSelection={true}
-            currentText={currentText}
+            textSelection={false}
+            currentText={convertedText}
             copiedSucessfully={copiedSucessfully}
           />
         </StyledTwoGrid>
@@ -59,4 +57,4 @@ function BoldConvert() {
   );
 }
 
-export default BoldConvert;
+export default MirrorConvert;

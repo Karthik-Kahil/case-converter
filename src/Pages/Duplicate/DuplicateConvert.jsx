@@ -5,15 +5,9 @@ import CaseInformation from "../Home/CaseInformation";
 import TextArea from "../../UI/TextArea";
 import TextOutput from "../../UI/TextOutput";
 import WordsCounter from "../../Features/Counter/WordsCounter";
-import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { copyClipBoard, currentTextLoader } from "./duplicateSlice";
-
-const StyledTwoGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-`;
+import StyledTwoGrid from "../../UI/StyledTwoGrid";
 
 function DuplicateConvert() {
   const dispatch = useDispatch();
