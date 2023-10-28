@@ -22,9 +22,10 @@ const duplicateSlice = createSlice({
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
 
-      const duplicateRemover = state.currentText.split(/\n/);
-      state.convertedText = [...new Set(duplicateRemover)];
-      state.convertedText = state.convertedText.join("\n");
+      const duplicateRemover = state.currentText;
+      state.convertedText = [...new Set(duplicateRemover.split(/\n/))];
+      console.log(state.convertedText);
+      state.convertedText = state.convertedText.join(" <br/> ");
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);
