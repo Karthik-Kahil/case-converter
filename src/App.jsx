@@ -6,6 +6,7 @@ import BoldConvert from "./Pages/Bold/BoldConvert";
 import DuplicateConvert from "./Pages/Duplicate/DuplicateConvert";
 import MirrorConvert from "./Pages/Mirror/MirrorConvert";
 import PlainConvert from "./Pages/Plain/PlainConvert";
+import ReverseConvert from "./Features/Reverse/ReverseConvert";
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
             ></Route>
             <Route
               path="/reverse-text-converter"
-              element={<CaseConvert />}
+              element={<ReverseConvert />}
             ></Route>
             <Route
               path="/sentense-text-converter"
