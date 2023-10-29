@@ -17,7 +17,7 @@ function TextArea({ currentText, textHandler }) {
       autoFocus={true}
       value={currentText}
       onChange={textHandler}
-      placeholder="Type or paste here..."
+      placeholder={`Type or paste here... | Make text copying more convenient by using the keyboard shortcuts + C or Control + C.`}
     ></StyledTextArea>
   );
 }

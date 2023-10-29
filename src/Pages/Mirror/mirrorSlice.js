@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { copyTextToClipboard } from "../../Utils/copyclip";
+import flipTable from "./MirrorTexts";
 
 const initialState = {
   currentText: "",
@@ -15,6 +16,12 @@ const mirrorSlice = createSlice({
   reducers: {
     currentTextLoader(state, action) {
       state.currentText = action.payload;
+
+      state.convertedText = state.currentText
+        .split("")
+        .reverse()
+        .map((letters) => flipTable[letters])
+        .join("");
 
       state.charactersCount = action.payload.split("").length;
       state.wordCount = action.payload

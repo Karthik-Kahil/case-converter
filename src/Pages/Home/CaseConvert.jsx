@@ -35,8 +35,12 @@ function CaseConvert() {
     dispatch(copyClipBoard());
   };
 
+  const keyPressHandler = (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === "c") copiedSucessfully();
+  };
+
   return (
-    <div>
+    <div onKeyDown={keyPressHandler}>
       <StyledBox>
         <HeaderText>
           <h3>
