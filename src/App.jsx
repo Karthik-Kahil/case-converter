@@ -5,6 +5,7 @@ import GlobalStyles from "./Styles/GlobalStyles";
 import BoldConvert from "./Pages/Bold/BoldConvert";
 import DuplicateConvert from "./Pages/Duplicate/DuplicateConvert";
 import MirrorConvert from "./Pages/Mirror/MirrorConvert";
+import PlainConvert from "./Pages/Plain/PlainConvert";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
             ></Route>
             <Route
               path="/plain-text-converter"
-              element={<CaseConvert />}
+              element={<PlainConvert />}
             ></Route>
             <Route
               path="/reverse-text-converter"
