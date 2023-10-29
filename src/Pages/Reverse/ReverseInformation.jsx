@@ -10,7 +10,7 @@ const ReverseInformationList = [
   {
     header: "How to Reverse Text?",
     description:
-      "All you have to do is write the text as you would normally in the left panel and then you will see it getting converted in the right panel. Then you can simply copy and paste it to wherever you wish.<br/><br/>.txet sdrawkcab fo ecnetnes elpmaxe na si sihT<br/><br/>Of course, if you do have any questions about the Backwards Text Generator and have any suggestions on how we can improve further, then please do let us know and we will be more than happy to help.",
+      "All you have to do is write the text as you would normally in the left panel and then you will see it getting converted in the right panel. Then you can simply copy and paste it to wherever you wish.<br/><br/>.txet sdrawkcab fo ecnetnes elpmaxe na si sihT<br/><br/>Of course, if you do have any questions about the Backwards Text Generator and have any suggestions on how we can improve further, then please do let us know and we will be more than happy to help",
   },
 ];
 
