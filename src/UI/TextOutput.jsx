@@ -42,12 +42,14 @@ function TextOutput({ currentText, copiedSucessfully, textSelection }) {
       <Button>Download Text</Button>
       <Button onClick={copiedSucessfully}>Copy to Clipboard</Button>
       <Button>
-        <img
-          src="../../public/kofi.png"
-          alt="Buy a coffee"
-          style={{ height: "14px", width: "21px" }}
-        />{" "}
-        Buy me a Coffee
+        <a href="https://www.buymeacoffee.com/karthikkahil" target="__blank">
+          <img
+            src="../../public/Buy Me a Coffee.svg"
+            alt="Buy a coffee"
+            style={{ height: "15px", width: "15px" }}
+          />{" "}
+          Buy me a Coffee
+        </a>
       </Button>
     </StyledTextArea>
   );
