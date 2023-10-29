@@ -8,6 +8,7 @@ const StyledBox = styled.div`
   grid-gap: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  height: auto;
 `;
 
 // eslint-disable-next-line react/prop-types

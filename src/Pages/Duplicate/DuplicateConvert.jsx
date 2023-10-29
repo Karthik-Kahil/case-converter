@@ -1,13 +1,13 @@
 import toast, { Toaster } from "react-hot-toast";
 import HeaderText from "../../UI/HeaderText";
 import StyledBox from "../../UI/StyledBox";
-import CaseInformation from "../Home/CaseInformation";
 import TextArea from "../../UI/TextArea";
 import TextOutput from "../../UI/TextOutput";
 import WordsCounter from "../../Features/Counter/WordsCounter";
 import { useDispatch, useSelector } from "react-redux";
 import { copyClipBoard, currentTextLoader } from "./duplicateSlice";
 import StyledTwoGrid from "../../UI/StyledTwoGrid";
+import DuplicateInformation from "./DuplicateInformation";
 
 function DuplicateConvert() {
   const dispatch = useDispatch();
@@ -56,7 +56,7 @@ function DuplicateConvert() {
           lineCount={lineCount}
         />
       </StyledBox>
-      <CaseInformation />
+      <DuplicateInformation />
     </div>
   );
 }

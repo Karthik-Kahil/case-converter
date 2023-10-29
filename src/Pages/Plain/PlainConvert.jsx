@@ -7,7 +7,7 @@ import WordsCounter from "../../Features/Counter/WordsCounter";
 import TextOutput from "../../UI/TextOutput";
 import TextArea from "../../UI/TextArea";
 import StyledTwoGrid from "../../UI/StyledTwoGrid";
-import CaseInformation from "../Home/CaseInformation";
+import PlainInformation from "./PlainInformation";
 
 function PlainConvert() {
   const dispatch = useDispatch();
@@ -60,7 +60,7 @@ function PlainConvert() {
           lineCount={lineCount}
         />
       </StyledBox>
-      <CaseInformation />
+      <PlainInformation />
     </div>
   );
 }

@@ -2,12 +2,12 @@ import HeaderText from "../../UI/HeaderText";
 import StyledBox from "../../UI/StyledBox";
 import TextArea from "../../UI/TextArea";
 import TextOutput from "../../UI/TextOutput";
-import CaseInformation from "../Home/CaseInformation";
 import WordsCounter from "../../Features/Counter/WordsCounter";
 import { copyClipBoard, currentTextLoader } from "./boldSlice";
 import { useDispatch, useSelector } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 import StyledTwoGrid from "../../UI/StyledTwoGrid";
+import BoldInformation from "./BoldInformation";
 
 function BoldConvert() {
   const dispatch = useDispatch();
@@ -58,7 +58,7 @@ function BoldConvert() {
           lineCount={lineCount}
         />
       </StyledBox>
-      <CaseInformation />
+      <BoldInformation />
     </div>
   );
 }

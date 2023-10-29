@@ -1,13 +1,13 @@
 import toast, { Toaster } from "react-hot-toast";
 import HeaderText from "../../UI/HeaderText";
 import StyledBox from "../../UI/StyledBox";
-import CaseInformation from "../Home/CaseInformation";
 import TextArea from "../../UI/TextArea";
 import TextOutput from "../../UI/TextOutput";
 import StyledTwoGrid from "../../UI/StyledTwoGrid";
 import WordsCounter from "../../Features/Counter/WordsCounter";
 import { copyClipBoard, currentTextLoader } from "./mirrorSlice";
 import { useDispatch, useSelector } from "react-redux";
+import MirrorInformation from "./MirrorInformation";
 
 function MirrorConvert() {
   const dispatch = useDispatch();
@@ -57,7 +57,7 @@ function MirrorConvert() {
           lineCount={lineCount}
         />
       </StyledBox>
-      <CaseInformation />
+      <MirrorInformation />
     </div>
   );
 }
