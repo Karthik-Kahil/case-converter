@@ -4,7 +4,7 @@ import boldSlice from "../Pages/Bold/boldSlice";
 import duplicateSlice from "../Pages/Duplicate/duplicateSlice";
 import mirrorSlice from "../Pages/Mirror/mirrorSlice";
 import plainSlice from "../Pages/Plain/plainSlice";
-import reverseSlice from "../Features/Reverse/reverseSlice";
+import reverseSlice from "../Pages/Reverse/reverseSlice";
 
 const store = configureStore({
   reducer: {

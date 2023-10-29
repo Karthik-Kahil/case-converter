@@ -7,7 +7,7 @@ import WordsCounter from "../../Features/Counter/WordsCounter";
 import TextOutput from "../../UI/TextOutput";
 import TextArea from "../../UI/TextArea";
 import StyledTwoGrid from "../../UI/StyledTwoGrid";
-import CaseInformation from "../../Pages/Home/CaseInformation";
+import ReverseInformation from "./ReverseInformation";
 
 function ReverseConvert() {
   const dispatch = useDispatch();
@@ -57,7 +57,7 @@ function ReverseConvert() {
           lineCount={lineCount}
         />
       </StyledBox>
-      <CaseInformation />
+      <ReverseInformation />
     </div>
   );
 }
