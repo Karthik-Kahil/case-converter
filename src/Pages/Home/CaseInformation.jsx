@@ -2,44 +2,44 @@ import InformationBox from "../../UI/InformationBox";
 
 const caseInformationList = [
   {
-    header: "Welcome to the Convert Morpher Text Generator Tool",
+    header: "Welcome to the CaseMorph Pro Text Generator Tool",
     description:
-      "A very handy online text tool where you can change between lower case and upper case letters, where you can capitalize, uncapitalize, convert to mix case and transform your text. Explore the options below:",
+      "Discover a versatile online text tool that allows you to switch between lowercase and uppercase letters. This tool empowers you to capitalize, uncapitalize, convert to mixed case, and transform your text as needed. Explore the available options below.",
   },
   {
     header: "Lower Case",
     description:
-      "If you are wondering how to uncapitalize text, this is exactly what the lower case text converter will allow you to do - it transforms all the letters in your text into lowercase letters. Simply copy the text that you need generating into lower case and paste the text into the box above and select the ‘lower case’ tab. this is an example of lower case.",
+      "If you're wondering how to convert text to lowercase, the lowercase text converter is the tool that will help you achieve this. It effectively changes all the letters in your text to lowercase. Just copy the text you want to convert to lowercase and paste it into the box above. Then, select the 'lower case' tab. Here's an example of text in lowercase.<br/><br/>this is an example of lower case.",
   },
   {
     header: "Sentence Case",
     description:
-      "The sentence case converter will allow you to paste any text you’d like, and it will automatically transform it to a fully formed structured sentence. <br/><br/>It works by capitalizing the very first letter in each sentence, and will then go on to transform the rest of the text into lowercase as well as converting i’s into I’s. Every letter after a full stop will get converted into an upper case letter.<br/><br/>Note: it won’t, however, capitalize names or places.<br/><br/>This is an example of sentence case.",
+      "The Sentence Case Converter offers you the ability to paste text of your choice, automatically transforming it into well-structured sentences. It accomplishes this by capitalizing the initial letter of each sentence, converting the rest of the text to lowercase, and changing 'i' to 'I.' Moreover, every letter following a full stop becomes uppercase.<br/><br/>Please note that it does not capitalize names or places. This serves as an example of text in sentence case.",
   },
   {
     header: "Upper Case",
     description:
-      "The upper case transformer will take any text that you have and will generate all the letters into upper case ones. It will essentially make all lower case letters into CAPITALS (as well as keep upper case letters as upper case letters).<br/><br/>To do this, you simply have to select the text that you need changing and pasting into the box above and then select the UPPER CASE tab.<br/><br/>THIS IS AN EXAMPLE OF UPPER CASE.",
+      "The Upper Case Transformer can convert any text you have into all uppercase letters. It transforms all lowercase letters into CAPITALS while maintaining uppercase letters in their original form.<br/><br/>To achieve this, just select the text you want to change, paste it into the box above, and then click on the 'UPPER CASE' tab.<br/><br/>Here's an example of text in UPPER CASE.",
   },
   {
     header: "Capitalized Case",
     description:
-      "The capitalized case converter will automatically convert the starting letter of every word into an upper case and will leave the remaining letters as lower case ones.<br/><br/>Simply copy the content that you will like to generate into this format, then paste into the box form above and select the Capitalized Case tab.<br/><br/>This Is An Example Of Capitalized Case.",
+      "The Capitalized Case Converter automatically changes the initial letter of every word to uppercase while keeping the rest in lowercase.<br/><br/>To achieve this, copy the content you'd like to format in this way and paste it into the form above. Then, click on the 'Capitalized Case' tab.<br/><br/>Here's an example of text in Capitalized Case.",
   },
   {
     header: "Alternating Case",
     description:
-      "The alternating case converter will allow you to transform your text (no matter the current format) into text that alternates between lower case and upper case. It will generate a capital letter and then a lower case letter within the same word.<br/><br/>tHiS Is aN ExAmPlE Of aLtErNaTiNg cAsE.",
+      "The Alternating Case Converter enables you to change your text, regardless of its current format, into a pattern that alternates between lowercase and uppercase letters. It creates a sequence of capital and lowercase letters within the same word.<br/><br/>For this effect, simply input your text, and it will generate alternating case text.<br/><br/>Here is an example: tHiS Is aN ExAmPlE Of aLtErNaTiNg cAsE.",
   },
   {
     header: "Title Case",
     description:
-      "The title case converter is perfect for those who are a bit unsure on how to title an upcoming essay. It essentially ensures the correct letters are capitalized within the context of a title. Words such as “an” will be left all in lower case and words that are important will be converted such as “Title”.<br/><br/>This Is an Example of Title Case.",
+      "The Title Case Converter is an ideal tool for individuals who may be uncertain about how to format the title of an upcoming essay. It guarantees that the appropriate words are capitalized within the context of a title. Common words like 'an' will remain in lowercase, while significant words, such as 'Title,' will be capitalized.<br/><br/>Here's an example of text in Title Case: This Is an Example of Title Case.",
   },
   {
     header: "Inverse Case",
     description:
-      "The title case converter is perfect for those who are a bit unsure on how to title an upcoming essay. It essentially ensures the correct letters are capitalized within the context of a title. Words such as “an” will be left all in lower case and words that are important will be converted such as “Title”.<br/><br/>This Is an Example of Title Case.",
+      "Inverse Case reverses the usual letter capitalization, making uppercase letters lowercase and lowercase letters uppercase.<br/><br/>Here's an example of text in Title Case: THIS IS AN eXAMPLE OF iNVERSE CASE.",
   },
 ];
 

@@ -17,8 +17,11 @@ import WordsCounter from "../../Features/Counter/WordsCounter";
 import HeaderText from "../../UI/HeaderText";
 import TextArea from "../../UI/TextArea";
 import StyledBox from "../../UI/StyledBox";
+import { useState } from "react";
+import { saveAs } from "file-saver";
 
 function CaseConvert() {
+  const [isDownloading, setIsDownloading] = useState(false);
   const dispatch = useDispatch();
   const { currentText, charactersCount, wordCount, lineCount } = useSelector(
     (select) => select.convertCase
@@ -39,14 +42,24 @@ function CaseConvert() {
     if ((e.metaKey || e.ctrlKey) && e.key === "c") copiedSucessfully();
   };
 
+  const handleDownload = () => {
+    if (isDownloading) {
+      return;
+    }
+
+    setIsDownloading(true);
+
+    const file = new Blob([currentText]);
+    currentText.length > 0 && saveAs(file, "CaseMorph_Case_Convert.txt");
+
+    setIsDownloading(false);
+  };
+
   return (
     <div onKeyDown={keyPressHandler}>
       <StyledBox>
         <HeaderText>
-          <h3>
-            Accidentally left the caps lock on and typed something, but
-            can&rsquo;t be bothered to start again and retype it all?
-          </h3>
+          <h3>Oops, accidentally typed something in caps lock? No worries!</h3>
           <p>
             Simply enter your text and choose the case you want to convert it
             to.
@@ -67,6 +80,7 @@ function CaseConvert() {
         <Button onClick={copiedSucessfully}>Copy to Clipboard</Button>
         <Toaster />
         <Button onClick={() => dispatch(clear())}>Clear</Button>
+        <Button onClick={() => handleDownload()}>Download text</Button>
         <Button>
           <a href="https://www.buymeacoffee.com/karthikkahil" target="__blank">
             <img

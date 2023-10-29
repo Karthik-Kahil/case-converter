@@ -15,10 +15,17 @@ const StyledTextArea = styled.div`
     background-color: #f5eec8;
     margin-top: 2rem;
     min-height: 300px;
+    overflow: scroll;
   }
 `;
 
-function TextOutput({ currentText, copiedSucessfully, textSelection }) {
+function TextOutput({
+  currentText,
+  copiedSucessfully,
+  textSelection,
+  handleDownload,
+  isDownloading,
+}) {
   const dispatch = useDispatch();
   const fonts = getFonts();
   const [fontType, setFontType] = useState("sansSerifBold");
@@ -39,7 +46,9 @@ function TextOutput({ currentText, copiedSucessfully, textSelection }) {
         {/* {textSelection ? convertedText : currentText} */}
       </p>
       {textSelection && <TextSelection setFontType={setFontType} />}
-      <Button>Download Text</Button>
+      <Button onClick={handleDownload} disabled={isDownloading}>
+        Download Text
+      </Button>
       <Button onClick={copiedSucessfully}>Copy to Clipboard</Button>
       <Button>
         <a href="https://www.buymeacoffee.com/karthikkahil" target="__blank">

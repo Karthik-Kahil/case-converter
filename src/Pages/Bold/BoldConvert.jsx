@@ -8,12 +8,14 @@ import { useDispatch, useSelector } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 import StyledTwoGrid from "../../UI/StyledTwoGrid";
 import BoldInformation from "./BoldInformation";
+import { saveAs } from "file-saver";
+import { useState } from "react";
 
 function BoldConvert() {
   const dispatch = useDispatch();
-  const { currentText, charactersCount, wordCount, lineCount } = useSelector(
-    (select) => select.boldConvert
-  );
+  const [isDownloading, setIsDownloading] = useState(false);
+  const { currentText, convertedText, charactersCount, wordCount, lineCount } =
+    useSelector((select) => select.boldConvert);
 
   const textHandler = (e) => {
     dispatch(currentTextLoader(e.target.value));
@@ -28,6 +30,20 @@ function BoldConvert() {
 
   const keyPressHandler = (e) => {
     if ((e.metaKey || e.ctrlKey) && e.key === "c") copiedSucessfully();
+    if ((e.metaKey || e.ctrlKey) && e.key === "j") handleDownload();
+  };
+
+  const handleDownload = () => {
+    if (isDownloading) {
+      return;
+    }
+
+    setIsDownloading(true);
+
+    const file = new Blob([convertedText]);
+    convertedText.length > 0 && saveAs(file, "CaseMorph_Pro_Bold.txt");
+
+    setIsDownloading(false);
   };
 
   return (
@@ -50,6 +66,8 @@ function BoldConvert() {
             textSelection={true}
             currentText={currentText}
             copiedSucessfully={copiedSucessfully}
+            handleDownload={handleDownload}
+            isDownloading={isDownloading}
           />
         </StyledTwoGrid>
         <WordsCounter
