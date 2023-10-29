@@ -36,6 +36,12 @@ const plainSlice = createSlice({
     currentTextLoader(state, action) {
       state.currentText = action.payload;
       state.convertedText = htmltoText(state.currentText);
+
+      state.charactersCount = action.payload.split("").length;
+      state.wordCount = action.payload
+        .split(" ")
+        .filter((word) => word !== "").length;
+      state.lineCount = action.payload.split(/\n/).length;
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);
