@@ -52,13 +52,13 @@ function PlainConvert() {
         <HeaderText>
           <h3>Plain Text Converter</h3>
           <p>
-            Are you struggling with losing the numbering, bulleted, or tabbed
-            formatting when copying and pasting rich text into an online form?
-            Convert Case&rsquo;s Plain Text Converter is here to help. Our
-            online utility preserves the benefits of formatting while removing
-            the frustrating background embedded code, allowing you to easily
-            copy and paste from one application or form to another. No more
-            frustration, just seamless productivity.
+            Do you encounter issues with losing numbering, bullet points, or
+            tabbed formatting when copying and pasting rich text into an online
+            form? Convert Case&rsquo;s Plain Text Converter is your solution.
+            Our online tool retains the advantages of formatting while
+            eliminating the troublesome embedded background code. This enables
+            smooth copying and pasting between applications and forms,
+            eliminating frustration and enhancing productivity.
           </p>
         </HeaderText>
         <Toaster />

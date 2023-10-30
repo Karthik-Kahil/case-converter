@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "./Features/Navbar/NavBar";
 import styled from "styled-components";
+import Footer from "./Features/Footer/Footer";
 
 const StyledMain = styled.main`
   padding: 0 5%;
@@ -19,6 +20,7 @@ function AppLayout() {
       <StyledMain>
         <Outlet />
       </StyledMain>
+      <Footer />
     </StyledDiv>
   );
 }

@@ -52,11 +52,11 @@ function BoldConvert() {
         <HeaderText>
           <h3>Bold Text Generator</h3>
           <p>
-            Use this handy bold text generator. Simply paste or write the text
-            that you need to be converted into a bold font into the left field,
-            then as you write it, you will see it being converted into bold into
-            the field on the right. Then simply copy it from the bold text
-            converter and paste it where you want it to go.
+            Utilize our convenient Bold Text Generator. Just input the text you
+            want to convert to bold in the left field. As you type, you&rsquo;ll
+            instantly see it transform into bold text in the right field. Once
+            it&rsquo;s bold, copy it from the converter and place it where you
+            need it.
           </p>
         </HeaderText>
         <Toaster />

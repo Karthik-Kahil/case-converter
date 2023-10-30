@@ -52,10 +52,10 @@ function DuplicateConvert() {
         <HeaderText>
           <h3>Online Duplicate Line Remover</h3>
           <p>
-            Whether you&rsquo;re dealing with large data sets, cleaning up
-            lists, or just need to eliminate redundant information, our tool is
-            here to simplify your task. Simply paste your text and let our tool
-            do the rest!
+            Whether you&rsquo;re working with extensive data sets, streamlining
+            lists, or eliminating duplicate information, our tool is designed to
+            streamline your task. Just paste your text, and our tool will take
+            care of the rest!
           </p>
         </HeaderText>
         <Toaster />

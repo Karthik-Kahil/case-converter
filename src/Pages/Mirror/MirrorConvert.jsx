@@ -52,10 +52,10 @@ function MirrorConvert() {
         <HeaderText>
           <h3>Mirror Text Generator</h3>
           <p>
-            Use this mirrored text generator as a quick and easy way of changing
-            standard text into the mirrored version. Simply type the normal and
-            regular text in the left hand panel and see it get converted to the
-            mirrored text on the right hand side.
+            Transform regular text into its mirrored version with ease using our
+            Mirrored Text Generator. Just type your standard text in the
+            left-hand panel, and witness it instantly converted into mirrored
+            text on the right-hand side.
           </p>
         </HeaderText>
         <Toaster />

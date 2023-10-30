@@ -2,26 +2,25 @@ import InformationBox from "../../UI/InformationBox";
 
 const PlainInformationList = [
   {
-    header: "How to Use ConvertCase's Plain Text Converter",
+    header: "Effortless Formatting Preservation with Plain Text Converter",
     description:
-      "Using our Plain Text Converter is simple. Just copy the rich text you want to convert and paste it into the converter. Our tool will automatically remove all the embedded code and preserve the numbered, bulleted, and tabbed formatting. You can then copy the plain text and use it in any online form or application without losing your formatting. Say goodbye to manual reformatting and hello to seamless productivity with ConvertCase's Plain Text Converter.",
+      "Converting rich text has never been easier. Follow these straightforward steps: Copy the rich text you wish to convert, paste it into our converter, and our tool will seamlessly remove embedded code while retaining numbered, bulleted, and tabbed formatting. Copy the plain text and seamlessly utilize it in any online form or application, without losing your formatting. No more manual reformatting hassles - embrace seamless productivity with ConvertCase's Plain Text Converter.",
   },
 
   {
-    header: "Is the Plain Text Converter free to use?",
+    header: "Free Conversion Service",
     description:
-      "Yes, our converter is completely free to use. Simply visit our website and start converting your rich text to plain text today.",
+      "Enjoy the benefits of our free converter. Visit our website and effortlessly convert your rich text to plain text today.",
   },
   {
-    header: "What types of formatting does the Plain Text Converter preserve?",
+    header: "Preserve Formatting with Ease",
     description:
-      "Our converter preserves numbered, bulleted, and tabbed formatting, making it easy for you to copy and paste your text into any online form or application without losing your formatting.",
+      "Our converter ensures your numbered, bulleted, and tabbed formatting remains intact. It simplifies the process of copying and pasting your text into any online form or application without compromising your formatting.",
   },
   {
-    header:
-      "Does the Plain Text Converter support languages other than English?",
+    header: "Multilingual Support",
     description:
-      "Yes, our converter supports a wide range of languages, including non-Latin scripts. Simply copy and paste your text into the converter and let us do the rest.",
+      "Our converter offers extensive language support, including non-Latin scripts. Just copy and paste your text into the converter, and we'll take care of the rest.",
   },
 ];
 
