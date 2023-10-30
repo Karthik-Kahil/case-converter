@@ -8,9 +8,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { copyClipBoard, currentTextLoader } from "./duplicateSlice";
 import StyledTwoGrid from "../../UI/StyledTwoGrid";
 import DuplicateInformation from "./DuplicateInformation";
+import { useState } from "react";
+import { saveAs } from "file-saver";
 
 function DuplicateConvert() {
   const dispatch = useDispatch();
+  const [isDownloading, setIsDownloading] = useState(false);
   const { currentText, convertedText, charactersCount, wordCount, lineCount } =
     useSelector((select) => select.duplicateConvert);
 
@@ -27,6 +30,20 @@ function DuplicateConvert() {
 
   const keyPressHandler = (e) => {
     if ((e.metaKey || e.ctrlKey) && e.key === "c") copiedSucessfully();
+    if ((e.metaKey || e.ctrlKey) && e.key === "j") handleDownload();
+  };
+
+  const handleDownload = () => {
+    if (isDownloading) {
+      return;
+    }
+
+    setIsDownloading(true);
+
+    const file = new Blob([currentText]);
+    currentText.length > 0 && saveAs(file, "CaseMorph_Case_Convert.txt");
+
+    setIsDownloading(false);
   };
 
   return (

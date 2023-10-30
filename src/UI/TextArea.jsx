@@ -17,7 +17,7 @@ function TextArea({ currentText, textHandler }) {
       autoFocus={true}
       value={currentText}
       onChange={textHandler}
-      placeholder={`Type or paste here... \n\nShortcuts:\n\n1. Make text copying more convenient by using the keyboard shortcuts: "Command + C or Control + C"\n\n2. Enhance the download process's convenience with keyboard shortcuts: utilize either "Command + J" or "Control + J"`}
+      placeholder={`Type or paste here... \n\nShortcuts:\n\n1. Make text copying more convenient by using the keyboard shortcuts: "Command + C" or "Control + C"\n\n2. Enhance the download process's convenience with keyboard shortcuts: utilize either "Command + J" or "Control + J"`}
     ></StyledTextArea>
   );
 }

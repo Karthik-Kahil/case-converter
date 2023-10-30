@@ -8,10 +8,12 @@ import TextOutput from "../../UI/TextOutput";
 import TextArea from "../../UI/TextArea";
 import StyledTwoGrid from "../../UI/StyledTwoGrid";
 import ReverseInformation from "./ReverseInformation";
+import { useState } from "react";
+import { saveAs } from "file-saver";
 
 function ReverseConvert() {
   const dispatch = useDispatch();
-
+  const [isDownloading, setIsDownloading] = useState(false);
   const { currentText, convertedText, charactersCount, wordCount, lineCount } =
     useSelector((select) => select.reverseConvert);
 
@@ -28,6 +30,20 @@ function ReverseConvert() {
 
   const keyPressHandler = (e) => {
     if ((e.metaKey || e.ctrlKey) && e.key === "c") copiedSucessfully();
+    if ((e.metaKey || e.ctrlKey) && e.key === "j") handleDownload();
+  };
+
+  const handleDownload = () => {
+    if (isDownloading) {
+      return;
+    }
+
+    setIsDownloading(true);
+
+    const file = new Blob([currentText]);
+    currentText.length > 0 && saveAs(file, "CaseMorph_Case_Convert.txt");
+
+    setIsDownloading(false);
   };
 
   return (
