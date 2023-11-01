@@ -4,8 +4,11 @@ import styled from "styled-components";
 const StyledLink = styled.li`
   list-style: none;
   font-size: 1.3rem;
+  width: 100%;
+  margin-bottom: 2rem;
 
   & a {
+    width: 100%;
     display: inline-block;
     text-decoration: none;
     background-color: #748e63;

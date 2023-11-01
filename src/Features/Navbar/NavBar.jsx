@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import NavLinks from "./NavLink";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import NavLinks from "./NavLinks";
 
 const StyledUl = styled.ul`
   display: flex;
@@ -70,11 +70,6 @@ function NavBar() {
   return (
     <nav>
       <StyledUl>
-        {titleName.map((data) => (
-          <NavLinks key={data.titleName} to={data.pathName}>
-            {data.linkName}
-          </NavLinks>
-        ))}
         {titleName.map((data) => (
           <NavLinks key={data.titleName} to={data.pathName}>
             {data.linkName}
