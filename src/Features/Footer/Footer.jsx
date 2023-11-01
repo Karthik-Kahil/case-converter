@@ -28,62 +28,95 @@ const StyledFooter = styled.footer`
     font-size: 1.3rem;
     line-height: 3rem;
   }
+
+  @media screen and (max-width: 769px) {
+    grid-template-columns: 1fr 1fr;
+
+    & ul {
+      grid-template-columns: 1fr;
+    }
+
+    & p {
+      grid-column: 1 / 2;
+    }
+  }
+
+  @media screen and (max-width: 481px) {
+    grid-template-columns: 1fr;
+
+    & ul {
+      grid-template-columns: 1fr;
+    }
+
+    & p {
+      grid-column: 1;
+    }
+  }
+`;
+
+const StylePara = styled.p`
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 5rem;
 `;
 
 function Footer() {
   return (
-    <StyledFooter>
-      <ul>
-        <p>Text Modification/Formatting</p>
-        <div>
-          <FooterLinks>Bold Text Generator</FooterLinks>
-          <FooterLinks>Bubble Text Generator</FooterLinks>
-          <FooterLinks>Cursed Text Tool</FooterLinks>
-          <FooterLinks>Duplicate Line Remover</FooterLinks>
-          <FooterLinks>Invisible Text Generator</FooterLinks>
-          <FooterLinks>Italic Text Converter</FooterLinks>
-          <FooterLinks>Plain Text Converter</FooterLinks>
-          <FooterLinks>Reverse Text Generator</FooterLinks>
-          <FooterLinks>Sentence Case Converter</FooterLinks>
-        </div>
-        <div>
-          <FooterLinks>Small Text Generator</FooterLinks>
-          <FooterLinks>Strikethrough Text Generator</FooterLinks>
-          <FooterLinks>Superscript Generator</FooterLinks>
-          <FooterLinks>Title Case Converter</FooterLinks>
-          <FooterLinks>Underline Text Generator</FooterLinks>
-          <FooterLinks>Unicode Text Converter</FooterLinks>
-          <FooterLinks>Whitespace Remover</FooterLinks>
-          <FooterLinks>Wide Text Generator</FooterLinks>
-          <FooterLinks>Zalgo Glitch Text Generator</FooterLinks>
-        </div>
-      </ul>
-      <ul>
-        <p>Code & Data Translation</p>
-        <div>
-          <FooterLinks>Bold Text Generator</FooterLinks>
-          <FooterLinks>Bubble Text Generator</FooterLinks>
-          <FooterLinks>Cursed Text Tool</FooterLinks>
-          <FooterLinks>Duplicate Line Remover</FooterLinks>
-          <FooterLinks>Invisible Text Generator</FooterLinks>
-          <FooterLinks>Italic Text Converter</FooterLinks>
-          <FooterLinks>Plain Text Converter</FooterLinks>
-          <FooterLinks>Reverse Text Generator</FooterLinks>
-          <FooterLinks>Sentence Case Converter</FooterLinks>
-        </div>
-        <div>
-          <FooterLinks>Small Text Generator</FooterLinks>
-          <FooterLinks>Strikethrough Text Generator</FooterLinks>
-          <FooterLinks>Superscript Generator</FooterLinks>
-          <FooterLinks>Title Case Converter</FooterLinks>
-          <FooterLinks>Underline Text Generator</FooterLinks>
-          <FooterLinks>Unicode Text Converter</FooterLinks>
-          <FooterLinks>Whitespace Remover</FooterLinks>
-          <FooterLinks>Wide Text Generator</FooterLinks>
-          <FooterLinks>Zalgo Glitch Text Generator</FooterLinks>
-        </div>
-      </ul>
-    </StyledFooter>
+    <>
+      <StyledFooter>
+        <ul>
+          <p>Text Modification/Formatting</p>
+          <div>
+            <FooterLinks>Bold Text Generator</FooterLinks>
+            <FooterLinks>Bubble Text Generator</FooterLinks>
+            <FooterLinks>Cursed Text Tool</FooterLinks>
+            <FooterLinks>Duplicate Line Remover</FooterLinks>
+            <FooterLinks>Invisible Text Generator</FooterLinks>
+            <FooterLinks>Italic Text Converter</FooterLinks>
+            <FooterLinks>Plain Text Converter</FooterLinks>
+            <FooterLinks>Reverse Text Generator</FooterLinks>
+            <FooterLinks>Sentence Case Converter</FooterLinks>
+          </div>
+          <div>
+            <FooterLinks>Small Text Generator</FooterLinks>
+            <FooterLinks>Strikethrough Text Generator</FooterLinks>
+            <FooterLinks>Superscript Generator</FooterLinks>
+            <FooterLinks>Title Case Converter</FooterLinks>
+            <FooterLinks>Underline Text Generator</FooterLinks>
+            <FooterLinks>Unicode Text Converter</FooterLinks>
+            <FooterLinks>Whitespace Remover</FooterLinks>
+            <FooterLinks>Wide Text Generator</FooterLinks>
+            <FooterLinks>Zalgo Glitch Text Generator</FooterLinks>
+          </div>
+        </ul>
+        <ul>
+          <p>Code & Data Translation/Image Tools</p>
+          <div>
+            <FooterLinks>Binary Code Translator</FooterLinks>
+            <FooterLinks>CSV to JSON Converter</FooterLinks>
+            <FooterLinks>Hex to Text Converter</FooterLinks>
+            <FooterLinks>JSON Stringify Text Generator</FooterLinks>
+            <FooterLinks>Morse Code Translator</FooterLinks>
+            <FooterLinks>Slugify URL Generator</FooterLinks>
+            <FooterLinks>UTF-8 Encoder/Decoder</FooterLinks>
+            <FooterLinks>UTM Builder Generator</FooterLinks>
+          </div>
+          <div>
+            <FooterLinks>Ascii Art Generator</FooterLinks>
+            <FooterLinks>JPG to PNG Converter</FooterLinks>
+            <FooterLinks>JPG to WebP Converter</FooterLinks>
+            <FooterLinks>PNG to JPG Converter</FooterLinks>
+            <FooterLinks>PNG to WebP Converter</FooterLinks>
+            <FooterLinks>WebP to JPG Converter</FooterLinks>
+            <FooterLinks>WebP to PNG Converter</FooterLinks>
+          </div>
+        </ul>
+      </StyledFooter>
+      <StylePara>
+        CaseMorph Pro | Concept by Karthik Kahil | Inspiration from Convert Case
+        | <a href="#">Site Map</a> | Theme: Auto
+      </StylePara>
+    </>
   );
 }
 

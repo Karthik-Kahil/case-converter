@@ -5,9 +5,11 @@ import { useLocation } from "react-router-dom";
 
 const StyledUl = styled.ul`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  grid-gap: 1rem;
   margin-top: 2rem;
   padding: 0 5%;
+  overflow: hidden;
 
   & a {
     outline-color: #445d48;

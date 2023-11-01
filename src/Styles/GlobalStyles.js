@@ -99,7 +99,7 @@ select:focus {
 
 
 body {
-  background-color: #faf8ed;
+ background-color: #faf8ed;
 }
 
 

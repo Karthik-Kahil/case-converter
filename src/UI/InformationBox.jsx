@@ -9,6 +9,10 @@ const StyledBox = styled.div`
   margin-top: 2rem;
   margin-bottom: 2rem;
   height: auto;
+
+  @media screen and (max-width: 769px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 // eslint-disable-next-line react/prop-types
