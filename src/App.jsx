@@ -40,6 +40,10 @@ function App() {
               path="/sentense-text-converter"
               element={<CaseConvert />}
             ></Route>
+            <Route
+              path="/bubble-text-generater"
+              element={<CaseConvert />}
+            ></Route>
           </Route>
         </Routes>
       </BrowserRouter>

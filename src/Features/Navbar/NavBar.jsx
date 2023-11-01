@@ -64,7 +64,7 @@ function NavBar() {
     );
 
     document.title =
-      "CaseMorph Pro | " + currentData[0].titleName || "CaseMorph Pro";
+      "CaseMorph Pro | " + currentData[0]?.titleName || "CaseMorph Pro";
   }, [currentLocation.pathname]);
 
   return (

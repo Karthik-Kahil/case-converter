@@ -40,7 +40,7 @@ function CaseConvert() {
 
   const keyPressHandler = (e) => {
     if ((e.metaKey || e.ctrlKey) && e.key === "c") copiedSucessfully();
-    if ((e.metaKey || e.ctrlKey) && e.key === "j") handleDownload();
+    if ((e.metaKey || e.ctrlKey) && e.key === "b") handleDownload();
     if (e.key === "CapsLock")
       toast("Caps lock on", {
         icon: "🔒",

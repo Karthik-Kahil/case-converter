@@ -6,10 +6,10 @@ const StyledLink = styled.li`
   font-size: 1rem;
 `;
 
-function FooterLinks({ children }) {
+function FooterLinks({ children, to }) {
   return (
     <StyledLink>
-      <Link>{children}</Link>
+      <Link to={to}>{children}</Link>
     </StyledLink>
   );
 }

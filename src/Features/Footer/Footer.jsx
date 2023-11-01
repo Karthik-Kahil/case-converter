@@ -21,7 +21,10 @@ const StyledFooter = styled.footer`
     grid-template-columns: 1fr 1fr;
     color: #ffffff;
     padding: 2rem;
-    text-decoration: underline;
+  }
+
+  & div {
+    text-decoration: underline !important;
   }
 
   & ul a {
@@ -67,8 +70,12 @@ function Footer() {
         <ul>
           <p>Text Modification/Formatting</p>
           <div>
-            <FooterLinks>Bold Text Generator</FooterLinks>
-            <FooterLinks>Bubble Text Generator</FooterLinks>
+            <FooterLinks to={"/bold-text-generater"}>
+              Bold Text Generator
+            </FooterLinks>
+            <FooterLinks to={"/bubble-text-generater"}>
+              Bubble Text Generator
+            </FooterLinks>
             <FooterLinks>Cursed Text Tool</FooterLinks>
             <FooterLinks>Duplicate Line Remover</FooterLinks>
             <FooterLinks>Invisible Text Generator</FooterLinks>
