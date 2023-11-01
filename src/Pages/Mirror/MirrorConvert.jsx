@@ -40,8 +40,8 @@ function MirrorConvert() {
 
     setIsDownloading(true);
 
-    const file = new Blob([currentText]);
-    currentText.length > 0 && saveAs(file, "CaseMorph_Case_Convert.txt");
+    const file = new Blob([convertedText]);
+    currentText.length > 0 && saveAs(file, "CaseMorph_Mirror_Convert.txt");
 
     setIsDownloading(false);
   };

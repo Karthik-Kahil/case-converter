@@ -41,7 +41,7 @@ function DuplicateConvert() {
     setIsDownloading(true);
 
     const file = new Blob([currentText]);
-    currentText.length > 0 && saveAs(file, "CaseMorph_Case_Convert.txt");
+    currentText.length > 0 && saveAs(file, "CaseMorph_duplicate_Convert.txt");
 
     setIsDownloading(false);
   };

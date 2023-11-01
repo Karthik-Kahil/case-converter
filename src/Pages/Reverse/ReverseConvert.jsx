@@ -41,7 +41,7 @@ function ReverseConvert() {
     setIsDownloading(true);
 
     const file = new Blob([currentText]);
-    currentText.length > 0 && saveAs(file, "CaseMorph_Case_Convert.txt");
+    currentText.length > 0 && saveAs(file, "CaseMorph_Reverse_Convert.txt");
 
     setIsDownloading(false);
   };
