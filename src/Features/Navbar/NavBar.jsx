@@ -10,9 +10,10 @@ const StyledUl = styled.ul`
   margin-top: 2rem;
   padding: 0 5%;
   overflow: hidden;
+  flex-wrap: wrap;
 
   & a {
-    outline-color: #445d48;
+    outline-color: #555d44;
   }
 `;
 
@@ -69,6 +70,11 @@ function NavBar() {
   return (
     <nav>
       <StyledUl>
+        {titleName.map((data) => (
+          <NavLinks key={data.titleName} to={data.pathName}>
+            {data.linkName}
+          </NavLinks>
+        ))}
         {titleName.map((data) => (
           <NavLinks key={data.titleName} to={data.pathName}>
             {data.linkName}
