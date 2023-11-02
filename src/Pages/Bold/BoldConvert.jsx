@@ -19,7 +19,9 @@ function BoldConvert() {
   console.log(searchParms.get("type"));
 
   useEffect(() => {
-    searchParms.get("type") && dispatch(typeSelector(searchParms.get("type")));
+    searchParms.get("type")
+      ? dispatch(typeSelector(searchParms.get("type")))
+      : dispatch(typeSelector("sansSerifBold"));
   }, [searchParms, dispatch]);
 
   const [isDownloading, setIsDownloading] = useState(false);
