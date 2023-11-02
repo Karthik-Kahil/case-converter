@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledLink = styled.li`
@@ -7,9 +7,17 @@ const StyledLink = styled.li`
 `;
 
 function FooterLinks({ children, to }) {
+  const navigate = useNavigate();
+
+  const navigateHandler = (path) => {
+    navigate(path);
+  };
+
   return (
     <StyledLink>
-      <Link to={to}>{children}</Link>
+      <Link to={to} onClick={() => navigateHandler(to)}>
+        {children}
+      </Link>
     </StyledLink>
   );
 }

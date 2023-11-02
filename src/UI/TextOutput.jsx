@@ -25,10 +25,11 @@ function TextOutput({
   textSelection,
   handleDownload,
   isDownloading,
+  multiPageType,
 }) {
   const dispatch = useDispatch();
   const fonts = getFonts();
-  const [fontType, setFontType] = useState("sansSerifBold");
+  const [fontType, setFontType] = useState(multiPageType || "sansSerifBold");
   const { convertedText } = useSelector((select) => select.boldConvert);
 
   useEffect(() => {
@@ -45,7 +46,9 @@ function TextOutput({
       >
         {/* {textSelection ? convertedText : currentText} */}
       </p>
-      {textSelection && <TextSelection setFontType={setFontType} />}
+      {textSelection && (
+        <TextSelection setFontType={setFontType} fontType={fontType} />
+      )}
       <Button onClick={handleDownload} disabled={isDownloading}>
         Download Text
       </Button>

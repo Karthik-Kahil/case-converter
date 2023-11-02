@@ -10,8 +10,13 @@ import StyledTwoGrid from "../../UI/StyledTwoGrid";
 import BoldInformation from "./BoldInformation";
 import { saveAs } from "file-saver";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 function BoldConvert() {
+  const [searchParms] = useSearchParams();
+  const types = searchParms.get("type");
+  console.log(types);
+
   const dispatch = useDispatch();
   const [isDownloading, setIsDownloading] = useState(false);
   const { currentText, convertedText, charactersCount, wordCount, lineCount } =
@@ -30,7 +35,7 @@ function BoldConvert() {
 
   const keyPressHandler = (e) => {
     if ((e.metaKey || e.ctrlKey) && e.key === "c") copiedSucessfully();
-    if ((e.metaKey || e.ctrlKey) && e.key === "j") handleDownload();
+    if ((e.metaKey || e.ctrlKey) && e.key === "b") handleDownload();
   };
 
   const handleDownload = () => {
@@ -68,6 +73,7 @@ function BoldConvert() {
             copiedSucessfully={copiedSucessfully}
             handleDownload={handleDownload}
             isDownloading={isDownloading}
+            multiPageType={types}
           />
         </StyledTwoGrid>
         <WordsCounter

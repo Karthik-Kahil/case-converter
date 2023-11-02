@@ -73,7 +73,7 @@ function Footer() {
             <FooterLinks to={"/bold-text-generater"}>
               Bold Text Generator
             </FooterLinks>
-            <FooterLinks to={"/bubble-text-generater"}>
+            <FooterLinks to={"bold-text-generater?type=negativeCircledCapital"}>
               Bubble Text Generator
             </FooterLinks>
             <FooterLinks>Cursed Text Tool</FooterLinks>

@@ -13,13 +13,18 @@ const StyledSelection = styled.select`
 `;
 
 // eslint-disable-next-line react/prop-types
-function TextSelection({ setFontType }) {
+function TextSelection({ fontType, setFontType }) {
   const onChangeHandler = (e) => {
     setFontType(e.target.value);
   };
+  console.log(fontType);
 
   return (
-    <StyledSelection name="fontsSelection" onChange={onChangeHandler}>
+    <StyledSelection
+      name="fontsSelection"
+      onChange={onChangeHandler}
+      value={fontType}
+    >
       <option value="sansSerifBold">𝗛𝗘𝗟𝗟𝗢 𝗪𝗢𝗥𝗟𝗗, 𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟲𝟴𝟵</option>
       <option value="sansSerif">𝖧𝖤𝖫𝖫𝖮 𝖶𝖮𝖱𝖫𝖣, 𝟢𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟨𝟪𝟫</option>
       <option value="sansSerifItalic">𝘏𝘌𝘓𝘓𝘖 𝘞𝘖𝘙𝘓𝘋, 01234567689</option>
