@@ -70,16 +70,20 @@ function Footer() {
         <ul>
           <p>Text Modification/Formatting</p>
           <div>
-            <FooterLinks to={"/bold-text-generater"}>
+            <FooterLinks to={"bold-text-generater"}>
               Bold Text Generator
             </FooterLinks>
             <FooterLinks to={"bold-text-generater?type=negativeCircledCapital"}>
               Bubble Text Generator
             </FooterLinks>
             <FooterLinks>Cursed Text Tool</FooterLinks>
-            <FooterLinks>Duplicate Line Remover</FooterLinks>
+            <FooterLinks to={"duplicate-line-remover"}>
+              Duplicate Line Remover
+            </FooterLinks>
             <FooterLinks>Invisible Text Generator</FooterLinks>
-            <FooterLinks>Italic Text Converter</FooterLinks>
+            <FooterLinks to={"bold-text-generater?type=sansSerifBoldItalic"}>
+              Italic Text Converter
+            </FooterLinks>
             <FooterLinks>Plain Text Converter</FooterLinks>
             <FooterLinks>Reverse Text Generator</FooterLinks>
             <FooterLinks>Sentence Case Converter</FooterLinks>
@@ -99,7 +103,9 @@ function Footer() {
         <ul>
           <p>Code & Data Translation/Image Tools</p>
           <div>
-            <FooterLinks>Binary Code Translator</FooterLinks>
+            <FooterLinks to={"/binary-code-translator"}>
+              Binary Code Translator
+            </FooterLinks>
             <FooterLinks>CSV to JSON Converter</FooterLinks>
             <FooterLinks>Hex to Text Converter</FooterLinks>
             <FooterLinks>JSON Stringify Text Generator</FooterLinks>

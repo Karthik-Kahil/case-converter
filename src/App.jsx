@@ -7,6 +7,7 @@ import DuplicateConvert from "./Pages/Duplicate/DuplicateConvert";
 import MirrorConvert from "./Pages/Mirror/MirrorConvert";
 import PlainConvert from "./Pages/Plain/PlainConvert";
 import ReverseConvert from "./Pages/Reverse/ReverseConvert";
+import BinaryTranslator from "./Pages/Binary/BinaryTranslator";
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
             <Route
               path="/sentense-text-converter"
               element={<CaseConvert />}
+            ></Route>
+            <Route
+              path="/binary-code-translator"
+              element={<BinaryTranslator />}
             ></Route>
           </Route>
         </Routes>

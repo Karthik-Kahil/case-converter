@@ -5,6 +5,7 @@ import duplicateSlice from "../Pages/Duplicate/duplicateSlice";
 import mirrorSlice from "../Pages/Mirror/mirrorSlice";
 import plainSlice from "../Pages/Plain/plainSlice";
 import reverseSlice from "../Pages/Reverse/reverseSlice";
+import binarySlice from "../Pages/Binary/binarySlice";
 
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     mirrorConvert: mirrorSlice,
     plainConvert: plainSlice,
     reverseConvert: reverseSlice,
+    binaryConvert: binarySlice,
   },
 });
 

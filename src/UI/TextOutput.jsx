@@ -15,8 +15,8 @@ const StyledTextArea = styled.div`
     background-color: #f5eec8;
     margin-top: 2rem;
     min-height: 300px;
-    overflow: scroll;
   }
+  overflow: hidden;
 `;
 
 function TextOutput({
@@ -44,9 +44,7 @@ function TextOutput({
         dangerouslySetInnerHTML={{
           __html: textSelection ? convertedText : currentText,
         }}
-      >
-        {/* {textSelection ? convertedText : currentText} */}
-      </p>
+      ></p>
       {textSelection && <TextSelection />}
       <Button onClick={handleDownload} disabled={isDownloading}>
         Download Text
