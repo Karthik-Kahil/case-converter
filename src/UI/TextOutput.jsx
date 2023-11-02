@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "./Button";
 import { getFonts, transform } from "convert-unicode-fonts";
 import TextSelection from "./TextSelection";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { convertedTextLoader } from "../Pages/Bold/boldSlice";
 
@@ -25,17 +25,18 @@ function TextOutput({
   textSelection,
   handleDownload,
   isDownloading,
-  multiPageType,
 }) {
   const dispatch = useDispatch();
   const fonts = getFonts();
-  const [fontType, setFontType] = useState(multiPageType || "sansSerifBold");
-  const { convertedText } = useSelector((select) => select.boldConvert);
+
+  const { convertedText, differentType } = useSelector(
+    (select) => select.boldConvert
+  );
 
   useEffect(() => {
-    const resultText = transform(currentText, fonts[fontType]);
+    const resultText = transform(currentText, fonts[differentType]);
     dispatch(convertedTextLoader(resultText));
-  }, [currentText, fontType, dispatch, fonts]);
+  }, [currentText, differentType, dispatch, fonts]);
 
   return (
     <StyledTextArea>
@@ -46,9 +47,7 @@ function TextOutput({
       >
         {/* {textSelection ? convertedText : currentText} */}
       </p>
-      {textSelection && (
-        <TextSelection setFontType={setFontType} fontType={fontType} />
-      )}
+      {textSelection && <TextSelection />}
       <Button onClick={handleDownload} disabled={isDownloading}>
         Download Text
       </Button>

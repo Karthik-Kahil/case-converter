@@ -7,7 +7,7 @@ const initialState = {
   charactersCount: 0,
   wordCount: 0,
   lineCount: 0,
-  differentType: "",
+  differentType: "sansSerifBold",
 };
 
 const boldSlice = createSlice({

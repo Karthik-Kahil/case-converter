@@ -16,19 +16,15 @@ function BoldConvert() {
   const [searchParms] = useSearchParams();
   const dispatch = useDispatch();
 
+  console.log(searchParms.get("type"));
+
   useEffect(() => {
-    dispatch(typeSelector(searchParms.get("type")));
+    searchParms.get("type") && dispatch(typeSelector(searchParms.get("type")));
   }, [searchParms, dispatch]);
 
   const [isDownloading, setIsDownloading] = useState(false);
-  const {
-    currentText,
-    convertedText,
-    charactersCount,
-    wordCount,
-    lineCount,
-    differentType,
-  } = useSelector((select) => select.boldConvert);
+  const { currentText, convertedText, charactersCount, wordCount, lineCount } =
+    useSelector((select) => select.boldConvert);
 
   const textHandler = (e) => {
     dispatch(currentTextLoader(e.target.value));
@@ -81,7 +77,6 @@ function BoldConvert() {
             copiedSucessfully={copiedSucessfully}
             handleDownload={handleDownload}
             isDownloading={isDownloading}
-            multiPageType={differentType}
           />
         </StyledTwoGrid>
         <WordsCounter

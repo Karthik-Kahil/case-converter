@@ -1,4 +1,6 @@
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { typeSelector } from "../Pages/Bold/boldSlice";
 
 const StyledSelection = styled.select`
   color: #f5eec8;
@@ -13,16 +15,19 @@ const StyledSelection = styled.select`
 `;
 
 // eslint-disable-next-line react/prop-types
-function TextSelection({ fontType, setFontType }) {
+function TextSelection() {
+  const dispatch = useDispatch();
+  const { differentType } = useSelector((select) => select.boldConvert);
+
   const onChangeHandler = (e) => {
-    setFontType(e.target.value);
+    dispatch(typeSelector(e.target.value));
   };
 
   return (
     <StyledSelection
       name="fontsSelection"
       onChange={onChangeHandler}
-      value={fontType}
+      value={differentType}
     >
       <option value="sansSerifBold">𝗛𝗘𝗟𝗟𝗢 𝗪𝗢𝗥𝗟𝗗, 𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟲𝟴𝟵</option>
       <option value="sansSerif">𝖧𝖤𝖫𝖫𝖮 𝖶𝖮𝖱𝖫𝖣, 𝟢𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟨𝟪𝟫</option>
