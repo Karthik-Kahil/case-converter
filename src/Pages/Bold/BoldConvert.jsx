@@ -3,24 +3,32 @@ import StyledBox from "../../UI/StyledBox";
 import TextArea from "../../UI/TextArea";
 import TextOutput from "../../UI/TextOutput";
 import WordsCounter from "../../Features/Counter/WordsCounter";
-import { copyClipBoard, currentTextLoader } from "./boldSlice";
+import { copyClipBoard, currentTextLoader, typeSelector } from "./boldSlice";
 import { useDispatch, useSelector } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 import StyledTwoGrid from "../../UI/StyledTwoGrid";
 import BoldInformation from "./BoldInformation";
 import { saveAs } from "file-saver";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 function BoldConvert() {
   const [searchParms] = useSearchParams();
-  const types = searchParms.get("type");
-  console.log(types);
-
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(typeSelector(searchParms.get("type")));
+  }, [searchParms, dispatch]);
+
   const [isDownloading, setIsDownloading] = useState(false);
-  const { currentText, convertedText, charactersCount, wordCount, lineCount } =
-    useSelector((select) => select.boldConvert);
+  const {
+    currentText,
+    convertedText,
+    charactersCount,
+    wordCount,
+    lineCount,
+    differentType,
+  } = useSelector((select) => select.boldConvert);
 
   const textHandler = (e) => {
     dispatch(currentTextLoader(e.target.value));
@@ -73,7 +81,7 @@ function BoldConvert() {
             copiedSucessfully={copiedSucessfully}
             handleDownload={handleDownload}
             isDownloading={isDownloading}
-            multiPageType={types}
+            multiPageType={differentType}
           />
         </StyledTwoGrid>
         <WordsCounter

@@ -17,7 +17,6 @@ function TextSelection({ fontType, setFontType }) {
   const onChangeHandler = (e) => {
     setFontType(e.target.value);
   };
-  console.log(fontType);
 
   return (
     <StyledSelection

@@ -7,6 +7,7 @@ const initialState = {
   charactersCount: 0,
   wordCount: 0,
   lineCount: 0,
+  differentType: "",
 };
 
 const boldSlice = createSlice({
@@ -27,10 +28,17 @@ const boldSlice = createSlice({
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);
     },
+    typeSelector(state, action) {
+      state.differentType = action.payload;
+    },
   },
 });
 
-export const { currentTextLoader, convertedTextLoader, copyClipBoard } =
-  boldSlice.actions;
+export const {
+  currentTextLoader,
+  convertedTextLoader,
+  copyClipBoard,
+  typeSelector,
+} = boldSlice.actions;
 
 export default boldSlice.reducer;
