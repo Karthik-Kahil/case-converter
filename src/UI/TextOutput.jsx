@@ -10,12 +10,15 @@ import { convertedTextLoader } from "../Pages/Bold/boldSlice";
 const StyledTextArea = styled.div`
   & p {
     width: 100%;
+    height: 300px;
     padding: 20px;
     color: #186f65;
     background-color: #f5eec8;
     margin-top: 2rem;
     min-height: 300px;
+    overflow: scroll;
   }
+
   overflow: hidden;
 `;
 

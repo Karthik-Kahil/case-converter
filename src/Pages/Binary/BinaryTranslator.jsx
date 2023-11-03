@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { copyClipBoard, currentTextLoader } from "./binarySlice";
 import { useState } from "react";
 import { saveAs } from "file-saver";
+import BinaryInformation from "./BinaryInformation";
 
 function BinaryTranslator() {
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ function BinaryTranslator() {
     setIsDownloading(true);
 
     const file = new Blob([convertedText]);
-    convertedText.length > 0 && saveAs(file, "CaseMorph_Pro_Bold.txt");
+    convertedText.length > 0 && saveAs(file, "CaseMorph_Pro_Binary.txt");
 
     setIsDownloading(false);
   };
@@ -53,13 +54,11 @@ function BinaryTranslator() {
         <HeaderText>
           <h3>Binary Code Translator</h3>
           <p>
-            You can use this handy online binary code translation tool to
-            quickly convert your English text into a binary code. Simply enter
-            the regular text as you would in the left column panel and then you
-            will see it automatically get translated into a series of binary
-            code on the right. Likewise, if you have binary code - enter it into
-            the right panel of the binary translator and get the english
-            translation.
+            You can use this convenient online tool to easily convert English
+            text into binary code. Just input your text on the left side, and it
+            will automatically be translated into binary code on the right.
+            Similarly, if you have binary code, enter it on the right side to
+            get an English translation.
           </p>
         </HeaderText>
         <Toaster />
@@ -79,6 +78,7 @@ function BinaryTranslator() {
           lineCount={lineCount}
         />
       </StyledBox>
+      <BinaryInformation />
     </div>
   );
 }
