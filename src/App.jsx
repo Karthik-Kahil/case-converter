@@ -8,6 +8,7 @@ import MirrorConvert from "./Pages/Mirror/MirrorConvert";
 import PlainConvert from "./Pages/Plain/PlainConvert";
 import ReverseConvert from "./Pages/Reverse/ReverseConvert";
 import BinaryTranslator from "./Pages/Binary/BinaryTranslator";
+import CsvJson from "./Pages/CSV/CsvJson";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
               path="/binary-code-translator"
               element={<BinaryTranslator />}
             ></Route>
+            <Route path="/csv-to-json" element={<CsvJson />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

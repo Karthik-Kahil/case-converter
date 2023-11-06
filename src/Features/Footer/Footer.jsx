@@ -106,7 +106,7 @@ function Footer() {
             <FooterLinks to={"/binary-code-translator"}>
               Binary Code Translator
             </FooterLinks>
-            <FooterLinks>CSV to JSON Converter</FooterLinks>
+            <FooterLinks to={"/csv-to-json"}>CSV to JSON Converter</FooterLinks>
             <FooterLinks>Hex to Text Converter</FooterLinks>
             <FooterLinks>JSON Stringify Text Generator</FooterLinks>
             <FooterLinks>Morse Code Translator</FooterLinks>

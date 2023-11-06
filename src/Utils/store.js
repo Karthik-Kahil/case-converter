@@ -6,6 +6,7 @@ import mirrorSlice from "../Pages/Mirror/mirrorSlice";
 import plainSlice from "../Pages/Plain/plainSlice";
 import reverseSlice from "../Pages/Reverse/reverseSlice";
 import binarySlice from "../Pages/Binary/binarySlice";
+import csvtojson from "../Pages/CSV/csvtojson";
 
 const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ const store = configureStore({
     plainConvert: plainSlice,
     reverseConvert: reverseSlice,
     binaryConvert: binarySlice,
+    csvConvert: csvtojson,
   },
 });
 
