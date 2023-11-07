@@ -72,6 +72,7 @@ function UploadInput() {
           Drag and Drop image here
           <input
             type="file"
+            accept=".csv"
             onChange={dragNdrop}
             onDragOver={drag}
             onDrop={drop}
