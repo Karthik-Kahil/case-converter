@@ -90,7 +90,7 @@ function Footer() {
             <FooterLinks to={"reverse-text-converter"}>
               Reverse Text Generator
             </FooterLinks>
-            <FooterLinks>Sentence Case Converter</FooterLinks>
+            <FooterLinks to={"/"}>Sentence Case Converter</FooterLinks>
           </div>
           <div>
             <FooterLinks>Small Text Generator</FooterLinks>

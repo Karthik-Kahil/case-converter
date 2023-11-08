@@ -19,7 +19,7 @@ const StyledOuter = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 150px;
+    height: 200px;
     margin: 0 auto;
     position: relative;
     font-weight: bold;
@@ -70,7 +70,6 @@ function UploadInput() {
       skipEmptyLines: true,
       complete: (result) => {
         if (result.data.length > 0) {
-          console.log(result.data); // This will contain the JSON data
           dispatch(convertedTextLoader(result.data));
         } else {
           toast.error("CSV file is empty.");

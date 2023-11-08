@@ -25,9 +25,8 @@ const csvjsonSlice = createSlice({
     convertedTextLoader(state, action) {
       state.convertedText = JSON.stringify(action.payload, null, 2);
     },
-    copyClipBoard() {
-      // copyTextToClipboard(JSON.stringify(state.convertedText, null, 2));
-      console.log("no error");
+    copyClipBoard(state) {
+      copyTextToClipboard(state.convertedText);
     },
   },
 });

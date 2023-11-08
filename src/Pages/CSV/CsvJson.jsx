@@ -9,9 +9,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { saveAs } from "file-saver";
 
-import { copyTextToClipboard } from "../../Utils/copyclip";
-import { currentTextLoader } from "./csvtojson";
+import { copyClipBoard, currentTextLoader } from "./csvtojson";
 import UploadInput from "../../UI/UploadInput";
+import CsvInformation from "./CsvInformation";
 
 function CsvJson() {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ function CsvJson() {
     (convertedText.length > 0 && toast.success("Copied to clipboard")) ||
       toast.error("Please enter some text to copy");
 
-    dispatch(copyTextToClipboard());
+    dispatch(copyClipBoard());
   };
 
   const keyPressHandler = (e) => {
@@ -79,7 +79,7 @@ function CsvJson() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <DuplicateInformation /> */}
+      <CsvInformation />
     </div>
   );
 }
