@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
@@ -67,7 +66,7 @@ function UploadInput() {
       <StyledOuter>
         <div className="dragBox">
           Drag and Drop image here
-          <input type="file" accept=".csv" onChange={csvDrop} />
+          <input type="file" accept=".csv,.xlsx,.xls" onChange={csvDrop} />
         </div>
       </StyledOuter>
     </>
