@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
+import Papa from "papaparse";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { currentTextLoader } from "../Pages/CSV/csvtojson";
+import Loader from "../Features/Loader/Loader";
+import { useState } from "react";
 
 const StyledOuter = styled.div`
   cursor: pointer;
@@ -43,8 +46,10 @@ const StyledOuter = styled.div`
 
 function UploadInput() {
   const dispatch = useDispatch();
+  const [loader, setLoader] = useState(false);
 
   const csvDrop = (e) => {
+    setLoader(true);
     const file = e.target.files[0]; // Get the selected file
     if (file && file.type !== "text/csv")
       toast.error("Please upload files in .csv format");
@@ -53,6 +58,7 @@ function UploadInput() {
 
     if (file && file.type === "text/csv")
       reader.onload = function (e) {
+        setLoader(false);
         const fileContent = e.target.result; // Get the file content
 
         dispatch(currentTextLoader(fileContent));
@@ -65,10 +71,16 @@ function UploadInput() {
     <>
       <StyledOuter>
         <div className="dragBox">
-          Drag and Drop image here
-          <input type="file" accept=".csv,.xlsx,.xls" onChange={csvDrop} />
+          Drag & drop a CSV file here or click to upload
+          <input
+            type="file"
+            accept=".csv,.xlsx,.xls"
+            onChange={csvDrop}
+            disabled={loader}
+          />
         </div>
       </StyledOuter>
+      {loader && <Loader />}
     </>
   );
 }

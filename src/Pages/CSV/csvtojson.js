@@ -21,6 +21,8 @@ const csvjsonSlice = createSlice({
         .split(" ")
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
+
+      state.convertedText = state.currentText;
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);

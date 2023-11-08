@@ -68,6 +68,7 @@ function CsvJson() {
             textSelection={false}
             currentText={convertedText}
             copiedSucessfully={copiedSucessfully}
+            downloadBtn={"Download JSON"}
           />
         </StyledTwoGrid>
         <WordsCounter

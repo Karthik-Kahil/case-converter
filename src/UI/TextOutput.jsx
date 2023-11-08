@@ -28,6 +28,7 @@ function TextOutput({
   textSelection,
   handleDownload,
   isDownloading,
+  downloadBtn,
 }) {
   const dispatch = useDispatch();
   const fonts = getFonts();
@@ -50,7 +51,7 @@ function TextOutput({
       ></p>
       {textSelection && <TextSelection />}
       <Button onClick={handleDownload} disabled={isDownloading}>
-        Download Text
+        {downloadBtn || "Download Text"}
       </Button>
       <Button onClick={copiedSucessfully}>Copy to Clipboard</Button>
       <Button>
