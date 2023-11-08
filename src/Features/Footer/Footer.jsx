@@ -84,8 +84,12 @@ function Footer() {
             <FooterLinks to={"bold-text-generater?type=sansSerifBoldItalic"}>
               Italic Text Converter
             </FooterLinks>
-            <FooterLinks>Plain Text Converter</FooterLinks>
-            <FooterLinks>Reverse Text Generator</FooterLinks>
+            <FooterLinks to={"plain-text-converter"}>
+              Plain Text Converter
+            </FooterLinks>
+            <FooterLinks to={"reverse-text-converter"}>
+              Reverse Text Generator
+            </FooterLinks>
             <FooterLinks>Sentence Case Converter</FooterLinks>
           </div>
           <div>

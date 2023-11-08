@@ -63,7 +63,7 @@ function CsvJson() {
         <Toaster />
         <UploadInput />
         <StyledTwoGrid>
-          <TextArea textHandler={textHandler} />
+          <TextArea textHandler={textHandler} currentText={currentText} />
           <TextOutput
             textSelection={false}
             currentText={convertedText}

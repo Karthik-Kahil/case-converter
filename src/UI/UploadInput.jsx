@@ -1,5 +1,9 @@
+/* eslint-disable react/prop-types */
+
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { currentTextLoader } from "../Pages/CSV/csvtojson";
 
 const StyledOuter = styled.div`
   cursor: pointer;
@@ -38,45 +42,32 @@ const StyledOuter = styled.div`
   }
 `;
 
-const drag = () => {
-  document.getElementById("uploadFile").parentNode.className =
-    "draging dragBox";
-};
+function UploadInput() {
+  const dispatch = useDispatch();
 
-const drop = () => {
-  document.getElementById("uploadFile").parentNode.className = "dragBox";
-};
+  const csvDrop = (e) => {
+    const file = e.target.files[0]; // Get the selected file
+    if (file && file.type !== "text/csv")
+      toast.error("Please upload files in .csv format");
 
-const dragNdrop = async (e) => {
-  const file = e.target.files[0]; // Get the selected file
-  if (file && file.type === "text/csv") {
     const reader = new FileReader(); // Create a FileReader
 
-    reader.onload = function (e) {
-      const fileContent = e.target.result; // Get the file content
-      console.log(fileContent);
-      //   document.getElementById("fileContent").textContent = fileContent; // Display the content
-    };
+    if (file && file.type === "text/csv")
+      reader.onload = function (e) {
+        const fileContent = e.target.result; // Get the file content
+
+        dispatch(currentTextLoader(fileContent));
+      };
 
     reader.readAsText(file); // Read the file as text
-  } else {
-    toast.error("Please upload files in .csv format");
-  }
-};
+  };
 
-function UploadInput() {
   return (
     <>
       <StyledOuter>
         <div className="dragBox">
           Drag and Drop image here
-          <input
-            type="file"
-            accept=".csv"
-            onChange={dragNdrop}
-            onDragOver={drag}
-            onDrop={drop}
-          />
+          <input type="file" accept=".csv" onChange={csvDrop} />
         </div>
       </StyledOuter>
     </>
