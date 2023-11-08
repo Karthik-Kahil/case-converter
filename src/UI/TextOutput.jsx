@@ -19,6 +19,17 @@ const StyledTextArea = styled.div`
     overflow: scroll;
   }
 
+  & textarea {
+    width: 100%;
+    height: 300px;
+    padding: 20px;
+    color: #186f65;
+    background-color: #f5eec8;
+    margin-top: 2rem;
+    min-height: 300px;
+    overflow: scroll;
+  }
+
   overflow: hidden;
 `;
 
@@ -29,6 +40,7 @@ function TextOutput({
   handleDownload,
   isDownloading,
   downloadBtn,
+  isTextArea,
 }) {
   const dispatch = useDispatch();
   const fonts = getFonts();
@@ -44,11 +56,14 @@ function TextOutput({
 
   return (
     <StyledTextArea>
-      <p
-        dangerouslySetInnerHTML={{
-          __html: textSelection ? convertedText : currentText,
-        }}
-      ></p>
+      {isTextArea || (
+        <p
+          dangerouslySetInnerHTML={{
+            __html: textSelection ? convertedText : currentText,
+          }}
+        ></p>
+      )}
+      {isTextArea && <textarea defaultValue={currentText}></textarea>}
       {textSelection && <TextSelection />}
       <Button onClick={handleDownload} disabled={isDownloading}>
         {downloadBtn || "Download Text"}

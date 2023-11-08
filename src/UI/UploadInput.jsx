@@ -3,7 +3,7 @@ import Papa from "papaparse";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { currentTextLoader } from "../Pages/CSV/csvtojson";
+import { convertedTextLoader, currentTextLoader } from "../Pages/CSV/csvtojson";
 import Loader from "../Features/Loader/Loader";
 import { useState } from "react";
 
@@ -60,11 +60,28 @@ function UploadInput() {
       reader.onload = function (e) {
         setLoader(false);
         const fileContent = e.target.result; // Get the file content
-
         dispatch(currentTextLoader(fileContent));
       };
 
     reader.readAsText(file); // Read the file as text
+
+    Papa.parse(file, {
+      header: true, // Use the first row as the header
+      skipEmptyLines: true,
+      complete: (result) => {
+        if (result.data.length > 0) {
+          console.log(result.data); // This will contain the JSON data
+          dispatch(convertedTextLoader(result.data));
+        } else {
+          toast.error("CSV file is empty.");
+        }
+      },
+      error: (error) => {
+        toast(`Error parsing CSV: ${error.message}`, {
+          duration: 2000,
+        });
+      },
+    });
   };
 
   return (

@@ -21,15 +21,18 @@ const csvjsonSlice = createSlice({
         .split(" ")
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
-
-      state.convertedText = state.currentText;
     },
-    copyClipBoard(state) {
-      copyTextToClipboard(state.convertedText);
+    convertedTextLoader(state, action) {
+      state.convertedText = JSON.stringify(action.payload, null, 2);
+    },
+    copyClipBoard() {
+      // copyTextToClipboard(JSON.stringify(state.convertedText, null, 2));
+      console.log("no error");
     },
   },
 });
 
-export const { currentTextLoader, copyClipBoard } = csvjsonSlice.actions;
+export const { currentTextLoader, copyClipBoard, convertedTextLoader } =
+  csvjsonSlice.actions;
 
 export default csvjsonSlice.reducer;

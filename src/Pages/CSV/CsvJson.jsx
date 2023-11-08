@@ -24,7 +24,7 @@ function CsvJson() {
   };
 
   const copiedSucessfully = () => {
-    (currentText.length > 0 && toast.success("Copied to clipboard")) ||
+    (convertedText.length > 0 && toast.success("Copied to clipboard")) ||
       toast.error("Please enter some text to copy");
 
     dispatch(copyTextToClipboard());
@@ -42,8 +42,8 @@ function CsvJson() {
 
     setIsDownloading(true);
 
-    const file = new Blob([currentText]);
-    currentText.length > 0 && saveAs(file, "CaseMorph_duplicate_Convert.txt");
+    const file = new Blob([convertedText]);
+    convertedText.length > 0 && saveAs(file, "CaseMorph_csv_to_json.json");
 
     setIsDownloading(false);
   };
@@ -68,7 +68,9 @@ function CsvJson() {
             textSelection={false}
             currentText={convertedText}
             copiedSucessfully={copiedSucessfully}
+            handleDownload={handleDownload}
             downloadBtn={"Download JSON"}
+            isTextArea={true}
           />
         </StyledTwoGrid>
         <WordsCounter
