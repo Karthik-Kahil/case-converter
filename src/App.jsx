@@ -9,6 +9,8 @@ import PlainConvert from "./Pages/Plain/PlainConvert";
 import ReverseConvert from "./Pages/Reverse/ReverseConvert";
 import BinaryTranslator from "./Pages/Binary/BinaryTranslator";
 import CsvJson from "./Pages/CSV/CsvJson";
+import AllTools from "./Pages/All/AllTools";
+import CursedText from "./Pages/CursedText/CursedText";
 
 function App() {
   return (
@@ -38,6 +40,7 @@ function App() {
               path="/reverse-text-converter"
               element={<ReverseConvert />}
             ></Route>
+            <Route path="/all-tools" element={<AllTools />}></Route>
             <Route
               path="/sentense-text-converter"
               element={<CaseConvert />}
@@ -46,6 +49,7 @@ function App() {
               path="/binary-code-translator"
               element={<BinaryTranslator />}
             ></Route>
+            <Route path="/cursed-text-tool" element={<CursedText />}></Route>
             <Route path="/csv-to-json" element={<CsvJson />}></Route>
           </Route>
         </Routes>

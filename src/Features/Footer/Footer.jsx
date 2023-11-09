@@ -76,7 +76,7 @@ function Footer() {
             <FooterLinks to={"bold-text-generater?type=negativeCircledCapital"}>
               Bubble Text Generator
             </FooterLinks>
-            <FooterLinks>Cursed Text Tool</FooterLinks>
+            <FooterLinks to={"cursed-text-tool"}>Cursed Text Tool</FooterLinks>
             <FooterLinks to={"duplicate-line-remover"}>
               Duplicate Line Remover
             </FooterLinks>

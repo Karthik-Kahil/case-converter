@@ -49,9 +49,9 @@ const titleName = [
     titleName: "Reverse Text Converter",
   },
   {
-    pathName: "/sentense-text-converter",
-    linkName: "...more tools",
-    titleName: "...more tools",
+    pathName: "/all-tools",
+    linkName: "All tools",
+    titleName: "All tools",
   },
 ];
 
@@ -64,7 +64,7 @@ function NavBar() {
     );
 
     document.title =
-      "CaseMorph Pro | " + currentData[0]?.titleName || "CaseMorph Pro";
+      currentData[0]?.titleName + " | CaseMorph Pro" || "CaseMorph Pro";
   }, [currentLocation.pathname]);
 
   return (
