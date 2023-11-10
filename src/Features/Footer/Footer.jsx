@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import FooterLinks from "./FooterLinks";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const StyledFooter = styled.footer`
   display: grid;
@@ -63,7 +65,56 @@ const StylePara = styled.p`
   margin-bottom: 5rem;
 `;
 
+const titleName = [
+  {
+    pathName: "/bold-text-generater",
+    linkName: "Bold text generater",
+    titleName: "Bold text generater",
+  },
+  {
+    pathName: "/cursed-text-tool",
+    linkName: "Cursed Text Generater",
+    titleName: "Cursed Text Generater",
+  },
+  {
+    pathName: "/binary-code-translator",
+    linkName: "Binary code translator",
+    titleName: "Binary code translator",
+  },
+  {
+    pathName: "/csv-to-json",
+    linkName: "csv to json",
+    titleName: "csv to json",
+  },
+  {
+    pathName: "/invisible-text-generator",
+    linkName: "Invisible Text Generator",
+    titleName: "Invisible Text Generator",
+  },
+  {
+    pathName: "/reverse-text-converter",
+    linkName: "Reverse Text Converter",
+    titleName: "Reverse Text Converter",
+  },
+  {
+    pathName: "/all-tools",
+    linkName: "All tools",
+    titleName: "All tools",
+  },
+];
+
 function Footer() {
+  const currentLocation = useLocation();
+
+  useEffect(() => {
+    const currentData = titleName.filter(
+      (data) => data.pathName === currentLocation.pathname
+    );
+
+    document.title =
+      currentData[0]?.titleName + " | CaseMorph Pro" || "CaseMorph Pro";
+  }, [currentLocation.pathname]);
+
   return (
     <>
       <StyledFooter>
@@ -80,7 +131,9 @@ function Footer() {
             <FooterLinks to={"duplicate-line-remover"}>
               Duplicate Line Remover
             </FooterLinks>
-            <FooterLinks>Invisible Text Generator</FooterLinks>
+            <FooterLinks to={"/invisible-text-generator"}>
+              Invisible Text Generator
+            </FooterLinks>
             <FooterLinks to={"bold-text-generater?type=sansSerifBoldItalic"}>
               Italic Text Converter
             </FooterLinks>

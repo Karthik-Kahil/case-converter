@@ -7,6 +7,8 @@ import plainSlice from "../Pages/Plain/plainSlice";
 import reverseSlice from "../Pages/Reverse/reverseSlice";
 import binarySlice from "../Pages/Binary/binarySlice";
 import csvtojson from "../Pages/CSV/csvtojson";
+import cursedSlice from "../Pages/CursedText/cursedSlice";
+import invisibleSlice from "../Pages/Invisible/invisibleSlice";
 
 const store = configureStore({
   reducer: {
@@ -18,6 +20,8 @@ const store = configureStore({
     reverseConvert: reverseSlice,
     binaryConvert: binarySlice,
     csvConvert: csvtojson,
+    cursedTool: cursedSlice,
+    invisibleGen: invisibleSlice,
   },
 });
 

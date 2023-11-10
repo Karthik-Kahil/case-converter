@@ -65,6 +65,7 @@ function MirrorConvert() {
             textSelection={false}
             currentText={convertedText}
             copiedSucessfully={copiedSucessfully}
+            handleDownload={handleDownload}
           />
         </StyledTwoGrid>
         <WordsCounter

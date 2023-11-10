@@ -1,13 +1,25 @@
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import HeaderText from "../../UI/HeaderText";
 import StyledBox from "../../UI/StyledBox";
 import { saveAs } from "file-saver";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { copyClipBoard, currentTextLoader } from "./cursedSlice";
+import WordsCounter from "../../Features/Counter/WordsCounter";
+import TextArea from "../../UI/TextArea";
+import StyledTwoGrid from "../../UI/StyledTwoGrid";
+import TextOutput from "../../UI/TextOutput";
+import CursedInformation from "./CursedInformation";
 
 function CursedText() {
   const dispatch = useDispatch();
   const [isDownloading, setIsDownloading] = useState(false);
+  const { currentText, convertedText, charactersCount, wordCount, lineCount } =
+    useSelector((select) => select.cursedTool);
+
+  const textHandler = (e) => {
+    dispatch(currentTextLoader(e.target.value));
+  };
 
   const copiedSucessfully = () => {
     (currentText.length > 0 && toast.success("Copied to clipboard")) ||
@@ -29,7 +41,8 @@ function CursedText() {
     setIsDownloading(true);
 
     const file = new Blob([convertedText]);
-    currentText.length > 0 && saveAs(file, "CaseMorph_Mirror_Convert.txt");
+    (currentText.length > 0 && saveAs(file, "CaseMorph_cursed_tool.txt")) ||
+      toast.error("No files to download");
 
     setIsDownloading(false);
   };
@@ -47,7 +60,23 @@ function CursedText() {
             them stand out from the rest. So go ahead and give it a try!
           </p>
         </HeaderText>
+        <Toaster />
+        <StyledTwoGrid>
+          <TextArea textHandler={textHandler} />
+          <TextOutput
+            textSelection={false}
+            currentText={convertedText}
+            copiedSucessfully={copiedSucessfully}
+            handleDownload={handleDownload}
+          />
+        </StyledTwoGrid>
+        <WordsCounter
+          charactersCount={charactersCount}
+          wordCount={wordCount}
+          lineCount={lineCount}
+        />
       </StyledBox>
+      <CursedInformation />
     </div>
   );
 }

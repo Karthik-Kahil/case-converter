@@ -1,23 +1,20 @@
-import toast, { Toaster } from "react-hot-toast";
-import WordsCounter from "../../Features/Counter/WordsCounter";
-import HeaderText from "../../UI/HeaderText";
-import StyledBox from "../../UI/StyledBox";
-import StyledTwoGrid from "../../UI/StyledTwoGrid";
-import TextOutput from "../../UI/TextOutput";
-import TextArea from "../../UI/TextArea";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import StyledBox from "../../UI/StyledBox";
+import toast, { Toaster } from "react-hot-toast";
 import { saveAs } from "file-saver";
+import { useState } from "react";
+import { copyClipBoard, currentTextLoader } from "./invisibleSlice";
+import HeaderText from "../../UI/HeaderText";
+import StyledTwoGrid from "../../UI/StyledTwoGrid";
+import TextArea from "../../UI/TextArea";
+import TextOutput from "../../UI/TextOutput";
+import WordsCounter from "../../Features/Counter/WordsCounter";
 
-import { copyClipBoard, currentTextLoader } from "./csvtojson";
-import UploadInput from "../../UI/UploadInput";
-import CsvInformation from "./CsvInformation";
-
-function CsvJson() {
+function InvisibleGenerator() {
   const dispatch = useDispatch();
   const [isDownloading, setIsDownloading] = useState(false);
   const { currentText, convertedText, charactersCount, wordCount, lineCount } =
-    useSelector((select) => select.csvConvert);
+    useSelector((select) => select.invisibleGen);
 
   const textHandler = (e) => {
     dispatch(currentTextLoader(e.target.value));
@@ -53,25 +50,23 @@ function CsvJson() {
     <div onKeyDown={keyPressHandler}>
       <StyledBox>
         <HeaderText>
-          <h3>Convert CSV to JSON and JSON to CSV</h3>
+          <h3>Cursed Text Tool</h3>
           <p>
-            This is a simple tool that allows you to convert CSV to JSON and
-            vice versa JSON to CSV as well. Simply copy and paste your code into
-            the corresponding field and see it get converted back in the next
-            field.
+            Try our cursed text generator and create slanting text that suits
+            your profile and content! If you&rsquo;re looking for action-packed
+            posts, then this is the perfect tool for you. With our cursed text
+            generator, you can add a touch of excitement to your posts and make
+            them stand out from the rest. So go ahead and give it a try!
           </p>
         </HeaderText>
         <Toaster />
-        <UploadInput />
         <StyledTwoGrid>
-          <TextArea textHandler={textHandler} currentText={currentText} />
+          <TextArea textHandler={textHandler} />
           <TextOutput
             textSelection={false}
             currentText={convertedText}
             copiedSucessfully={copiedSucessfully}
             handleDownload={handleDownload}
-            downloadBtn={"Download JSON"}
-            isTextArea={true}
           />
         </StyledTwoGrid>
         <WordsCounter
@@ -80,9 +75,9 @@ function CsvJson() {
           lineCount={lineCount}
         />
       </StyledBox>
-      <CsvInformation />
+      {/* <CursedInformation /> */}
     </div>
   );
 }
 
-export default CsvJson;
+export default InvisibleGenerator;

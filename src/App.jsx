@@ -11,6 +11,7 @@ import BinaryTranslator from "./Pages/Binary/BinaryTranslator";
 import CsvJson from "./Pages/CSV/CsvJson";
 import AllTools from "./Pages/All/AllTools";
 import CursedText from "./Pages/CursedText/CursedText";
+import InvisibleGenerator from "./Pages/Invisible/InvisibleGenerator";
 
 function App() {
   return (
@@ -48,6 +49,10 @@ function App() {
             <Route
               path="/binary-code-translator"
               element={<BinaryTranslator />}
+            ></Route>
+            <Route
+              path="/invisible-text-generator"
+              element={<InvisibleGenerator />}
             ></Route>
             <Route path="/cursed-text-tool" element={<CursedText />}></Route>
             <Route path="/csv-to-json" element={<CsvJson />}></Route>
