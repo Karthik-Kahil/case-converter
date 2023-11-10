@@ -9,12 +9,14 @@ import StyledTwoGrid from "../../UI/StyledTwoGrid";
 import TextArea from "../../UI/TextArea";
 import TextOutput from "../../UI/TextOutput";
 import WordsCounter from "../../Features/Counter/WordsCounter";
+import InvisibleInformation from "./InvisibleInformation";
 
 function InvisibleGenerator() {
   const dispatch = useDispatch();
   const [isDownloading, setIsDownloading] = useState(false);
-  const { currentText, convertedText, charactersCount, wordCount, lineCount } =
-    useSelector((select) => select.invisibleGen);
+  const { convertedText, charactersCount, wordCount, lineCount } = useSelector(
+    (select) => select.invisibleGen
+  );
 
   const textHandler = (e) => {
     dispatch(currentTextLoader(e.target.value));
@@ -40,7 +42,8 @@ function InvisibleGenerator() {
     setIsDownloading(true);
 
     const file = new Blob([convertedText]);
-    (convertedText.length > 0 && saveAs(file, "CaseMorph_csv_to_json.json")) ||
+    (convertedText.length > 0 &&
+      saveAs(file, "CaseMorph_invisible_generator.txt")) ||
       toast.error("No files to download");
 
     setIsDownloading(false);
@@ -50,13 +53,11 @@ function InvisibleGenerator() {
     <div onKeyDown={keyPressHandler}>
       <StyledBox>
         <HeaderText>
-          <h3>Cursed Text Tool</h3>
+          <h3>Invisible Text Generator</h3>
           <p>
-            Try our cursed text generator and create slanting text that suits
-            your profile and content! If you&rsquo;re looking for action-packed
-            posts, then this is the perfect tool for you. With our cursed text
-            generator, you can add a touch of excitement to your posts and make
-            them stand out from the rest. So go ahead and give it a try!
+            If you’re looking to produce some invisible text that looks just
+            like empty space but in fact contains a unique message, then this is
+            the online tool you need.
           </p>
         </HeaderText>
         <Toaster />
@@ -75,7 +76,7 @@ function InvisibleGenerator() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <CursedInformation /> */}
+      <InvisibleInformation />
     </div>
   );
 }

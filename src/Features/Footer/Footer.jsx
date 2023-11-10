@@ -65,7 +65,7 @@ const StylePara = styled.p`
   margin-bottom: 5rem;
 `;
 
-const titleName = [
+const titleNames = [
   {
     pathName: "/bold-text-generater",
     linkName: "Bold text generater",
@@ -91,23 +91,13 @@ const titleName = [
     linkName: "Invisible Text Generator",
     titleName: "Invisible Text Generator",
   },
-  {
-    pathName: "/reverse-text-converter",
-    linkName: "Reverse Text Converter",
-    titleName: "Reverse Text Converter",
-  },
-  {
-    pathName: "/all-tools",
-    linkName: "All tools",
-    titleName: "All tools",
-  },
 ];
 
 function Footer() {
   const currentLocation = useLocation();
 
   useEffect(() => {
-    const currentData = titleName.filter(
+    const currentData = titleNames.filter(
       (data) => data.pathName === currentLocation.pathname
     );
 
