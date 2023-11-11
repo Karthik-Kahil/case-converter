@@ -1,85 +1,48 @@
 import styled from "styled-components";
 
 const StyledLoader = styled.div`
-  width: 50px;
-  height: 50px;
-  display: flex;
-  transform: rotate(45deg);
-  animation: sh3-0 1.5s infinite linear;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  animation: sh8-0 1.5s infinite linear;
 
   &:before,
   &:after {
     content: "";
-    width: 50%;
-    background: #f5eec8;
-    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    grid-area: 1/1;
+    background: #445c48;
+    clip-path: polygon(0 0%, 100% 0, 100% 100%);
     animation: inherit;
-    animation-name: sh3-1;
+    animation-name: sh8-1;
   }
 
   &:after {
-    clip-path: polygon(0 0, 100% 50%, 0% 100%);
-    animation-name: sh3-2;
+    --s: -1;
+    background: #f5eec8;
   }
 
-  @keyframes sh3-0 {
-    25% {
-      width: 50px;
-      height: 50px;
-      transform: rotate(0);
+  @keyframes sh8-0 {
+    66% {
+      transform: skewX(0deg);
     }
-    50% {
-      width: 50px;
-      height: 50px;
-    }
-    75% {
-      width: 70.7px;
-      height: 35.35px;
-    }
+    80%,
     100% {
-      width: 70.7px;
-      height: 35.35px;
-      transform: rotate(0);
+      transform: skewX(-45deg);
     }
   }
 
-  @keyframes sh3-1 {
-    0%,
-    25% {
-      clip-path: polygon(0 50%, 100% 0, 100% 100%);
-      transform: translate(0.3px);
+  @keyframes sh8-1 {
+    0% {
+      transform: scale(var(--s, 1)) translate(-0.5px, 0);
     }
-    50% {
-      clip-path: polygon(0 50%, 100% 0, 100% 100%);
-      transform: translate(-5px);
+    33% {
+      transform: scale(var(--s, 1)) translate(calc(1px - 50%), calc(1px - 50%));
     }
-    75% {
-      clip-path: polygon(0 100%, 0 0, 100% 100%);
-      transform: translate(-5px);
+    66% {
+      transform: scale(var(--s, 1)) translate(calc(1px - 50%), 0%);
     }
     100% {
-      clip-path: polygon(0 100%, 0 0, 100% 100%);
-      transform: translate(17.7px);
-    }
-  }
-
-  @keyframes sh3-2 {
-    0%,
-    25% {
-      clip-path: polygon(0 0, 100% 50%, 0 100%);
-      transform: translate(-0.3px);
-    }
-    50% {
-      clip-path: polygon(0 0, 100% 50%, 0 100%);
-      transform: translate(5px);
-    }
-    75% {
-      clip-path: polygon(0 0, 100% 0, 100% 100%);
-      transform: translate(5px);
-    }
-    100% {
-      clip-path: polygon(0 0, 100% 0, 100% 100%);
-      transform: translate(-17.7px);
+      transform: scale(var(--s, 1)) translate(calc(0.5px - 50%), 0%);
     }
   }
 `;
@@ -87,8 +50,8 @@ const StyledLoader = styled.div`
 const StyledDiv = styled.div`
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   position: fixed;

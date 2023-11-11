@@ -12,6 +12,8 @@ import CsvJson from "./Pages/CSV/CsvJson";
 import AllTools from "./Pages/All/AllTools";
 import CursedText from "./Pages/CursedText/CursedText";
 import InvisibleGenerator from "./Pages/Invisible/InvisibleGenerator";
+import TinyText from "./Pages/TinyText/TinyText";
+import StrikeThroughConvert from "./Pages/Strikethrough/StrikeThroughConvert";
 
 function App() {
   return (
@@ -56,6 +58,11 @@ function App() {
             ></Route>
             <Route path="/cursed-text-tool" element={<CursedText />}></Route>
             <Route path="/csv-to-json" element={<CsvJson />}></Route>
+            <Route path="/tiny-text-generator" element={<TinyText />}></Route>
+            <Route
+              path="/strikethrough-text-generator"
+              element={<StrikeThroughConvert />}
+            ></Route>
           </Route>
         </Routes>
       </BrowserRouter>

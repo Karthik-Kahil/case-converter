@@ -9,6 +9,8 @@ import binarySlice from "../Pages/Binary/binarySlice";
 import csvtojson from "../Pages/CSV/csvtojson";
 import cursedSlice from "../Pages/CursedText/cursedSlice";
 import invisibleSlice from "../Pages/Invisible/invisibleSlice";
+import tinySlice from "../Pages/TinyText/tinySlice";
+import strikethroughSlice from "../Pages/Strikethrough/strikethroughSlice";
 
 const store = configureStore({
   reducer: {
@@ -22,6 +24,8 @@ const store = configureStore({
     csvConvert: csvtojson,
     cursedTool: cursedSlice,
     invisibleGen: invisibleSlice,
+    tinyGen: tinySlice,
+    strikeThrough: strikethroughSlice,
   },
 });
 

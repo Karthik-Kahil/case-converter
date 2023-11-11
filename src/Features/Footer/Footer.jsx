@@ -136,8 +136,12 @@ function Footer() {
             <FooterLinks to={"/"}>Sentence Case Converter</FooterLinks>
           </div>
           <div>
-            <FooterLinks>Small Text Generator</FooterLinks>
-            <FooterLinks>Strikethrough Text Generator</FooterLinks>
+            <FooterLinks to={"/tiny-text-generator"}>
+              Tiny Text Generator
+            </FooterLinks>
+            <FooterLinks to={"/strikethrough-text-generator"}>
+              Strikethrough Text Generator
+            </FooterLinks>
             <FooterLinks>Superscript Generator</FooterLinks>
             <FooterLinks>Title Case Converter</FooterLinks>
             <FooterLinks>Underline Text Generator</FooterLinks>
