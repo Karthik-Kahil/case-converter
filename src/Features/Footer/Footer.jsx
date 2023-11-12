@@ -142,7 +142,9 @@ function Footer() {
             <FooterLinks to={"/strikethrough-text-generator"}>
               Strikethrough Text Generator
             </FooterLinks>
-            <FooterLinks>Superscript Generator</FooterLinks>
+            <FooterLinks to={"/superscript-generator"}>
+              Superscript Generator
+            </FooterLinks>
             <FooterLinks>Title Case Converter</FooterLinks>
             <FooterLinks>Underline Text Generator</FooterLinks>
             <FooterLinks>Unicode Text Converter</FooterLinks>

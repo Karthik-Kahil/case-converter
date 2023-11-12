@@ -11,6 +11,7 @@ import cursedSlice from "../Pages/CursedText/cursedSlice";
 import invisibleSlice from "../Pages/Invisible/invisibleSlice";
 import tinySlice from "../Pages/TinyText/tinySlice";
 import strikethroughSlice from "../Pages/Strikethrough/strikethroughSlice";
+import superSlice from "../Pages/SuperScript/superSlice";
 
 const store = configureStore({
   reducer: {
@@ -26,6 +27,7 @@ const store = configureStore({
     invisibleGen: invisibleSlice,
     tinyGen: tinySlice,
     strikeThrough: strikethroughSlice,
+    superSlice: superSlice,
   },
 });
 

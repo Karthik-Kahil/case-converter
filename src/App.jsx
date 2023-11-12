@@ -14,6 +14,7 @@ import CursedText from "./Pages/CursedText/CursedText";
 import InvisibleGenerator from "./Pages/Invisible/InvisibleGenerator";
 import TinyText from "./Pages/TinyText/TinyText";
 import StrikeThroughConvert from "./Pages/Strikethrough/StrikeThroughConvert";
+import SuperScriptConvert from "./Pages/SuperScript/SuperScriptConvert";
 
 function App() {
   return (
@@ -62,6 +63,10 @@ function App() {
             <Route
               path="/strikethrough-text-generator"
               element={<StrikeThroughConvert />}
+            ></Route>
+            <Route
+              path="/superscript-generator"
+              element={<SuperScriptConvert />}
             ></Route>
           </Route>
         </Routes>
