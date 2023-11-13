@@ -151,10 +151,13 @@ function Footer() {
             <FooterLinks to={"/underline-text"}>
               Underline Text Generator
             </FooterLinks>
-            <FooterLinks>Unicode Text Converter</FooterLinks>
-            <FooterLinks>Whitespace Remover</FooterLinks>
+            <FooterLinks to={"/whitespace-remover"}>
+              Whitespace Remover
+            </FooterLinks>
             <FooterLinks>Wide Text Generator</FooterLinks>
-            <FooterLinks>Zalgo Glitch Text Generator</FooterLinks>
+            <FooterLinks to={"/glitch-text-converter"}>
+              Zalgo Glitch Text Generator
+            </FooterLinks>
           </div>
         </ul>
         <ul>

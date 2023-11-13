@@ -16,7 +16,9 @@ import TinyText from "./Pages/TinyText/TinyText";
 import StrikeThroughConvert from "./Pages/Strikethrough/StrikeThroughConvert";
 import SuperScriptConvert from "./Pages/SuperScript/SuperScriptConvert";
 import TitleCaseConverter from "./Pages/TitleCase/TitleCaseConverter";
-import UnderlineSlice from "./Pages/Underline/underlineSlice";
+import UnderlineText from "./Pages/Underline/UnderlineText";
+import WhitespaceRemover from "./Pages/Whitespace/WhitespaceRemover";
+import ZalgoGenerator from "./Pages/Zalgo/ZalgoGenerator";
 
 function App() {
   return (
@@ -74,7 +76,15 @@ function App() {
               path="/title-case-converter"
               element={<TitleCaseConverter />}
             ></Route>
-            <Route path="/underline-text" element={<UnderlineSlice />}></Route>
+            <Route path="/underline-text" element={<UnderlineText />}></Route>
+            <Route
+              path="/whitespace-remover"
+              element={<WhitespaceRemover />}
+            ></Route>
+            <Route
+              path="/glitch-text-converter"
+              element={<ZalgoGenerator />}
+            ></Route>
           </Route>
         </Routes>
       </BrowserRouter>

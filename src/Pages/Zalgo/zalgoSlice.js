@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { copyTextToClipboard } from "../../Utils/copyclip";
+import { zalgoRandomGeneration } from "zalgo-generator";
 
 const initialState = {
   currentText: "",
@@ -9,14 +10,8 @@ const initialState = {
   lineCount: 0,
 };
 
-function underlineText(text) {
-  const underlineCharacter = "\u0332";
-  const characters = text.split("").map((char) => char + underlineCharacter);
-  return characters.join("");
-}
-
-const underlineSlice = createSlice({
-  name: "underlineSlice",
+const zalgoSlice = createSlice({
+  name: "zalgoSliceGenerator",
   initialState,
   reducers: {
     currentTextLoader(state, action) {
@@ -28,7 +23,7 @@ const underlineSlice = createSlice({
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
 
-      state.convertedText = underlineText(state.currentText);
+      state.convertedText = zalgoRandomGeneration(state.currentText, 3);
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);
@@ -36,6 +31,6 @@ const underlineSlice = createSlice({
   },
 });
 
-export const { currentTextLoader, copyClipBoard } = underlineSlice.actions;
+export const { currentTextLoader, copyClipBoard } = zalgoSlice.actions;
 
-export default underlineSlice.reducer;
+export default zalgoSlice.reducer;

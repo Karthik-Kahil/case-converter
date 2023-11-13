@@ -9,14 +9,8 @@ const initialState = {
   lineCount: 0,
 };
 
-function underlineText(text) {
-  const underlineCharacter = "\u0332";
-  const characters = text.split("").map((char) => char + underlineCharacter);
-  return characters.join("");
-}
-
-const underlineSlice = createSlice({
-  name: "underlineSlice",
+const whitespaceSlice = createSlice({
+  name: "whitespaceSlice",
   initialState,
   reducers: {
     currentTextLoader(state, action) {
@@ -28,7 +22,7 @@ const underlineSlice = createSlice({
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
 
-      state.convertedText = underlineText(state.currentText);
+      state.convertedText = state.currentText.split(" ").join("");
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);
@@ -36,6 +30,6 @@ const underlineSlice = createSlice({
   },
 });
 
-export const { currentTextLoader, copyClipBoard } = underlineSlice.actions;
+export const { currentTextLoader, copyClipBoard } = whitespaceSlice.actions;
 
-export default underlineSlice.reducer;
+export default whitespaceSlice.reducer;

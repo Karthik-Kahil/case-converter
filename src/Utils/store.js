@@ -14,6 +14,8 @@ import strikethroughSlice from "../Pages/Strikethrough/strikethroughSlice";
 import superSlice from "../Pages/SuperScript/superSlice";
 import titlecaseSlice from "../Pages/TitleCase/titlecaseSlice";
 import underlineSlice from "../Pages/Underline/underlineSlice";
+import whitespaceSlice from "../Pages/Whitespace/whitespaceSlice";
+import zalgoSlice from "../Pages/Zalgo/zalgoSlice";
 
 const store = configureStore({
   reducer: {
@@ -32,6 +34,8 @@ const store = configureStore({
     superSlice: superSlice,
     titleSlice: titlecaseSlice,
     underlineSlice: underlineSlice,
+    whitespaceRemover: whitespaceSlice,
+    zalgoSlice: zalgoSlice,
   },
 });
 
