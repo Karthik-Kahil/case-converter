@@ -64,6 +64,7 @@ function DuplicateConvert() {
           <TextOutput
             textSelection={false}
             currentText={convertedText}
+            handleDownload={handleDownload}
             copiedSucessfully={copiedSucessfully}
           />
         </StyledTwoGrid>

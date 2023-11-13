@@ -58,7 +58,11 @@ const convertslice = createSlice({
       state.currentText = sentence;
     },
     titleCase(state) {
-      state.currentText = titleConverter(state.currentText);
+      const sentence = state.currentText.toLowerCase();
+      state.currentText = sentence
+        .split("\n")
+        .map((letter) => titleConverter(letter))
+        .join("\n");
     },
     clear(state) {
       state.currentText = "";

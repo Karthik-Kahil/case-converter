@@ -23,7 +23,11 @@ const boldSlice = createSlice({
       state.lineCount = action.payload.split(/\n/).length;
     },
     convertedTextLoader(state, action) {
-      state.convertedText = action.payload;
+      const convertedTexts = action.payload;
+      state.convertedText = convertedTexts
+        .split("\n")
+        .map((letter) => letter)
+        .join("<br>\n");
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);

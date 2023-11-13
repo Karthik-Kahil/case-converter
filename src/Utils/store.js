@@ -16,6 +16,7 @@ import titlecaseSlice from "../Pages/TitleCase/titlecaseSlice";
 import underlineSlice from "../Pages/Underline/underlineSlice";
 import whitespaceSlice from "../Pages/Whitespace/whitespaceSlice";
 import zalgoSlice from "../Pages/Zalgo/zalgoSlice";
+import widetextSlice from "../Pages/Wide/widetextSlice";
 
 const store = configureStore({
   reducer: {
@@ -36,6 +37,7 @@ const store = configureStore({
     underlineSlice: underlineSlice,
     whitespaceRemover: whitespaceSlice,
     zalgoSlice: zalgoSlice,
+    wideSlice: widetextSlice,
   },
 });
 

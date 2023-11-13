@@ -19,6 +19,7 @@ import TitleCaseConverter from "./Pages/TitleCase/TitleCaseConverter";
 import UnderlineText from "./Pages/Underline/UnderlineText";
 import WhitespaceRemover from "./Pages/Whitespace/WhitespaceRemover";
 import ZalgoGenerator from "./Pages/Zalgo/ZalgoGenerator";
+import WideTextGenerator from "./Pages/Wide/WideTextGenerator";
 
 function App() {
   return (
@@ -84,6 +85,10 @@ function App() {
             <Route
               path="/glitch-text-converter"
               element={<ZalgoGenerator />}
+            ></Route>
+            <Route
+              path="/vaporwave-wide-text-generator"
+              element={<WideTextGenerator />}
             ></Route>
           </Route>
         </Routes>

@@ -53,6 +53,8 @@ function CaseConvert() {
       return;
     }
 
+    currentText.length === 0 && toast.error("No files to download");
+
     setIsDownloading(true);
 
     const file = new Blob([currentText]);

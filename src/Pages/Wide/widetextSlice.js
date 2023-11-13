@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { copyTextToClipboard } from "../../Utils/copyclip";
+import vaporwaveGenerator from "vaporwave-generator";
 
 const initialState = {
   currentText: "",
@@ -21,6 +22,8 @@ const widetextSlice = createSlice({
         .split(" ")
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
+
+      state.convertedText = vaporwaveGenerator(state.currentText);
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);

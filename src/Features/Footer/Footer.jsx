@@ -154,7 +154,9 @@ function Footer() {
             <FooterLinks to={"/whitespace-remover"}>
               Whitespace Remover
             </FooterLinks>
-            <FooterLinks>Wide Text Generator</FooterLinks>
+            <FooterLinks to={"/vaporwave-wide-text-generator"}>
+              Wide Text Generator
+            </FooterLinks>
             <FooterLinks to={"/glitch-text-converter"}>
               Zalgo Glitch Text Generator
             </FooterLinks>

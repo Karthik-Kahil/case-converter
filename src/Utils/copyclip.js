@@ -1,6 +1,4 @@
 export async function copyTextToClipboard(text) {
-  // Remove HTML tags from the text
-
   const plainText = text.replace(/<[^>]*>/g, "");
 
   if ("clipboard" in navigator) {
