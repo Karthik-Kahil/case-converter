@@ -10,6 +10,7 @@ import {
   lowerCase,
   sentenceCase,
   textLoader,
+  titleCase,
   upperCase,
 } from "./ConvertSlice";
 import CaseInformation from "./CaseInformation";
@@ -80,7 +81,7 @@ function CaseConvert() {
         <Button onClick={() => dispatch(alternatingCase())}>
           aLtErNaTiNg cAsE
         </Button>
-        <Button>Title Case</Button>
+        <Button onClick={() => dispatch(titleCase())}>Title Case</Button>
         <Button onClick={() => dispatch(inverseCase())}>InVeRsE CaSe</Button>
         <Button onClick={copiedSucessfully}>Copy to Clipboard</Button>
         <Toaster />

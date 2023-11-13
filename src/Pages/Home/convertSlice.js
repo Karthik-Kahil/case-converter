@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { copyTextToClipboard } from "../../Utils/copyclip";
+import { titleCase as titleConverter } from "title-case";
 
 const initialState = {
   currentText: "",
@@ -56,6 +57,9 @@ const convertslice = createSlice({
         .join("");
       state.currentText = sentence;
     },
+    titleCase(state) {
+      state.currentText = titleConverter(state.currentText);
+    },
     clear(state) {
       state.currentText = "";
     },
@@ -71,6 +75,7 @@ export const {
   alternatingCase,
   copyClipBoard,
   inverseCase,
+  titleCase,
   clear,
 } = convertslice.actions;
 

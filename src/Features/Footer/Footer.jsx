@@ -145,7 +145,9 @@ function Footer() {
             <FooterLinks to={"/superscript-generator"}>
               Superscript Generator
             </FooterLinks>
-            <FooterLinks>Title Case Converter</FooterLinks>
+            <FooterLinks to={"/title-case-converter"}>
+              Title Case Converter
+            </FooterLinks>
             <FooterLinks>Underline Text Generator</FooterLinks>
             <FooterLinks>Unicode Text Converter</FooterLinks>
             <FooterLinks>Whitespace Remover</FooterLinks>

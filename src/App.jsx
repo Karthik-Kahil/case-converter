@@ -15,6 +15,7 @@ import InvisibleGenerator from "./Pages/Invisible/InvisibleGenerator";
 import TinyText from "./Pages/TinyText/TinyText";
 import StrikeThroughConvert from "./Pages/Strikethrough/StrikeThroughConvert";
 import SuperScriptConvert from "./Pages/SuperScript/SuperScriptConvert";
+import TitleCaseConverter from "./Pages/TitleCase/TitleCaseConverter";
 
 function App() {
   return (
@@ -67,6 +68,10 @@ function App() {
             <Route
               path="/superscript-generator"
               element={<SuperScriptConvert />}
+            ></Route>
+            <Route
+              path="/title-case-converter"
+              element={<TitleCaseConverter />}
             ></Route>
           </Route>
         </Routes>

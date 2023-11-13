@@ -23,6 +23,7 @@
     "styled-components": "^6.1.0",
     "superscript-text": "^1.0.0",
     "tiny-text": "^1.0.1",
+    "title-case": "^4.1.2",
     "zalgo-js": "^1.0.0",
     "zalgo-text": "^1.0.0"
   },
