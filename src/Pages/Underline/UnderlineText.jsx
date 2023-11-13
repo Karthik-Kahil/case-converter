@@ -7,14 +7,14 @@ import TextOutput from "../../UI/TextOutput";
 import WordsCounter from "../../Features/Counter/WordsCounter";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { copyClipBoard, currentTextLoader } from "./titlecaseSlice";
 import { saveAs } from "file-saver";
+import { copyClipBoard, currentTextLoader } from "./underlineSlice";
 
-function TitleCaseConverter() {
+function UnderlineText() {
   const dispatch = useDispatch();
   const [isDownloading, setIsDownloading] = useState(false);
   const { currentText, convertedText, charactersCount, wordCount, lineCount } =
-    useSelector((select) => select.titleSlice);
+    useSelector((select) => select.underlineSlice);
 
   const textHandler = (e) => {
     dispatch(currentTextLoader(e.target.value));
@@ -44,6 +44,7 @@ function TitleCaseConverter() {
 
     setIsDownloading(false);
   };
+
   return (
     <div onKeyDown={keyPressHandler}>
       <StyledBox>
@@ -77,4 +78,4 @@ function TitleCaseConverter() {
   );
 }
 
-export default TitleCaseConverter;
+export default UnderlineText;

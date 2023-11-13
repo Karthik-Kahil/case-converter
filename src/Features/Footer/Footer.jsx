@@ -148,7 +148,9 @@ function Footer() {
             <FooterLinks to={"/title-case-converter"}>
               Title Case Converter
             </FooterLinks>
-            <FooterLinks>Underline Text Generator</FooterLinks>
+            <FooterLinks to={"/underline-text"}>
+              Underline Text Generator
+            </FooterLinks>
             <FooterLinks>Unicode Text Converter</FooterLinks>
             <FooterLinks>Whitespace Remover</FooterLinks>
             <FooterLinks>Wide Text Generator</FooterLinks>

@@ -4,6 +4,7 @@ import { titleCase as titleConverter } from "title-case";
 
 const initialState = {
   currentText: "",
+  convertedText: "",
   charactersCount: 0,
   wordCount: 0,
   lineCount: 0,
@@ -22,7 +23,16 @@ const titlecaseSlice = createSlice({
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
 
-      state.convertedText = titleConverter(state.currentText);
+      //   state.convertedText = titleConverter(
+      //     state.currentText
+      //       .split(" ")
+      //       .map((letter) => (letter === "/\n/" && "/\n/") || letter)
+      //   );
+      state.convertedText = state.currentText
+        .split("\n")
+        .map((letter) => titleConverter(letter))
+        .join("<br>\n");
+      console.log(state.currentText.split("\n").join("\n"));
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);

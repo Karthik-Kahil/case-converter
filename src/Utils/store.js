@@ -13,6 +13,7 @@ import tinySlice from "../Pages/TinyText/tinySlice";
 import strikethroughSlice from "../Pages/Strikethrough/strikethroughSlice";
 import superSlice from "../Pages/SuperScript/superSlice";
 import titlecaseSlice from "../Pages/TitleCase/titlecaseSlice";
+import underlineSlice from "../Pages/Underline/underlineSlice";
 
 const store = configureStore({
   reducer: {
@@ -30,6 +31,7 @@ const store = configureStore({
     strikeThrough: strikethroughSlice,
     superSlice: superSlice,
     titleSlice: titlecaseSlice,
+    underlineSlice: underlineSlice,
   },
 });
 

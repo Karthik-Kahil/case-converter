@@ -16,6 +16,7 @@ import TinyText from "./Pages/TinyText/TinyText";
 import StrikeThroughConvert from "./Pages/Strikethrough/StrikeThroughConvert";
 import SuperScriptConvert from "./Pages/SuperScript/SuperScriptConvert";
 import TitleCaseConverter from "./Pages/TitleCase/TitleCaseConverter";
+import UnderlineSlice from "./Pages/Underline/underlineSlice";
 
 function App() {
   return (
@@ -73,6 +74,7 @@ function App() {
               path="/title-case-converter"
               element={<TitleCaseConverter />}
             ></Route>
+            <Route path="/underline-text" element={<UnderlineSlice />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
