@@ -15,6 +15,16 @@ const underlineSlice = createSlice({
   reducers: {
     currentTextLoader(state, action) {
       state.currentText = action.payload;
+
+      state.charactersCount = action.payload.split("").length;
+      state.wordCount = action.payload
+        .split(" ")
+        .filter((word) => word !== "").length;
+      state.lineCount = action.payload.split(/\n/).length;
+
+      state.convertedText = state.currentText
+        .split("")
+        .map((letter) => `${letter}\u0332`);
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);

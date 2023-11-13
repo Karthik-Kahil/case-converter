@@ -23,11 +23,6 @@ const titlecaseSlice = createSlice({
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
 
-      //   state.convertedText = titleConverter(
-      //     state.currentText
-      //       .split(" ")
-      //       .map((letter) => (letter === "/\n/" && "/\n/") || letter)
-      //   );
       state.convertedText = state.currentText
         .split("\n")
         .map((letter) => titleConverter(letter))
