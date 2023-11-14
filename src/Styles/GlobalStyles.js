@@ -49,6 +49,8 @@ const GlobalStyles = createGlobalStyle`
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth;
 }
 
 body {
@@ -134,6 +136,7 @@ img {
   /* For dark mode */
   filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
 }
+
 
 
 `;

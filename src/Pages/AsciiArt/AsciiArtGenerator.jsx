@@ -58,7 +58,7 @@ function AsciiArtGenerator() {
         </HeaderText>
         <Toaster />
         <UploadInput
-          accept={".png, .jpg"}
+          accept={".png, .jpg, .gif"}
           placeHolder={"Drag & drop an image here or click to upload"}
         />
         <StyledTwoGrid>

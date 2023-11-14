@@ -67,14 +67,54 @@ const StylePara = styled.p`
 
 const titleNames = [
   {
-    pathName: "/bold-text-generater",
-    linkName: "Bold text generater",
-    titleName: "Bold text generater",
-  },
-  {
     pathName: "/cursed-text-tool",
     linkName: "Cursed Text Generater",
     titleName: "Cursed Text Generater",
+  },
+  {
+    pathName: "/invisible-text-generator",
+    linkName: "Invisible text generator",
+    titleName: "Invisible text generator",
+  },
+  {
+    pathName: "/tiny-text-generator",
+    linkName: "Tiny text generator",
+    titleName: "Tiny text generator",
+  },
+  {
+    pathName: "/strikethrough-text-generator",
+    linkName: "Strikethrough text generator",
+    titleName: "Strikethrough text generator",
+  },
+  {
+    pathName: "/superscript-generator",
+    linkName: "Superscript generator",
+    titleName: "Superscript generator",
+  },
+  {
+    pathName: "/title-case-converter",
+    linkName: "Title case converter",
+    titleName: "Title case converter",
+  },
+  {
+    pathName: "/underline-text",
+    linkName: "Underline text",
+    titleName: "Underline text",
+  },
+  {
+    pathName: "/whitespace-remover",
+    linkName: "Whitespace remover",
+    titleName: "Whitespace remover",
+  },
+  {
+    pathName: "/vaporwave-wide-text-generator",
+    linkName: "Wide text generator",
+    titleName: "Wide text generator",
+  },
+  {
+    pathName: "/glitch-text-converter",
+    linkName: "Glitch text converter",
+    titleName: "Glitch text converter",
   },
   {
     pathName: "/binary-code-translator",
@@ -83,13 +123,13 @@ const titleNames = [
   },
   {
     pathName: "/csv-to-json",
-    linkName: "csv to json",
-    titleName: "csv to json",
+    linkName: "CSV to JSON",
+    titleName: "CSV to JSON",
   },
   {
-    pathName: "/invisible-text-generator",
-    linkName: "Invisible Text Generator",
-    titleName: "Invisible Text Generator",
+    pathName: "/ascii-art-generator",
+    linkName: "ASCII Art generator",
+    titleName: "ASCII Art generator",
   },
 ];
 
@@ -101,8 +141,10 @@ function Footer() {
       (data) => data.pathName === currentLocation.pathname
     );
 
-    document.title =
-      currentData[0]?.titleName + " | CaseMorph Pro" || "CaseMorph Pro";
+    if (currentData[0]?.pathName === currentLocation.pathname) {
+      document.title =
+        currentData[0]?.titleName + " | CaseMorph Pro" || "CaseMorph Pro";
+    }
   }, [currentLocation.pathname]);
 
   return (

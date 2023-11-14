@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
+    "asciify-image": "^0.1.10",
     "convert-unicode-fonts": "^1.0.1",
     "file-saver": "^2.0.5",
     "papaparse": "^5.4.1",
