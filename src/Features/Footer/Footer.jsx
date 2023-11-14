@@ -177,7 +177,9 @@ function Footer() {
             <FooterLinks>UTM Builder Generator</FooterLinks>
           </div>
           <div>
-            <FooterLinks>Ascii Art Generator</FooterLinks>
+            <FooterLinks to={"/ascii-art-generator"}>
+              Ascii Art Generator
+            </FooterLinks>
             <FooterLinks>JPG to PNG Converter</FooterLinks>
             <FooterLinks>JPG to WebP Converter</FooterLinks>
             <FooterLinks>PNG to JPG Converter</FooterLinks>

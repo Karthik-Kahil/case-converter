@@ -1,31 +1,28 @@
 import toast, { Toaster } from "react-hot-toast";
-import WordsCounter from "../../Features/Counter/WordsCounter";
 import HeaderText from "../../UI/HeaderText";
 import StyledBox from "../../UI/StyledBox";
+import UploadInput from "../../UI/UploadInput";
 import StyledTwoGrid from "../../UI/StyledTwoGrid";
-import TextOutput from "../../UI/TextOutput";
 import TextArea from "../../UI/TextArea";
+import TextOutput from "../../UI/TextOutput";
+import WordsCounter from "../../Features/Counter/WordsCounter";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { copyClipBoard, currentTextLoader } from "./asciiArtSlice";
 import { saveAs } from "file-saver";
 
-import { copyClipBoard, currentTextLoader } from "./csvtojson";
-import UploadInput from "../../UI/UploadInput";
-import CsvInformation from "./CsvInformation";
-import csvConvertCode from "../../Utils/csvCode";
-
-function CsvJson() {
+function AsciiArtGenerator() {
   const dispatch = useDispatch();
   const [isDownloading, setIsDownloading] = useState(false);
   const { currentText, convertedText, charactersCount, wordCount, lineCount } =
-    useSelector((select) => select.csvConvert);
+    useSelector((select) => select.asciiSlice);
 
   const textHandler = (e) => {
     dispatch(currentTextLoader(e.target.value));
   };
 
   const copiedSucessfully = () => {
-    (convertedText.length > 0 && toast.success("Copied to clipboard")) ||
+    (currentText.length > 0 && toast.success("Copied to clipboard")) ||
       toast.error("Please enter some text to copy");
 
     dispatch(copyClipBoard());
@@ -44,8 +41,7 @@ function CsvJson() {
     setIsDownloading(true);
 
     const file = new Blob([convertedText]);
-    (convertedText.length > 0 && saveAs(file, "CaseMorph_csv_to_json.json")) ||
-      toast.error("No files to download");
+    currentText.length > 0 && saveAs(file, "CaseMorph_Mirror_Convert.txt");
 
     setIsDownloading(false);
   };
@@ -54,19 +50,16 @@ function CsvJson() {
     <div onKeyDown={keyPressHandler}>
       <StyledBox>
         <HeaderText>
-          <h3>Convert CSV to JSON and JSON to CSV</h3>
+          <h3>Ascii Generator - Text to Image Generator</h3>
           <p>
-            This is a simple tool that allows you to convert CSV to JSON and
-            vice versa JSON to CSV as well. Simply copy and paste your code into
-            the corresponding field and see it get converted back in the next
-            field.
+            Looking for a handy online tool that can convert your picture and
+            art to ascii? Then use this simple tool just below.
           </p>
         </HeaderText>
         <Toaster />
         <UploadInput
-          accept={".csv,.xlsx,.xls"}
-          placeHolder={"Drag & drop a CSV file here or click to upload"}
-          convertLoader={csvConvertCode}
+          accept={".png, .jpg"}
+          placeHolder={"Drag & drop an image here or click to upload"}
         />
         <StyledTwoGrid>
           <TextArea textHandler={textHandler} currentText={currentText} />
@@ -75,7 +68,6 @@ function CsvJson() {
             currentText={convertedText}
             copiedSucessfully={copiedSucessfully}
             handleDownload={handleDownload}
-            downloadBtn={"Download JSON"}
             isTextArea={true}
           />
         </StyledTwoGrid>
@@ -85,9 +77,9 @@ function CsvJson() {
           lineCount={lineCount}
         />
       </StyledBox>
-      <CsvInformation />
+      {/* <CsvInformation /> */}
     </div>
   );
 }
 
-export default CsvJson;
+export default AsciiArtGenerator;

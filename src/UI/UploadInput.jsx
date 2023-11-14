@@ -1,9 +1,7 @@
 /* eslint-disable react/prop-types */
-import Papa from "papaparse";
-import toast from "react-hot-toast";
+
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { convertedTextLoader, currentTextLoader } from "../Pages/CSV/csvtojson";
 import Loader from "../Features/Loader/Loader";
 import { useState } from "react";
 
@@ -44,53 +42,24 @@ const StyledOuter = styled.div`
   }
 `;
 
-function UploadInput() {
+function UploadInput({ accept, placeHolder, convertLoader }) {
   const dispatch = useDispatch();
   const [loader, setLoader] = useState(false);
 
   const csvDrop = (e) => {
     setLoader(true);
-    const file = e.target.files[0]; // Get the selected file
-    if (file && file.type !== "text/csv")
-      toast.error("Please upload files in .csv format");
 
-    const reader = new FileReader(); // Create a FileReader
-
-    if (file && file.type === "text/csv")
-      reader.onload = function (e) {
-        setLoader(false);
-        const fileContent = e.target.result; // Get the file content
-        dispatch(currentTextLoader(fileContent));
-      };
-
-    reader.readAsText(file); // Read the file as text
-
-    Papa.parse(file, {
-      header: true, // Use the first row as the header
-      skipEmptyLines: true,
-      complete: (result) => {
-        if (result.data.length > 0) {
-          dispatch(convertedTextLoader(result.data));
-        } else {
-          toast.error("CSV file is empty.");
-        }
-      },
-      error: (error) => {
-        toast(`Error parsing CSV: ${error.message}`, {
-          duration: 2000,
-        });
-      },
-    });
+    convertLoader({ setLoader, dispatch }, e);
   };
 
   return (
     <>
       <StyledOuter>
         <div className="dragBox">
-          Drag & drop a CSV file here or click to upload
+          {placeHolder}
           <input
             type="file"
-            accept=".csv,.xlsx,.xls"
+            accept={accept}
             onChange={csvDrop}
             disabled={loader}
           />

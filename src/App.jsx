@@ -20,6 +20,7 @@ import UnderlineText from "./Pages/Underline/UnderlineText";
 import WhitespaceRemover from "./Pages/Whitespace/WhitespaceRemover";
 import ZalgoGenerator from "./Pages/Zalgo/ZalgoGenerator";
 import WideTextGenerator from "./Pages/Wide/WideTextGenerator";
+import AsciiArtGenerator from "./Pages/AsciiArt/AsciiArtGenerator";
 
 function App() {
   return (
@@ -89,6 +90,10 @@ function App() {
             <Route
               path="/vaporwave-wide-text-generator"
               element={<WideTextGenerator />}
+            ></Route>
+            <Route
+              path="/ascii-art-generator"
+              element={<AsciiArtGenerator />}
             ></Route>
           </Route>
         </Routes>
