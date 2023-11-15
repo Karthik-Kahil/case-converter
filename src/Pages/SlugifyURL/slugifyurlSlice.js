@@ -9,8 +9,8 @@ const initialState = {
   lineCount: 0,
 };
 
-const jsonstringSlice = createSlice({
-  name: "jsonstringSlice",
+const slugifyurlSlice = createSlice({
+  name: "slugifyurlSlice",
   initialState,
   reducers: {
     currentTextLoader(state, action) {
@@ -21,11 +21,6 @@ const jsonstringSlice = createSlice({
         .split(" ")
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
-
-      const parsedJSON = JSON.parse(state.currentText);
-      const formattedJSONString = JSON.stringify(parsedJSON, null, 2);
-
-      state.convertedText = formattedJSONString;
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);
@@ -33,6 +28,6 @@ const jsonstringSlice = createSlice({
   },
 });
 
-export const { currentTextLoader, copyClipBoard } = jsonstringSlice.actions;
+export const { currentTextLoader, copyClipBoard } = slugifyurlSlice.actions;
 
-export default jsonstringSlice.reducer;
+export default slugifyurlSlice.reducer;

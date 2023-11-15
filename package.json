@@ -24,6 +24,7 @@
     "react-icons": "^4.11.0",
     "react-redux": "^8.1.3",
     "react-router-dom": "^6.17.0",
+    "slugify": "^1.6.6",
     "styled-components": "^6.1.0",
     "superscript-text": "^1.0.0",
     "tiny-text": "^1.0.1",

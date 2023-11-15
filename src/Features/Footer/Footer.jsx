@@ -136,6 +136,11 @@ const titleNames = [
     linkName: "Hex to Text",
     titleName: "Hex to Text",
   },
+  {
+    pathName: "/json-stringify-text",
+    linkName: "JSON Stringify",
+    titleName: "JSON Stringify",
+  },
 ];
 
 function Footer() {
@@ -223,7 +228,9 @@ function Footer() {
               JSON Stringify Text Generator
             </FooterLinks>
             <FooterLinks>Morse Code Translator</FooterLinks>
-            <FooterLinks>Slugify URL Generator</FooterLinks>
+            <FooterLinks to={"/slugify-url-handle-generator"}>
+              Slugify URL Generator
+            </FooterLinks>
             <FooterLinks>UTF-8 Encoder/Decoder</FooterLinks>
             <FooterLinks>UTM Builder Generator</FooterLinks>
           </div>

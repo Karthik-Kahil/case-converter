@@ -23,6 +23,7 @@ import WideTextGenerator from "./Pages/Wide/WideTextGenerator";
 import AsciiArtGenerator from "./Pages/AsciiArt/AsciiArtGenerator";
 import HextoText from "./Pages/HextoText/HextoText";
 import JsonString from "./Pages/JSONtoString/JsonString";
+import SlugifyUrl from "./Pages/SlugifyURL/SlugifyUrl";
 
 function App() {
   return (
@@ -102,6 +103,10 @@ function App() {
               element={<HextoText />}
             ></Route>
             <Route path="/json-stringify-text" element={<JsonString />}></Route>
+            <Route
+              path="/slugify-url-handle-generator"
+              element={<SlugifyUrl />}
+            ></Route>
           </Route>
         </Routes>
       </BrowserRouter>
