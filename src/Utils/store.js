@@ -18,6 +18,8 @@ import whitespaceSlice from "../Pages/Whitespace/whitespaceSlice";
 import zalgoSlice from "../Pages/Zalgo/zalgoSlice";
 import widetextSlice from "../Pages/Wide/widetextSlice";
 import asciiArtSlice from "../Pages/AsciiArt/asciiArtSlice";
+import hextextSlice from "../Pages/HextoText/hextextSlice";
+import jsonstringSlice from "../Pages/JSONtoString/jsonstringSlice";
 
 const store = configureStore({
   reducer: {
@@ -40,6 +42,8 @@ const store = configureStore({
     zalgoSlice: zalgoSlice,
     wideSlice: widetextSlice,
     asciiSlice: asciiArtSlice,
+    hextextSlice: hextextSlice,
+    jsonStringSlice: jsonstringSlice,
   },
 });
 

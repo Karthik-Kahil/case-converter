@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { copyTextToClipboard } from "../../Utils/copyclip";
-import { textToBinary } from "../../Utils/binaryCode";
 
 const initialState = {
   currentText: "",
@@ -10,8 +9,8 @@ const initialState = {
   lineCount: 0,
 };
 
-const binarySlice = createSlice({
-  name: "binarySlice",
+const hextextSlice = createSlice({
+  name: "hextextSlice",
   initialState,
   reducers: {
     currentTextLoader(state, action) {
@@ -23,15 +22,24 @@ const binarySlice = createSlice({
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
 
-      state.convertedText = textToBinary(state.currentText);
+      const stringToHex = (str) => {
+        let hex = [];
+        for (let i = 0; i < str.length; i++) {
+          const hexCharCode = str.charCodeAt(i).toString(16);
+          hex.push(hexCharCode.length === 1 ? "0" + hexCharCode : hexCharCode);
+        }
+        return hex.join(" ");
+      };
+
+      state.convertedText = stringToHex(state.currentText);
     },
+
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);
     },
   },
 });
 
-export const { currentTextLoader, convertedTextLoader, copyClipBoard } =
-  binarySlice.actions;
+export const { currentTextLoader, copyClipBoard } = hextextSlice.actions;
 
-export default binarySlice.reducer;
+export default hextextSlice.reducer;

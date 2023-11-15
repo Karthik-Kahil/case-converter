@@ -131,6 +131,11 @@ const titleNames = [
     linkName: "ASCII Art generator",
     titleName: "ASCII Art generator",
   },
+  {
+    pathName: "/hex-to-text-converter",
+    linkName: "Hex to Text",
+    titleName: "Hex to Text",
+  },
 ];
 
 function Footer() {
@@ -211,8 +216,12 @@ function Footer() {
               Binary Code Translator
             </FooterLinks>
             <FooterLinks to={"/csv-to-json"}>CSV to JSON Converter</FooterLinks>
-            <FooterLinks>Hex to Text Converter</FooterLinks>
-            <FooterLinks>JSON Stringify Text Generator</FooterLinks>
+            <FooterLinks to={"/hex-to-text-converter"}>
+              Hex to Text Converter
+            </FooterLinks>
+            <FooterLinks to={"/json-stringify-text"}>
+              JSON Stringify Text Generator
+            </FooterLinks>
             <FooterLinks>Morse Code Translator</FooterLinks>
             <FooterLinks>Slugify URL Generator</FooterLinks>
             <FooterLinks>UTF-8 Encoder/Decoder</FooterLinks>

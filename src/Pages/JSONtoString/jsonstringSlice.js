@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { copyTextToClipboard } from "../../Utils/copyclip";
-import { textToBinary } from "../../Utils/binaryCode";
 
 const initialState = {
   currentText: "",
@@ -10,8 +9,8 @@ const initialState = {
   lineCount: 0,
 };
 
-const binarySlice = createSlice({
-  name: "binarySlice",
+const jsonstringSlice = createSlice({
+  name: "jsonstringSlice",
   initialState,
   reducers: {
     currentTextLoader(state, action) {
@@ -22,8 +21,6 @@ const binarySlice = createSlice({
         .split(" ")
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
-
-      state.convertedText = textToBinary(state.currentText);
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);
@@ -31,7 +28,6 @@ const binarySlice = createSlice({
   },
 });
 
-export const { currentTextLoader, convertedTextLoader, copyClipBoard } =
-  binarySlice.actions;
+export const { currentTextLoader, copyClipBoard } = jsonstringSlice.actions;
 
-export default binarySlice.reducer;
+export default jsonstringSlice.reducer;

@@ -21,6 +21,8 @@ import WhitespaceRemover from "./Pages/Whitespace/WhitespaceRemover";
 import ZalgoGenerator from "./Pages/Zalgo/ZalgoGenerator";
 import WideTextGenerator from "./Pages/Wide/WideTextGenerator";
 import AsciiArtGenerator from "./Pages/AsciiArt/AsciiArtGenerator";
+import HextoText from "./Pages/HextoText/HextoText";
+import JsonString from "./Pages/JSONtoString/JsonString";
 
 function App() {
   return (
@@ -95,6 +97,11 @@ function App() {
               path="/ascii-art-generator"
               element={<AsciiArtGenerator />}
             ></Route>
+            <Route
+              path="/hex-to-text-converter"
+              element={<HextoText />}
+            ></Route>
+            <Route path="/json-stringify-text" element={<JsonString />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

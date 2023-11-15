@@ -1,19 +1,20 @@
 import toast, { Toaster } from "react-hot-toast";
 import HeaderText from "../../UI/HeaderText";
 import StyledBox from "../../UI/StyledBox";
-import UploadInput from "../../UI/UploadInput";
+import StyledTwoGrid from "../../UI/StyledTwoGrid";
 import TextOutput from "../../UI/TextOutput";
+import TextArea from "../../UI/TextArea";
 import WordsCounter from "../../Features/Counter/WordsCounter";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { copyClipBoard, currentTextLoader } from "./asciiArtSlice";
 import { saveAs } from "file-saver";
+import { copyClipBoard, currentTextLoader } from "./jsonstringSlice";
 
-function AsciiArtGenerator() {
+function JsonString() {
   const dispatch = useDispatch();
   const [isDownloading, setIsDownloading] = useState(false);
   const { currentText, convertedText, charactersCount, wordCount, lineCount } =
-    useSelector((select) => select.asciiSlice);
+    useSelector((select) => select.jsonStringSlice);
 
   const textHandler = (e) => {
     dispatch(currentTextLoader(e.target.value));
@@ -48,35 +49,32 @@ function AsciiArtGenerator() {
     <div onKeyDown={keyPressHandler}>
       <StyledBox>
         <HeaderText>
-          <h3>Ascii Generator - Text to Image Generator</h3>
+          <h3>JSON Stringify Text Generator</h3>
           <p>
-            Looking for a handy online tool that can convert your picture and
-            art to ascii? Then use this simple tool just below.
+            This tool helps you produce JSON Stringify text. Simply enter your
+            normal text in the left panel and then see it generated for you to
+            copy and paste in the next panel.
           </p>
         </HeaderText>
         <Toaster />
-
-        <UploadInput
-          accept={".png, .jpg, .gif"}
-          placeHolder={"Drag & drop an image here or click to upload"}
-        />
-
-        <TextOutput
-          textSelection={false}
-          currentText={convertedText}
-          copiedSucessfully={copiedSucessfully}
-          handleDownload={handleDownload}
-          isTextArea={true}
-        />
+        <StyledTwoGrid>
+          <TextArea textHandler={textHandler} />
+          <TextOutput
+            textSelection={false}
+            currentText={convertedText}
+            copiedSucessfully={copiedSucessfully}
+            handleDownload={handleDownload}
+          />
+        </StyledTwoGrid>
         <WordsCounter
           charactersCount={charactersCount}
           wordCount={wordCount}
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <CsvInformation /> */}
+      {/* <MirrorInformation /> */}
     </div>
   );
 }
 
-export default AsciiArtGenerator;
+export default JsonString;
