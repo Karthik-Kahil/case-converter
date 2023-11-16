@@ -21,6 +21,14 @@ const slugifyurlSlice = createSlice({
         .split(" ")
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
+
+      // const generateSlug = (text) => {
+      //   return slugify(text, {
+      //     lower: true, // Convert to lowercase
+      //     remove: /[*+~.()'"!:@]/g, // Remove special characters
+      //   });
+      // };
+      // state.convertedText = generateSlug(state.currentText);
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);

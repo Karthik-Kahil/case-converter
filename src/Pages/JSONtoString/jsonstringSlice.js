@@ -9,6 +9,16 @@ const initialState = {
   lineCount: 0,
 };
 
+const escapeSpecialChars = (value) => {
+  return value
+    .replace(/\\/g, "\\\\")
+    .replace(/\n/g, "\\n")
+    .replace(/\r/g, "\\r")
+    .replace(/\t/g, "\\t")
+    .replace(/\f/g, "\\f")
+    .replace(/"/g, '\\"');
+};
+
 const jsonstringSlice = createSlice({
   name: "jsonstringSlice",
   initialState,
@@ -22,10 +32,10 @@ const jsonstringSlice = createSlice({
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
 
-      const parsedJSON = JSON.parse(state.currentText);
-      const formattedJSONString = JSON.stringify(parsedJSON, null, 2);
+      //   const parsedJSON = JSON.parse(state.currentText);
+      //   const formattedJSONString = JSON.stringify(parsedJSON, null, 2);
 
-      state.convertedText = formattedJSONString;
+      state.convertedText = escapeSpecialChars(state.currentText);
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);

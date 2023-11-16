@@ -23,7 +23,8 @@ import WideTextGenerator from "./Pages/Wide/WideTextGenerator";
 import AsciiArtGenerator from "./Pages/AsciiArt/AsciiArtGenerator";
 import HextoText from "./Pages/HextoText/HextoText";
 import JsonString from "./Pages/JSONtoString/JsonString";
-import SlugifyUrl from "./Pages/SlugifyURL/SlugifyUrl";
+import SlugifyUrl from "./Pages/Slugify/SlugifyUrl";
+import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -107,6 +108,8 @@ function App() {
               path="/slugify-url-handle-generator"
               element={<SlugifyUrl />}
             ></Route>
+
+            <Route path="*" element={<PageNotFound />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -141,6 +141,11 @@ const titleNames = [
     linkName: "JSON Stringify",
     titleName: "JSON Stringify",
   },
+  {
+    pathName: "/slugify-url-handle-generator",
+    linkName: "Slugify URL generator",
+    titleName: "Slugify URL generator",
+  },
 ];
 
 function Footer() {

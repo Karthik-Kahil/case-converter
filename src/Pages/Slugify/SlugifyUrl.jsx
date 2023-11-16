@@ -14,7 +14,7 @@ function SlugifyUrl() {
   const dispatch = useDispatch();
   const [isDownloading, setIsDownloading] = useState(false);
   const { currentText, convertedText, charactersCount, wordCount, lineCount } =
-    useSelector((select) => select.jsonStringSlice);
+    useSelector((select) => select.slugifySlice);
 
   const textHandler = (e) => {
     dispatch(currentTextLoader(e.target.value));
@@ -52,10 +52,10 @@ function SlugifyUrl() {
           <h3>Slugify URL Generator</h3>
           <p>
             A tool for creating clean, readable, and search engine-friendly
-            URLs. As a website owner, blogger, or marketer, you'll appreciate
-            the simplicity of transforming long and complex URLs into short and
-            easy-to-read versions. Get started now to improve user experience
-            and SEO on your website.
+            URLs. As a website owner, blogger, or marketer, you&rsquo;ll
+            appreciate the simplicity of transforming long and complex URLs into
+            short and easy-to-read versions. Get started now to improve user
+            experience and SEO on your website.
           </p>
         </HeaderText>
         <Toaster />

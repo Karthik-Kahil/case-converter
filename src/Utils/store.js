@@ -20,6 +20,7 @@ import widetextSlice from "../Pages/Wide/widetextSlice";
 import asciiArtSlice from "../Pages/AsciiArt/asciiArtSlice";
 import hextextSlice from "../Pages/HextoText/hextextSlice";
 import jsonstringSlice from "../Pages/JSONtoString/jsonstringSlice";
+import slugifyurlSlice from "../Pages/Slugify/slugifyurlSlice";
 
 const store = configureStore({
   reducer: {
@@ -44,6 +45,7 @@ const store = configureStore({
     asciiSlice: asciiArtSlice,
     hextextSlice: hextextSlice,
     jsonStringSlice: jsonstringSlice,
+    slugifySlice: slugifyurlSlice,
   },
 });
 
