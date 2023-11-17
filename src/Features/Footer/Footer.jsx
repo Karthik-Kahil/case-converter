@@ -63,6 +63,10 @@ const StylePara = styled.p`
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 5rem;
+
+  a {
+    text-decoration: underline;
+  }
 `;
 
 const titleNames = [
@@ -267,7 +271,10 @@ function Footer() {
         </ul>
       </StyledFooter>
       <StylePara>
-        CaseMorph Pro | Concept by Karthik Kahil | Inspiration from Convert Case
+        CaseMorph Pro | Created by{" "}
+        <a href="https://karthikkahil.in/" target={"_blank"} rel="noreferrer">
+          karthik Kahil
+        </a>{" "}
         | <a href="#">Site Map</a> | Theme: Auto
       </StylePara>
     </>

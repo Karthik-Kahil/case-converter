@@ -3,6 +3,8 @@ import NavBar from "./Features/Navbar/NavBar";
 import styled from "styled-components";
 import Footer from "./Features/Footer/Footer";
 import Logo from "./UI/Logo";
+import QuickSearch from "./UI/QuickSearch";
+import { useState } from "react";
 
 const StyledMain = styled.main`
   padding: 0 5%;
@@ -15,8 +17,18 @@ const StyledDiv = styled.div`
 `;
 
 function AppLayout() {
+  const [searchShow, setSearchShow] = useState(false);
+
+  const keyPressHandler = (e) => {
+    console.log(e.key);
+    if ((e.metaKey || e.ctrlKey) && e.key === "/")
+      setSearchShow((show) => !show);
+    if (e.key === "Escape") setSearchShow((show) => !show);
+  };
+
   return (
-    <StyledDiv>
+    <StyledDiv onKeyDown={keyPressHandler}>
+      {searchShow && <QuickSearch />}
       <Logo />
       <NavBar />
       <StyledMain>
