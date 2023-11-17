@@ -41,6 +41,10 @@ function TextOutput({
   isDownloading,
   downloadBtn,
   isTextArea,
+  playButton,
+  playFunc,
+  playText,
+  pauseFunc,
 }) {
   const dispatch = useDispatch();
   const fonts = getFonts();
@@ -65,6 +69,16 @@ function TextOutput({
       )}
       {isTextArea && <textarea defaultValue={currentText}></textarea>}
       {textSelection && <TextSelection />}
+      {playButton && (
+        <Button
+          onClick={() =>
+            (currentText && playText === "Play" && dispatch(playFunc())) ||
+            (playText === "Stop" && dispatch(pauseFunc()))
+          }
+        >
+          {playText}
+        </Button>
+      )}
       <Button onClick={handleDownload} disabled={isDownloading}>
         {downloadBtn || "Download Text"}
       </Button>

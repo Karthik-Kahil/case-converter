@@ -25,6 +25,7 @@ import HextoText from "./Pages/HextoText/HextoText";
 import JsonString from "./Pages/JSONtoString/JsonString";
 import SlugifyUrl from "./Pages/Slugify/SlugifyUrl";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
+import MorseCodeGenerator from "./Pages/MorseGenerator/MorseCodeGenerator";
 
 function App() {
   return (
@@ -107,6 +108,10 @@ function App() {
             <Route
               path="/slugify-url-handle-generator"
               element={<SlugifyUrl />}
+            ></Route>
+            <Route
+              path="/morse-code-translator"
+              element={<MorseCodeGenerator />}
             ></Route>
 
             <Route path="*" element={<PageNotFound />}></Route>

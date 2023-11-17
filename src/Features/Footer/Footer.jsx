@@ -146,6 +146,11 @@ const titleNames = [
     linkName: "Slugify URL generator",
     titleName: "Slugify URL generator",
   },
+  {
+    pathName: "/morse-code-translator",
+    linkName: "Morse code translator",
+    titleName: "Morse code translator",
+  },
 ];
 
 function Footer() {
@@ -232,7 +237,9 @@ function Footer() {
             <FooterLinks to={"/json-stringify-text"}>
               JSON Stringify Text Generator
             </FooterLinks>
-            <FooterLinks>Morse Code Translator</FooterLinks>
+            <FooterLinks to={"/morse-code-translator"}>
+              Morse Code Translator
+            </FooterLinks>
             <FooterLinks to={"/slugify-url-handle-generator"}>
               Slugify URL Generator
             </FooterLinks>

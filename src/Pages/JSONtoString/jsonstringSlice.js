@@ -9,7 +9,7 @@ const initialState = {
   lineCount: 0,
 };
 
-const escapeSpecialChars = (value) => {
+const escapeSpecialCharsGen = (value) => {
   return value
     .replace(/\\/g, "\\\\")
     .replace(/\n/g, "\\n")
@@ -32,10 +32,7 @@ const jsonstringSlice = createSlice({
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
 
-      //   const parsedJSON = JSON.parse(state.currentText);
-      //   const formattedJSONString = JSON.stringify(parsedJSON, null, 2);
-
-      state.convertedText = escapeSpecialChars(state.currentText);
+      state.convertedText = `"${escapeSpecialCharsGen(state.currentText)}"`;
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);
