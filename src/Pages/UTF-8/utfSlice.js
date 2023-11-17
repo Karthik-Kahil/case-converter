@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { copyTextToClipboard } from "../../Utils/copyclip";
-import slugify from "slugify";
+import unicodeToJsEscape from "unicode-escape";
 
 const initialState = {
   currentText: "",
@@ -10,8 +10,8 @@ const initialState = {
   lineCount: 0,
 };
 
-const slugifyurlSlice = createSlice({
-  name: "slugifyurlSlice",
+const utfSlice = createSlice({
+  name: "utfSlice",
   initialState,
   reducers: {
     currentTextLoader(state, action) {
@@ -23,7 +23,7 @@ const slugifyurlSlice = createSlice({
         .filter((word) => word !== "").length;
       state.lineCount = action.payload.split(/\n/).length;
 
-      state.convertedText = slugify(state.currentText);
+      state.convertedText = unicodeToJsEscape(state.currentText);
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);
@@ -31,6 +31,6 @@ const slugifyurlSlice = createSlice({
   },
 });
 
-export const { currentTextLoader, copyClipBoard } = slugifyurlSlice.actions;
+export const { currentTextLoader, copyClipBoard } = utfSlice.actions;
 
-export default slugifyurlSlice.reducer;
+export default utfSlice.reducer;

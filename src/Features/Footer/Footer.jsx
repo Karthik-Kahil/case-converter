@@ -151,6 +151,11 @@ const titleNames = [
     linkName: "Morse code translator",
     titleName: "Morse code translator",
   },
+  {
+    pathName: "/utf8-encoding",
+    linkName: "UTF-8 Encode & Decode",
+    titleName: "UTF-8 Encode & Decode",
+  },
 ];
 
 function Footer() {
@@ -243,7 +248,9 @@ function Footer() {
             <FooterLinks to={"/slugify-url-handle-generator"}>
               Slugify URL Generator
             </FooterLinks>
-            <FooterLinks>UTF-8 Encoder/Decoder</FooterLinks>
+            <FooterLinks to={"/utf8-encoding"}>
+              UTF-8 Encoder/Decoder
+            </FooterLinks>
             <FooterLinks>UTM Builder Generator</FooterLinks>
           </div>
           <div>
