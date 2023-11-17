@@ -28,7 +28,7 @@ function AppLayout() {
 
   return (
     <StyledDiv onKeyDown={keyPressHandler}>
-      {searchShow && <QuickSearch />}
+      {searchShow && <QuickSearch setSearchShow={setSearchShow} />}
       <Logo />
       <NavBar />
       <StyledMain>

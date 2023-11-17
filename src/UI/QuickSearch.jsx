@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import searchDataList from "./quickSearchData";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -19,6 +20,7 @@ const StyledDiv = styled.div`
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.2s ease-in;
 
   input {
     position: fixed;
@@ -53,7 +55,7 @@ const StyledLink = styled(Link)`
   }
 
   li:hover {
-    background-color: red;
+    color: #748e63;
     background-color: #f5eec8;
   }
 
@@ -62,25 +64,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const searchDataList = [
-  {
-    key: crypto.randomUUID(),
-    searchName: "utf-8",
-    dataURL: "/utf8-encoding",
-  },
-  {
-    key: crypto.randomUUID(),
-    searchName: "binary-code",
-    dataURL: "/binary-code-translator",
-  },
-  {
-    key: crypto.randomUUID(),
-    searchName: "duplicate-line-remover",
-    dataURL: "/duplicate-line-remover",
-  },
-];
-
-function QuickSearch() {
+function QuickSearch({ setSearchShow }) {
   const [searchData, setSearchData] = useState([]);
 
   const searchHandler = (e) => {
@@ -95,8 +79,12 @@ function QuickSearch() {
     );
   };
 
+  const closeHandler = () => {
+    setSearchShow((toggle) => !toggle);
+  };
+
   return (
-    <StyledDiv>
+    <StyledDiv onClick={closeHandler}>
       <input
         type="search"
         autoFocus={true}
