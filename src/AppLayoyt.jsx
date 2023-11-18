@@ -20,7 +20,6 @@ function AppLayout() {
   const [searchShow, setSearchShow] = useState(false);
 
   const keyPressHandler = (e) => {
-    console.log(e.key);
     if ((e.metaKey || e.ctrlKey) && e.key === "/")
       setSearchShow((show) => !show);
     if (e.key === "Escape") setSearchShow((show) => !show);

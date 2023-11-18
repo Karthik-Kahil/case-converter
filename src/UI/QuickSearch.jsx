@@ -4,6 +4,17 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import searchDataList from "./quickSearchData";
 
+const StyledOverlay = styled.div`
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+`;
+
 const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,12 +25,7 @@ const StyledDiv = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+
   transition: all 0.2s ease-in;
 
   input {
@@ -32,7 +38,20 @@ const StyledDiv = styled.div`
     width: 70%;
     height: 50px;
     background-color: #445c48;
-    color: #ffffff;
+    color: #f5eec8;
+    font-size: 2rem;
+  }
+
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  ::placeholder {
+    color: #f5eec8;
+    opacity: 1;
   }
 `;
 
@@ -42,6 +61,8 @@ const StyledList = styled.div`
   background-color: #748e63;
   color: #ffffff;
   width: 70%;
+  max-height: 400px;
+  overflow: scroll;
   margin: 20px auto;
   border-radius: 10px 10px 10px 10px;
 `;
@@ -51,7 +72,7 @@ const StyledLink = styled(Link)`
 
   li {
     padding: 10px 20px;
-    border-radius: 10px 10px 10px 10px;
+    border-bottom: 1px solid #f5eec81b !important;
   }
 
   li:hover {
@@ -84,11 +105,12 @@ function QuickSearch({ setSearchShow }) {
   };
 
   return (
-    <StyledDiv onClick={closeHandler}>
+    <StyledDiv>
+      <StyledOverlay onClick={closeHandler}></StyledOverlay>
       <input
         type="search"
         autoFocus={true}
-        placeholder="Spolight Search"
+        placeholder=" Spolight Search"
         onChange={searchHandler}
       />
       <StyledList>
@@ -98,6 +120,7 @@ function QuickSearch({ setSearchShow }) {
               searchName={data.searchName}
               searchURL={data.dataURL}
               key={data.key}
+              closeHandler={closeHandler}
             />
           ))}
         </ul>
@@ -106,9 +129,9 @@ function QuickSearch({ setSearchShow }) {
   );
 }
 
-function QuickList({ searchName, searchURL }) {
+function QuickList({ searchName, searchURL, closeHandler }) {
   return (
-    <StyledLink to={searchURL}>
+    <StyledLink to={searchURL} onClick={closeHandler}>
       <li>{searchName}</li>
     </StyledLink>
   );
