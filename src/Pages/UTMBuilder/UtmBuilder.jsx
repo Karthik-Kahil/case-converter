@@ -16,8 +16,8 @@ function UtmBuilder() {
   const { currentText, convertedText, charactersCount, wordCount, lineCount } =
     useSelector((select) => select.utmBuilder);
 
-  const textHandler = (e) => {
-    dispatch(currentTextLoader(e.target.value));
+  const textHandler = (data) => {
+    dispatch(currentTextLoader(data));
   };
 
   const copiedSucessfully = () => {
@@ -62,7 +62,7 @@ function UtmBuilder() {
         <Toaster />
         <StyledTwoGrid>
           {/* <TextArea textHandler={textHandler} /> */}
-          <InputFields />
+          <InputFields textHandler={textHandler} />
           <TextOutput
             textSelection={false}
             currentText={convertedText}

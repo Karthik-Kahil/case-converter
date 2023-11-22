@@ -16,13 +16,18 @@ const utmSlice = createSlice({
     currentTextLoader(state, action) {
       state.currentText = action.payload;
 
-      state.charactersCount = action.payload.split("").length;
-      state.wordCount = action.payload
-        .split(" ")
-        .filter((word) => word !== "").length;
-      state.lineCount = action.payload.split(/\n/).length;
+      const campaignSouce = state.currentText.campaignSource;
+      const campaignMedium = state.currentText.campaignMedium;
+      const campaignName = state.currentText.campaignName;
+      const campaignTerm = state.currentText.campaignTerm;
+      const campaignContent = state.currentText.campaignContent;
 
-      state.convertedText = state.currentText;
+      const utmConverter = `${state.currentText.siteURL}${
+        campaignSouce.length > 0 ? `?utm_source=${campaignSouce}` : ""
+      }`;
+
+      state.convertedText = utmConverter;
+      console.log(state.currentText);
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);
