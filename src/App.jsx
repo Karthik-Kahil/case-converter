@@ -27,6 +27,7 @@ import SlugifyUrl from "./Pages/Slugify/SlugifyUrl";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 import MorseCodeGenerator from "./Pages/MorseGenerator/MorseCodeGenerator";
 import UtfConverter from "./Pages/UTF-8/UtfConverter";
+import UtmBuilder from "./Pages/UTMBuilder/UtmBuilder";
 
 function App() {
   return (
@@ -115,6 +116,7 @@ function App() {
               element={<MorseCodeGenerator />}
             ></Route>
             <Route path="/utf8-encoding" element={<UtfConverter />}></Route>
+            <Route path="/utm-generator" element={<UtmBuilder />}></Route>
 
             <Route path="*" element={<PageNotFound />}></Route>
           </Route>

@@ -160,6 +160,11 @@ const titleNames = [
     linkName: "UTF-8 Encode & Decode",
     titleName: "UTF-8 Encode & Decode",
   },
+  {
+    pathName: "/utm-generator",
+    linkName: "UTM Builder",
+    titleName: "UTM Builder",
+  },
 ];
 
 function Footer() {
@@ -255,7 +260,9 @@ function Footer() {
             <FooterLinks to={"/utf8-encoding"}>
               UTF-8 Encoder/Decoder
             </FooterLinks>
-            <FooterLinks>UTM Builder Generator</FooterLinks>
+            <FooterLinks to={"/utm-generator"}>
+              UTM Builder Generator
+            </FooterLinks>
           </div>
           <div>
             <FooterLinks to={"/ascii-art-generator"}>

@@ -23,6 +23,7 @@ import jsonstringSlice from "../Pages/JSONtoString/jsonstringSlice";
 import slugifyurlSlice from "../Pages/Slugify/slugifyurlSlice";
 import morsecodeSlice from "../Pages/MorseGenerator/morsecodeSlice";
 import utfSlice from "../Pages/UTF-8/utfSlice";
+import UtmSlice from "../Pages/UTMBuilder/UtmSlice";
 
 const store = configureStore({
   reducer: {
@@ -50,6 +51,7 @@ const store = configureStore({
     slugifySlice: slugifyurlSlice,
     morseSlice: morsecodeSlice,
     utf8Slice: utfSlice,
+    utmBuilder: UtmSlice,
   },
 });
 
