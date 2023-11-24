@@ -3,7 +3,6 @@ import HeaderText from "../../UI/HeaderText";
 import StyledBox from "../../UI/StyledBox";
 import StyledTwoGrid from "../../UI/StyledTwoGrid";
 import TextOutput from "../../UI/TextOutput";
-import WordsCounter from "../../Features/Counter/WordsCounter";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { saveAs } from "file-saver";
@@ -13,8 +12,9 @@ import InputFields from "./InputFields";
 function UtmBuilder() {
   const dispatch = useDispatch();
   const [isDownloading, setIsDownloading] = useState(false);
-  const { currentText, convertedText, charactersCount, wordCount, lineCount } =
-    useSelector((select) => select.utmBuilder);
+  const { currentText, convertedText } = useSelector(
+    (select) => select.utmBuilder
+  );
 
   const textHandler = (data) => {
     dispatch(currentTextLoader(data));
@@ -68,13 +68,9 @@ function UtmBuilder() {
             currentText={convertedText}
             copiedSucessfully={copiedSucessfully}
             handleDownload={handleDownload}
+            openLinkBtn={true}
           />
         </StyledTwoGrid>
-        <WordsCounter
-          charactersCount={charactersCount}
-          wordCount={wordCount}
-          lineCount={lineCount}
-        />
       </StyledBox>
       {/* <MirrorInformation /> */}
     </div>

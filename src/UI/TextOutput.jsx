@@ -45,6 +45,7 @@ function TextOutput({
   playFunc,
   playText,
   pauseFunc,
+  openLinkBtn,
 }) {
   const dispatch = useDispatch();
   const fonts = getFonts();
@@ -77,6 +78,17 @@ function TextOutput({
           }
         >
           {playText}
+        </Button>
+      )}
+      {openLinkBtn && (
+        <Button>
+          <a
+            href={currentText.length > 0 && currentText}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open Link
+          </a>
         </Button>
       )}
       <Button onClick={handleDownload} disabled={isDownloading}>
