@@ -24,6 +24,10 @@ const utmSlice = createSlice({
 
       const utmConverter = `${state.currentText.siteURL}${
         campaignSouce.length > 0 ? `?utm_source=${campaignSouce}` : ""
+      }${campaignMedium.length > 0 ? `&utm_medium=${campaignMedium}` : ""}${
+        campaignName.length > 0 ? `&utm_campaign=${campaignName}` : ""
+      }${campaignTerm.length > 0 ? `&utm_term=${campaignTerm}` : ""}${
+        campaignContent.length > 0 ? `&utm_content=${campaignContent}` : ""
       }`;
 
       state.convertedText = utmConverter;
