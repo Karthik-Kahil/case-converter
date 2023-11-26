@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { saveAs } from "file-saver";
 import { copyClipBoard, currentTextLoader } from "./underlineSlice";
+import UnderlineInformation from "./UnderlineInformation";
 
 function UnderlineText() {
   const dispatch = useDispatch();
@@ -49,12 +50,12 @@ function UnderlineText() {
     <div onKeyDown={keyPressHandler}>
       <StyledBox>
         <HeaderText>
-          <h3>Title Case Converter Tool</h3>
+          <h3>Underline Text</h3>
           <p>
-            An easy to use title capitalization tool. Convert your standard text
-            into title text with this online title capitalizer. Simply enter
-            your standard text into the title case converter on the left and see
-            it automatically get generated on the right.
+            Swiftly underline your text with our underline text generator tool
+            below. Simply paste or write the text you want underlined on the
+            left, and witness it being converted with an underlined font in the
+            right panel. Effortless and efficient!
           </p>
         </HeaderText>
         <Toaster />
@@ -73,7 +74,7 @@ function UnderlineText() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <DuplicateInformation /> */}
+      <UnderlineInformation />
     </div>
   );
 }

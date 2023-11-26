@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { copyClipBoard, currentTextLoader } from "./titlecaseSlice";
 import { saveAs } from "file-saver";
+import TitleCaseInformation from "./TitleCaseInformation";
 
 function TitleCaseConverter() {
   const dispatch = useDispatch();
@@ -50,10 +51,11 @@ function TitleCaseConverter() {
         <HeaderText>
           <h3>Title Case Converter Tool</h3>
           <p>
-            An easy to use title capitalization tool. Convert your standard text
-            into title text with this online title capitalizer. Simply enter
-            your standard text into the title case converter on the left and see
-            it automatically get generated on the right.
+            Introducing an effortlessly simple Title Capitalization tool!
+            Transform your standard text into title case with our online title
+            capitalizer. Just input your standard text into the title case
+            converter on the left, and watch it instantly generate in title case
+            on the right. Easy and convenient!
           </p>
         </HeaderText>
         <Toaster />
@@ -72,7 +74,7 @@ function TitleCaseConverter() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <DuplicateInformation /> */}
+      <TitleCaseInformation />
     </div>
   );
 }

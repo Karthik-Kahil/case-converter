@@ -14,6 +14,7 @@ import {
   playAudio,
 } from "./morsecodeSlice";
 import { saveAs } from "file-saver";
+import MorseCodeInformation from "./MorseCodeInformation";
 
 function MorseCodeGenerator() {
   const dispatch = useDispatch();
@@ -62,15 +63,14 @@ function MorseCodeGenerator() {
         <HeaderText>
           <h3>Morse Code Translator & Morse Audio Player</h3>
           <p>
-            To use the morse code translator simply enter the text on the left
-            column and you will see that it is automatically getting translated
-            on the right column. Likewise, if you want to decode morse code,
-            then you can enter the morse code on the right handside of the Morse
-            Code converter and see it get translated back to English. Not only
-            can you convert your text into morse code you are actually able to
-            use the audio too via the ‘morse code translator audio play button’.
-            Simply type in the text you want converting or decoding and then hit
-            the play button and you will hear the audio morse code played.
+            To utilize the Morse code translator, enter the text in the left
+            column, and you&rsquo;ll see an automatic translation on the right
+            column. Conversely, for decoding Morse code, input the Morse code on
+            the right side of the converter to see it translated back into
+            English. Besides converting text to Morse code, you can also utilize
+            audio via the &rsquo;Morse code translator audio play button.&rsquo;
+            Enter or decode the text, hit the play button, and listen to the
+            audio Morse code.
           </p>
         </HeaderText>
         <Toaster />
@@ -93,7 +93,7 @@ function MorseCodeGenerator() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <MirrorInformation /> */}
+      <MorseCodeInformation />
     </div>
   );
 }

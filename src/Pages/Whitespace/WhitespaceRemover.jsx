@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { copyClipBoard, currentTextLoader } from "./whitespaceSlice";
 import { saveAs } from "file-saver";
+import WhitespaceInformation from "./WhitespaceInformation";
 
 function WhitespaceRemover() {
   const dispatch = useDispatch();
@@ -51,9 +52,9 @@ function WhitespaceRemover() {
         <HeaderText>
           <h3>Whitespace Remover</h3>
           <p>
-            Struggling with messy code or cluttered text? Our Whitespace Remover
-            tool streamlines your data, making it cleaner and more efficient.
-            Get started today.
+            Dealing with messy code or cluttered text? Our Whitespace Remover
+            tool is designed to streamline your data, making it cleaner and more
+            efficient. Simplify your content with ease - get started today!
           </p>
         </HeaderText>
         <Toaster />
@@ -72,7 +73,7 @@ function WhitespaceRemover() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <DuplicateInformation /> */}
+      <WhitespaceInformation singleColumn={true} />
     </div>
   );
 }

@@ -9,13 +9,8 @@ const SuperScriptInformationList = [
   },
 ];
 
-function SuperScriptInformation({ singleColumn }) {
-  return (
-    <InformationBox
-      singleColumn={singleColumn}
-      data={SuperScriptInformationList}
-    />
-  );
+function SuperScriptInformation() {
+  return <InformationBox data={SuperScriptInformationList} />;
 }
 
 export default SuperScriptInformation;

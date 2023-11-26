@@ -72,7 +72,7 @@ function SuperScriptConvert() {
           lineCount={lineCount}
         />
       </StyledBox>
-      <SuperScriptInformation singleColumn={true} />
+      <SuperScriptInformation />
     </div>
   );
 }

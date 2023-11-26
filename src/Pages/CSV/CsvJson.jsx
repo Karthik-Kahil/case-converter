@@ -56,10 +56,9 @@ function CsvJson() {
         <HeaderText>
           <h3>Convert CSV to JSON and JSON to CSV</h3>
           <p>
-            This is a simple tool that allows you to convert CSV to JSON and
-            vice versa JSON to CSV as well. Simply copy and paste your code into
-            the corresponding field and see it get converted back in the next
-            field.
+            This tool is straightforward and enables you to convert CSV to JSON
+            and vice versa, JSON to CSV. Just copy and paste your code into the
+            respective field, and observe the conversion in the adjacent field.
           </p>
         </HeaderText>
         <Toaster />

@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { saveAs } from "file-saver";
 import { copyClipBoard, currentTextLoader } from "./zalgoSlice";
+import ZalgoInformation from "./ZalgoInformation";
 
 function ZalgoGenerator() {
   const dispatch = useDispatch();
@@ -51,8 +52,10 @@ function ZalgoGenerator() {
         <HeaderText>
           <h3>Zalgo Glitch Text Generator</h3>
           <p>
-            A handy online free glitch generator that will turn your standard
-            text into zalgo text (which gives it the glitchy look below).
+            Introducing our convenient and free online glitch generator that
+            effortlessly transforms your standard text into zalgo text,
+            providing it with that distinctive glitchy appearance. Experience
+            the glitch effect below!
           </p>
         </HeaderText>
         <Toaster />
@@ -71,7 +74,7 @@ function ZalgoGenerator() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <DuplicateInformation /> */}
+      <ZalgoInformation />
     </div>
   );
 }

@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { saveAs } from "file-saver";
 import { copyClipBoard, currentTextLoader } from "./hextextSlice";
+import HexTextInformation from "./HexTextInformation";
 
 function HextoText() {
   const dispatch = useDispatch();
@@ -51,9 +52,9 @@ function HextoText() {
         <HeaderText>
           <h3>Hex to Text Converter</h3>
           <p>
-            This online converter allows you to convert hexadecimal strings to
-            text. Simply enter the hex string into the input field and see the
-            result on the right.
+            This online converter provides the ability to transform hexadecimal
+            strings into text. Input the hex string into the designated field,
+            and observe the result on the right.
           </p>
         </HeaderText>
         <Toaster />
@@ -72,7 +73,7 @@ function HextoText() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <MirrorInformation /> */}
+      <HexTextInformation />
     </div>
   );
 }

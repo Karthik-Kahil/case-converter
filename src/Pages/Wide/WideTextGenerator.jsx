@@ -9,6 +9,7 @@ import StyledTwoGrid from "../../UI/StyledTwoGrid";
 import TextArea from "../../UI/TextArea";
 import TextOutput from "../../UI/TextOutput";
 import WordsCounter from "../../Features/Counter/WordsCounter";
+import WideTextInformation from "./WideTextInformation";
 
 function WideTextGenerator() {
   const dispatch = useDispatch();
@@ -51,11 +52,12 @@ function WideTextGenerator() {
         <HeaderText>
           <h3>Wide Text Generator</h3>
           <p>
-            A simple to use online vaporwave text generator tool that widens and
-            spaces out your text. It basically converts your normal text into a
-            vaporwave font, you will see that it is also referred to as an
-            aesthetic font. Essentially you will have your standard font widened
-            via this wide text generator.
+            Discover the simplicity of our online Vaporwave Text Generator tool,
+            designed to expand and space out your text. This tool effortlessly
+            transforms your regular text into a vaporwave font, often referred
+            to as an aesthetic font. Experience the widening of your standard
+            font with ease through this wide text generator. Explore the
+            aesthetic transformation today!
           </p>
         </HeaderText>
         <Toaster />
@@ -74,7 +76,7 @@ function WideTextGenerator() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <DuplicateInformation /> */}
+      <WideTextInformation />
     </div>
   );
 }

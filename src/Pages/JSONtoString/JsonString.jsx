@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { saveAs } from "file-saver";
 import { copyClipBoard, currentTextLoader } from "./jsonstringSlice";
+import JsonStringInformation from "./JsonStringInformation";
 
 function JsonString() {
   const dispatch = useDispatch();
@@ -51,9 +52,10 @@ function JsonString() {
         <HeaderText>
           <h3>JSON Stringify Text Generator</h3>
           <p>
-            This tool helps you produce JSON Stringify text. Simply enter your
-            normal text in the left panel and then see it generated for you to
-            copy and paste in the next panel.
+            This tool assists you in generating JSON Stringify text. Enter your
+            regular text in the left panel, and witness the JSON Stringify text
+            generated for you in the next panel. Copy and paste the result as
+            needed.
           </p>
         </HeaderText>
         <Toaster />
@@ -72,7 +74,7 @@ function JsonString() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <MirrorInformation /> */}
+      <JsonStringInformation />
     </div>
   );
 }
