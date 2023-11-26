@@ -15,6 +15,8 @@ const asciiArtSlice = createSlice({
   reducers: {
     currentTextLoader(state, action) {
       state.currentText = action.payload;
+
+      state.convertedText = state.currentText;
     },
     copyClipBoard(state) {
       copyTextToClipboard(state.convertedText);

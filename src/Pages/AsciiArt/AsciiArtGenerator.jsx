@@ -6,18 +6,16 @@ import TextOutput from "../../UI/TextOutput";
 import WordsCounter from "../../Features/Counter/WordsCounter";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { copyClipBoard, currentTextLoader } from "./asciiArtSlice";
+import { copyClipBoard } from "./asciiArtSlice";
 import { saveAs } from "file-saver";
+import MiniInputLabel from "../../UI/MiniInputLabel";
 
 function AsciiArtGenerator() {
   const dispatch = useDispatch();
   const [isDownloading, setIsDownloading] = useState(false);
+
   const { currentText, convertedText, charactersCount, wordCount, lineCount } =
     useSelector((select) => select.asciiSlice);
-
-  const textHandler = (e) => {
-    dispatch(currentTextLoader(e.target.value));
-  };
 
   const copiedSucessfully = () => {
     (currentText.length > 0 && toast.success("Copied to clipboard")) ||
@@ -59,7 +57,9 @@ function AsciiArtGenerator() {
         <UploadInput
           accept={".png, .jpg, .gif"}
           placeHolder={"Drag & drop an image here or click to upload"}
+          //   convertLoader={asciiGenerator}
         />
+        <MiniInputLabel label={"Characters:"}></MiniInputLabel>
 
         <TextOutput
           textSelection={false}

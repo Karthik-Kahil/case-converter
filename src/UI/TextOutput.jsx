@@ -16,7 +16,20 @@ const StyledTextArea = styled.div`
     background-color: #f5eec8;
     margin-top: 2rem;
     min-height: 300px;
-    overflow: scroll;
+    overflow-y: scroll;
+  }
+
+  & p::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  & p::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+  }
+
+  & p::-webkit-scrollbar-thumb {
+    background-color: #186e65;
   }
 
   & textarea {
@@ -30,7 +43,18 @@ const StyledTextArea = styled.div`
     overflow: scroll;
   }
 
-  overflow: hidden;
+  & textarea::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  & textarea::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+  }
+
+  & textarea::-webkit-scrollbar-thumb {
+    background-color: #186e65;
+  }
 `;
 
 function TextOutput({
