@@ -55,9 +55,9 @@ function InvisibleGenerator() {
         <HeaderText>
           <h3>Invisible Text Generator</h3>
           <p>
-            If you’re looking to produce some invisible text that looks just
-            like empty space but in fact contains a unique message, then this is
-            the online tool you need.
+            If you aim to generate hidden text that appears as blank space while
+            concealing a distinct message, this online tool is the solution
+            you&rsquo;re seeking.
           </p>
         </HeaderText>
         <Toaster />

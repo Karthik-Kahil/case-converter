@@ -4,13 +4,13 @@ const InvisibleInformationList = [
   {
     header: "Invisible Text Generator",
     description:
-      "There are a lot of apps and websites that don’t accept empty space as an input, however, you can get around this with our handy online tool. An invisible text generator, simply type the text you want to and then copy the text to be pasted wherever you want.",
+      "Numerous apps and websites do not recognize empty space as valid input. Nevertheless, our convenient online tool provides a workaround. As an invisible text generator, you can effortlessly input the desired text, copy the generated result, and paste it wherever needed.  ",
   },
   {
     header:
       "Can I create invisible letters or words using the Invisible Text Generator?",
     description:
-      "Yes, the Invisible Text Generator can create invisible letters and words. For each character or letter you input, an invisible character is produced. If you input a word, the generator will produce invisible text corresponding to that word.",
+      "Indeed, with the Invisible Text Generator, you can create invisible letters and words. When you input a character or letter, the generator produces an invisible counterpart for each. Moreover, if you input a word, the generator generates invisible text that corresponds to that specific word.",
   },
 ];
 

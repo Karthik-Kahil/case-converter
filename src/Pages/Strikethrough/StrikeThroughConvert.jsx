@@ -9,6 +9,7 @@ import { saveAs } from "file-saver";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { copyClipBoard, currentTextLoader } from "./strikethroughSlice";
+import StrikeThroughInformation from "./StrikeThroughInformation";
 
 function StrikeThroughConvert() {
   const dispatch = useDispatch();
@@ -52,10 +53,11 @@ function StrikeThroughConvert() {
         <HeaderText>
           <h3>Strikethrough Text Generator</h3>
           <p>
-            Simple and easy to use strikethrough text generator. Convert
-            standard text into crossed out text with this online strike text
-            generator. Type normal text on the left and have the content come
-            out with crossed out font through the strikeout generator.
+            Effortlessly create strikethrough text with our simple and
+            user-friendly strikethrough text generator. Transform regular text
+            into crossed-out font using this online tool. Input your standard
+            text on the left, and let the strikeout generator generate content
+            with a strikethrough effect.
           </p>
         </HeaderText>
         <Toaster />
@@ -74,7 +76,7 @@ function StrikeThroughConvert() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <DuplicateInformation /> */}
+      <StrikeThroughInformation />
     </div>
   );
 }

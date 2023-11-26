@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { copyClipBoard, currentTextLoader } from "./superSlice";
 import { saveAs } from "file-saver";
+import SuperScriptInformation from "./SuperScriptInformation";
 
 function SuperScriptConvert() {
   const dispatch = useDispatch();
@@ -51,9 +52,9 @@ function SuperScriptConvert() {
         <HeaderText>
           <h3>Superscript Generator</h3>
           <p>
-            Elevate your text with the nuanced touch of superscript formatting?
-            Look no further; you&rsquo;ve landed on the perfect platform to
-            effortlessly transform your text into superscript form.
+            Enhance your text with the subtle flair of superscript formatting!
+            Your quest for a seamless platform to effortlessly convert your text
+            into superscript form ends right here.
           </p>
         </HeaderText>
         <Toaster />
@@ -71,7 +72,7 @@ function SuperScriptConvert() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <DuplicateInformation /> */}
+      <SuperScriptInformation singleColumn={true} />
     </div>
   );
 }

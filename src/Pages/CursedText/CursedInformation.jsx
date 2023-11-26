@@ -4,12 +4,12 @@ const CursedInformationList = [
   {
     header: "Cursed Text Generator",
     description:
-      "To use the cursed text generator simply enter the text you want being 'cursed' on the left panel. On the right, you'll see the output of what your text will look like with our generator.<br/><br/>If you're looking to add a bit of excitement to your posts, then this is the perfect tool for you. With our cursed text generator, you can make your posts stand out from the rest. Ideal for a Halloween text generator, it's produces very scary text. So go ahead and give it a try!",
+      "Unleash the eerie power of our cursed text generator by simply inputting the text you desire to transform into a chilling spectacle. Witness the metamorphosis unfold on the right panel as your text is adorned with an aura of otherworldly dread.<br/><br/>Whether you seek to send shivers down the spines of your social media followers or inject a touch of spine-tingling intrigue into your Halloween messages, our cursed text generator is your gateway to the realm of the macabre. So, embark on this journey of textual terror and unleash the unfathomable horrors lurking within your words.",
   },
   {
     header: "Why Use a Cursed Text Tool?",
     description:
-      "If you're looking for a way to add some excitement to your posts, then you should definitely try out our cursed text generator. With this tool, you can easily create slanted text that will make your posts stand out from the rest.<br/><br/>As you can see there is a range of different 'cursed fonts' that you can use to create your own 'creepy vibe'. Not only is this tool great for adding a bit of excitement to your posts, but it's also perfect for creating attention-grabbing headlines. So if you're looking for a way to make your content more noticeable.",
+      "Elevate your online presence with our cursed text generator, the ultimate tool for crafting attention-grabbing content. Infuse your words with an unsettling aura, transforming ordinary text into spine-chilling messages that will leave a lasting impression.<br/><br/>Immerse yourself in a realm of typographic terror as you explore an array of eerie fonts, each meticulously designed to evoke a sense of dread and intrigue. Whether you seek to add a touch of mystery to your social media posts or inject a chilling twist into your Halloween greetings, our cursed text generator will unleash the unfathomable horrors lurking within your words.<br/><br/>Embrace the power of textual transformation and watch as your mundane messages morph into captivating spectacles of slanted text. Unleash the eldritch energies within your keyboard and command attention with every post.",
   },
 ];
 

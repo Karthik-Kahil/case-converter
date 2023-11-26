@@ -2,15 +2,15 @@ import InformationBox from "../../UI/InformationBox";
 
 const TinyInformationList = [
   {
-    header: "Effortless Text Reversal",
+    header: "Tiny Text Case",
     description:
-      "Whether you seek stylistic flair, humor, or any other reason, reversing your text can be a valuable choice. A reverse text generator simplifies the process, sparing you from complex keyboard controls and time-consuming self-editing. It's a versatile tool with various applications, offering a time-saving solution.<br/><br/>Reversing text is often a laborious task, but our generator streamlines the process, saving you time and effort. The transformation is swift, making it a remarkably efficient solution for instant text reversal.<br/><br/>Bid farewell to the struggles of manual editing. With our reverse text generator, you merely input or paste your text into the left-hand box. Click the 'Download Text' and/or 'Copy to Clipboard' button to obtain the edited content. Then, you can use it as needed.<br/><br/>Our design ensures maximum efficiency and ease, empowering you to make the most of your efforts. Experience faster text editing today with our reverse text generator.",
+      "Looking to generate compact text effortlessly? Utilize our user-friendly microtext generator. This tool provides the easiest way for you to transform any text into a diminutive style. Save precious time that would otherwise be spent manually converting text. Our microtext generator simplifies the process, turning what could take hours into a quick and efficient task.<br/><br/>We highly recommend using our convenient microtext generator to streamline the conversion process. Simply input the text you want to change from regular to microtext in the left box, and it will be adjusted to align with the small text style you desire.<br/><br/>When expediting text generation is crucial, this tool can be a game-changer. Instead of laboriously adjusting your text manually, our microtext generator swiftly accomplishes what can be a tedious and time-consuming task.<br/><br/>Take the burden off yourself with the assistance of a microtext generator that ensures accuracy. By avoiding typos, mistakes, and errors, you can promptly complete this task. Regardless of the purpose, our microtext generator simplifies the generation of tiny text, making it a much more efficient process than ever before!",
   },
 
   {
-    header: "Effortless Text Reversal with the Backwards Text Generator",
+    header: "Why is the Text Reduced in Size?",
     description:
-      "Simply compose your text in the left panel as you normally would, and watch it effortlessly convert in the right panel.<br/><br/>Transformed Text Example: .txet sdrawkcab fo ecnetnes elpmaxe na si sihT<br/><br/>Should you have any questions or suggestions for further improvements regarding the Backwards Text Generator, please don't hesitate to reach out. We're eager to assist you.",
+      "The tiny text generator functions by converting regular text into a series of subscript characters and small caps, giving it a visually smaller appearance. This reduction in size is achieved through the use of a Unicode alphabet. The small text generator provides you with the ability to easily copy and paste the transformed text into status updates on platforms like Facebook, Instagram, and Twitter, as well as applications like Excel and Word.<br/><br/>If the text were genuinely converted into a tiny font, unfortunately, you wouldn't have the flexibility to use it across various platforms.<br/><br/>For instance:<br/>ᴛʜɪs ɪs ᴀɴ ᴇxᴀᴍᴘʟᴇ ᴏꜰ ᴛɪɴʏ ᴛᴇxᴛ ᴄᴀꜱᴇ ᴡɪᴛʜ ꜱᴍᴀʟʟ ᴄᴀᴘꜱ<br/><br/>ᵗʰⁱˢ ⁱˢ ᵃⁿ ᵉˣᵃᵐᵖˡᵉ ᵒᶠ ᵗⁱⁿʸ ᵗᵉˣᵗ ᶜᵃˢᵉ ᵘˢⁱⁿᵍ ˢᵘᵖᵉʳˢᶜʳⁱᵖᵗ",
   },
 ];
 
