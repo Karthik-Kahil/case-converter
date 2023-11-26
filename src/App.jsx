@@ -28,10 +28,21 @@ import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 import MorseCodeGenerator from "./Pages/MorseGenerator/MorseCodeGenerator";
 import UtfConverter from "./Pages/UTF-8/UtfConverter";
 import UtmBuilder from "./Pages/UTMBuilder/UtmBuilder";
+import { useEffect, useState } from "react";
+import Loader from "./Features/Loader/Loader";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    window.onload = () => {
+      setIsLoading(false);
+    };
+  }, []);
+
   return (
     <>
+      {isLoading && <Loader />}
       <GlobalStyles />
       <BrowserRouter>
         <Routes>
