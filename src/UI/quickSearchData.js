@@ -135,6 +135,11 @@ const searchDataList = [
     searchName: "UTF8 Encoder/Decoder",
     dataURL: "/utf8-encoding",
   },
+  {
+    key: crypto.randomUUID(),
+    searchName: "UTM Builder Generator",
+    dataURL: "/utm-generator",
+  },
 ];
 
 export default searchDataList;
