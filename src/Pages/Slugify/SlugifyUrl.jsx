@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { saveAs } from "file-saver";
 import { copyClipBoard, currentTextLoader } from "./slugifyurlSlice";
+import SlugifyurlInformation from "./SlugifyurlInformation";
 
 function SlugifyUrl() {
   const dispatch = useDispatch();
@@ -51,11 +52,14 @@ function SlugifyUrl() {
         <HeaderText>
           <h3>Slugify URL Generator</h3>
           <p>
-            A tool for creating clean, readable, and search engine-friendly
-            URLs. As a website owner, blogger, or marketer, you&rsquo;ll
-            appreciate the simplicity of transforming long and complex URLs into
-            short and easy-to-read versions. Get started now to improve user
-            experience and SEO on your website.
+            The URL Cleaner tool is designed for website owners, bloggers, and
+            marketers seeking to create clean, readable, and search
+            engine-friendly URLs. This tool simplifies the process of
+            transforming long and complex URLs into shorter, more user-friendly
+            versions. By using this tool, you can enhance user experience and
+            improve the search engine optimization (SEO) of your website. Get
+            started now to streamline your URLs and make them more accessible to
+            your audience.
           </p>
         </HeaderText>
         <Toaster />
@@ -74,7 +78,7 @@ function SlugifyUrl() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <MirrorInformation /> */}
+      <SlugifyurlInformation />
     </div>
   );
 }

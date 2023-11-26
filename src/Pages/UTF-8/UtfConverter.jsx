@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { copyClipBoard, currentTextLoader } from "./utfSlice";
 import { saveAs } from "file-saver";
+import Utf8Information from "./Utf8Information";
 
 function UtfConverter() {
   const dispatch = useDispatch();
@@ -51,9 +52,12 @@ function UtfConverter() {
         <HeaderText>
           <h3>UTF8 Encoder/Decoder</h3>
           <p>
-            A simple online UTF8 encoder and decoder, for developers and
-            programmers. Simply copy and paste your text in the form field below
-            and see the UTF-8 data on the right.
+            The UTF-8 Encoder and Decoder is a convenient online tool designed
+            for developers and programmers. To use it, copy and paste your text
+            into the form field, and the tool will display the corresponding
+            UTF-8 data on the right. This makes it easy to encode or decode text
+            in UTF-8 format, an essential process for handling character
+            encoding in programming and development projects.
           </p>
         </HeaderText>
         <Toaster />
@@ -72,7 +76,7 @@ function UtfConverter() {
           lineCount={lineCount}
         />
       </StyledBox>
-      {/* <MirrorInformation /> */}
+      <Utf8Information />
     </div>
   );
 }

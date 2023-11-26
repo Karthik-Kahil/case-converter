@@ -8,6 +8,7 @@ import { useState } from "react";
 import { saveAs } from "file-saver";
 import { copyClipBoard, currentTextLoader } from "./UtmSlice";
 import InputFields from "./InputFields";
+import UtmBuilderInformation from "./UtmBuilderInformation";
 
 function UtmBuilder() {
   const dispatch = useDispatch();
@@ -51,12 +52,14 @@ function UtmBuilder() {
         <HeaderText>
           <h3>UTM Builder</h3>
           <p>
-            Welcome to our UTM Builder Generator, a powerful tool designed to
-            help marketers create custom UTM codes for tracking their marketing
-            campaigns. With a user-friendly interface, generating precise and
-            accurate UTM codes has never been easier. Optimize your marketing
-            efforts by gaining valuable insights into your campaign performance
-            and boost your ROI today.
+            The UTM Builder Generator simplifies the process of creating custom
+            UTM codes, empowering marketers to track and analyze the performance
+            of their marketing campaigns. This user-friendly tool provides a
+            convenient interface for generating precise and accurate UTM codes,
+            enhancing the ability to optimize marketing efforts and improve
+            return on investment (ROI). Gain valuable insights into campaign
+            performance with customized UTM tracking and elevate your marketing
+            strategy.
           </p>
         </HeaderText>
         <Toaster />
@@ -72,7 +75,7 @@ function UtmBuilder() {
           />
         </StyledTwoGrid>
       </StyledBox>
-      {/* <MirrorInformation /> */}
+      <UtmBuilderInformation />
     </div>
   );
 }
