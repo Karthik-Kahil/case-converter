@@ -36,16 +36,32 @@ function CsvJson() {
     if ((e.metaKey || e.ctrlKey) && e.key === "b") handleDownload();
   };
 
+  // const handleDownload = () => {
+  //   if (isDownloading) {
+  //     return;
+  //   }
+
+  //   setIsDownloading(true);
+
+  //   const file = new Blob([convertedText]);
+  //   (convertedText.length > 0 && saveAs(file, "CaseMorph_csv_to_json.json")) ||
+  //     toast.error("No files to download");
+
+  //   setIsDownloading(false);
+  // };
+
   const handleDownload = () => {
     if (isDownloading) {
       return;
     }
 
+    currentText.length === 0 && toast.error("No files to download");
+
     setIsDownloading(true);
 
-    const file = new Blob([convertedText]);
-    (convertedText.length > 0 && saveAs(file, "CaseMorph_csv_to_json.json")) ||
-      toast.error("No files to download");
+    const plainText = convertedText.replace(/<[^>]*>/g, "");
+    const file = new Blob([plainText]);
+    plainText.length > 0 && saveAs(file, "CaseMorph_Pro_json.json");
 
     setIsDownloading(false);
   };

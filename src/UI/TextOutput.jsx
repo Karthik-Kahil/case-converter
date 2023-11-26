@@ -41,6 +41,7 @@ const StyledTextArea = styled.div`
     margin-top: 2rem;
     min-height: 300px;
     overflow: scroll;
+    resize: vertical;
   }
 
   & textarea::-webkit-scrollbar-track {

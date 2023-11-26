@@ -38,10 +38,13 @@ function WhitespaceRemover() {
       return;
     }
 
+    currentText.length === 0 && toast.error("No files to download");
+
     setIsDownloading(true);
 
-    const file = new Blob([convertedText]);
-    currentText.length > 0 && saveAs(file, "CaseMorph_duplicate_Convert.txt");
+    const plainText = convertedText.replace(/<[^>]*>/g, "");
+    const file = new Blob([plainText]);
+    plainText.length > 0 && saveAs(file, "CaseMorph_Pro_Whitespace.txt");
 
     setIsDownloading(false);
   };
@@ -61,6 +64,7 @@ function WhitespaceRemover() {
         <StyledTwoGrid>
           <TextArea textHandler={textHandler} />
           <TextOutput
+            isTextArea={true}
             textSelection={false}
             currentText={convertedText}
             copiedSucessfully={copiedSucessfully}

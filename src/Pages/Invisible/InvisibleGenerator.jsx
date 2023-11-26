@@ -14,9 +14,8 @@ import InvisibleInformation from "./InvisibleInformation";
 function InvisibleGenerator() {
   const dispatch = useDispatch();
   const [isDownloading, setIsDownloading] = useState(false);
-  const { convertedText, charactersCount, wordCount, lineCount } = useSelector(
-    (select) => select.invisibleGen
-  );
+  const { currentText, convertedText, charactersCount, wordCount, lineCount } =
+    useSelector((select) => select.invisibleGen);
 
   const textHandler = (e) => {
     dispatch(currentTextLoader(e.target.value));
@@ -39,12 +38,13 @@ function InvisibleGenerator() {
       return;
     }
 
+    currentText.length === 0 && toast.error("No files to download");
+
     setIsDownloading(true);
 
-    const file = new Blob([convertedText]);
-    (convertedText.length > 0 &&
-      saveAs(file, "CaseMorph_invisible_generator.txt")) ||
-      toast.error("No files to download");
+    const plainText = convertedText.replace(/<[^>]*>/g, "");
+    const file = new Blob([plainText]);
+    plainText.length > 0 && saveAs(file, "CaseMorph_Pro_Invisible.txt");
 
     setIsDownloading(false);
   };

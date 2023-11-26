@@ -38,10 +38,13 @@ function UnderlineText() {
       return;
     }
 
+    currentText.length === 0 && toast.error("No files to download");
+
     setIsDownloading(true);
 
-    const file = new Blob([convertedText]);
-    currentText.length > 0 && saveAs(file, "CaseMorph_duplicate_Convert.txt");
+    const plainText = convertedText.replace(/<[^>]*>/g, "");
+    const file = new Blob([plainText]);
+    plainText.length > 0 && saveAs(file, "CaseMorph_Pro_Underline.txt");
 
     setIsDownloading(false);
   };

@@ -38,10 +38,13 @@ function PlainConvert() {
       return;
     }
 
+    currentText.length === 0 && toast.error("No files to download");
+
     setIsDownloading(true);
 
-    const file = new Blob([currentText]);
-    currentText.length > 0 && saveAs(file, "CaseMorph_Case_Convert.txt");
+    const plainText = convertedText.replace(/<[^>]*>/g, "");
+    const file = new Blob([plainText]);
+    plainText.length > 0 && saveAs(file, "CaseMorph_Pro_Plain.txt");
 
     setIsDownloading(false);
   };
@@ -68,6 +71,7 @@ function PlainConvert() {
             textSelection={false}
             currentText={convertedText}
             copiedSucessfully={copiedSucessfully}
+            handleDownload={handleDownload}
           />
         </StyledTwoGrid>
         <WordsCounter

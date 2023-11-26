@@ -38,10 +38,13 @@ function UtmBuilder() {
       return;
     }
 
+    currentText.length === 0 && toast.error("No files to download");
+
     setIsDownloading(true);
 
-    const file = new Blob([convertedText]);
-    currentText.length > 0 && saveAs(file, "CaseMorph_Mirror_Convert.txt");
+    const plainText = convertedText.replace(/<[^>]*>/g, "");
+    const file = new Blob([plainText]);
+    plainText.length > 0 && saveAs(file, "CaseMorph_Pro_utmbuilder.txt");
 
     setIsDownloading(false);
   };
@@ -67,6 +70,7 @@ function UtmBuilder() {
           {/* <TextArea textHandler={textHandler} /> */}
           <InputFields textHandler={textHandler} />
           <TextOutput
+            isTextArea={true}
             textSelection={false}
             currentText={convertedText}
             copiedSucessfully={copiedSucessfully}

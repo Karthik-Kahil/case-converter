@@ -4,8 +4,11 @@ import Papa from "papaparse";
 
 const csvConvertCode = ({ setLoader, dispatch }, e) => {
   const file = e.target.files[0]; // Get the selected file
-  if (file && file.type !== "text/csv")
+  if (file && file.type !== "text/csv") {
     toast.error("Please upload files in .csv format");
+    setLoader(false);
+    return null;
+  }
 
   const reader = new FileReader(); // Create a FileReader
 
